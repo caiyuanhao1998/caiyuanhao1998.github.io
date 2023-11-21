@@ -11,4 +11,4 @@ project: https://github.com/caiyuanhao1998/SAX-NeRF
 zhihu: 
 authors: <strong>Yuanhao Cai </strong>, <a href="https://jiahaoplus.github.io/">jiahao Wang</a>, <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>, <a href="https://www.zongweiz.com/">Zongwei Zhou*</a>, <a href="https://scholar.google.com/citations?hl=en&user=YR7re-cAAAAJ">Angtian Wang</a>
 ---
-A NeRF-based framework captures structures for larger-scale X-ray 3D reconstruction
+A NeRF algorithm captures structures for larger-scale X-ray 3D reconstruction
