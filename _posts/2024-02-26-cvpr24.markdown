@@ -5,7 +5,7 @@ date:   2024-02-26 08:00:00 +00:00
 image: /images/sax-nerf.png
 categories: research
 author: "Yuanhao Cai"
-venue: Conference on Computer Vision and Pattern Recognition (CVPR), 2024
+venue: Conference on Computer Vision and Pattern Recognition (CVPR)
 paper: https://arxiv.org/pdf/2311.10959.pdf
 project: https://github.com/caiyuanhao1998/SAX-NeRF
 zhihu: 
