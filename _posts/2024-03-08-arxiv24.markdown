@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Radiative Gaussian Splatting for Efficient X-ray Novel View Synthesis"
+date:   2024-03-08 08:00:00 +00:00
+image: /images/x-gaussian.png
+categories: research
+author: "Yuanhao Cai"
+venue: arxiv
+paper: https://arxiv.org/pdf/2403.04116.pdf
+project: https://github.com/caiyuanhao1998/X-Gaussian
+zhihu: 
+authors: <strong>Yuanhao Cai </strong>, <a href="https://yixunliang.github.io/">Yixun Liang</a>, <a href="https://jiahaoplus.github.io/">jiahao Wang</a>, <a href="https://scholar.google.com/citations?hl=en&user=YR7re-cAAAAJ">Angtian Wang</a>, <a href="https://yulunzhang.com/">Yulun Zhang</a>, <a href="https://english.seiee.sjtu.edu.cn/english/detail/842_802.htm">Xiaokang Yang</a>, <a href="https://www.zongweiz.com/">Zongwei Zhou</a>,  <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>
+---
+The first 3D Gaussian splatting-based method for X-ray 3D reconstruction
