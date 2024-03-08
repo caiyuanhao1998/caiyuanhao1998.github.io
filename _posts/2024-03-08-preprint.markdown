@@ -2,7 +2,7 @@
 layout: post
 title:  "Radiative Gaussian Splatting for Efficient X-ray Novel View Synthesis"
 date:   2024-03-08 08:00:00 +00:00
-image: /images/x-gaussian.png
+image: /images/sax-nerf.png
 categories: research
 author: "Yuanhao Cai"
 venue: arxiv
