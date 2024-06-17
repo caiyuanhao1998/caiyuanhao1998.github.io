@@ -9,6 +9,9 @@ venue: Conference on Computer Vision and Pattern Recognition (CVPR)
 paper: https://arxiv.org/pdf/2311.10959.pdf
 project: https://github.com/caiyuanhao1998/SAX-NeRF
 zhihu: https://zhuanlan.zhihu.com/p/702702109
+leaderboard: https://paperswithcode.com/dataset/x3d
+video: https://www.youtube.com/watch?v=oVVUaBY61eo
+bibtex: /bibtex/saxnerf.txt
 authors: <strong>Yuanhao Cai </strong>, <a href="https://jiahaoplus.github.io/">jiahao Wang</a>, <a href="https://www.zongweiz.com/">Zongwei Zhou</a>, <a href="https://scholar.google.com/citations?hl=en&user=YR7re-cAAAAJ">Angtian Wang</a>, <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>
 ---
 A NeRF algorithm capturing structures for large-scale X-ray 3D reconstruction

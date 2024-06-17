@@ -1,0 +1,6 @@
+@inproceedings{saxnerf,
+  title={Structure-Aware Sparse-View X-ray 3D Reconstruction},
+  author={Yuanhao Cai and Jiahao Wang and Alan Yuille and Zongwei Zhou and Angtian Wang},
+  booktitle={CVPR},
+  year={2024}
+}
