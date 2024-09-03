@@ -1,0 +1,6 @@
+@inproceedings{x_gaussian,
+  title={Radiative gaussian splatting for efficient x-ray novel view synthesis},
+  author={Yuanhao Cai and Yixun Liang and Jiahao Wang and Angtian Wang and Yulun Zhang and Xiaokang Yang and Zongwei Zhou and Alan Yuille},
+  booktitle={ECCV},
+  year={2024}
+}
