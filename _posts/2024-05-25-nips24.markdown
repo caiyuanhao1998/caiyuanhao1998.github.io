@@ -9,6 +9,6 @@ venue: "Advances in Neural Information Processing Systems (NeurIPS)"
 paper: https://arxiv.org/abs/2405.20693v1
 project: https://ruyi-zha.github.io/r2_gaussian/r2_gaussian.html
 media_MrNeRF: https://x.com/janusch_patas/status/1797493143094571041
-authors: <a href="https://ruyi-zha.github.io/">Ruyi Zha</a>, <a href="https://scholar.google.com/citations?user=BD7Hce0AAAAJ&hl=en">Tao Jun Lin</a>, <strong>Yuanhao Cai †</strong>, <a href="https://sites.google.com/view/yanhaozhang/home">Jiwen Cao</a>, <a href="https://users.cecs.anu.edu.au/~hongdong/">Jiwen Cao</a>
+authors: <a href="https://ruyi-zha.github.io/">Ruyi Zha</a>, <a href="https://scholar.google.com/citations?user=BD7Hce0AAAAJ&hl=en">Tao Jun Lin</a>, <strong>Yuanhao Cai †</strong>, <a href="https://sites.google.com/view/yanhaozhang/home">Jiwen Cao</a>, <a href="https://users.cecs.anu.edu.au/~hongdong/">Hongdong Li</a>
 ---
 The first 3D Gaussian splatting-based method for CT reconstruction
