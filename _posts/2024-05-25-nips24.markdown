@@ -2,7 +2,7 @@
 layout: post
 title:  "R2-Gaussian: Rectifying Radiative Gaussian Splatting for Tomographic Reconstruction"
 date:   2024-05-25 08:00:00 +00:00
-image: /images/r2gs.png
+image: /images/r2gs.gif
 categories: research
 author: "Yuanhao Cai"
 venue: "Advances in Neural Information Processing Systems (NeurIPS)"
