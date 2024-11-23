@@ -8,6 +8,6 @@ author: "Yuanhao Cai"
 venue: "arxiv"
 paper: https://arxiv.org/abs/2410.15636
 project: https://heye0507.github.io/LucidFusion_page/
-authors:  <a href="https://heye0507.github.io/">Hao He</a>, <a href="https://yixunliang.github.io/">Yixun Liang</a>, <a href="https://wileewang.github.io/">Luozhou Wang</a>, <strong>Yuanhao Cai </strong>, <a href="https://scholar.google.com/citations?user=lrgPuBUAAAAJ&hl=en&inst=1381320739207392350/">Xinli Xu</a>, Hao-Xiang Guo, Xiang Wen, <a href="https://www.yingcong.me/">Ying-Cong Chen</a>
+authors:  <a href="https://heye0507.github.io/">Hao He</a>, <a href="https://yixunliang.github.io/">Yixun Liang</a>, <a href="https://wileewang.github.io/">Luozhou Wang</a>, <strong>Yuanhao Cai</strong>, <a href="https://scholar.google.com/citations?user=lrgPuBUAAAAJ&hl=en&inst=1381320739207392350/">Xinli Xu</a>, Hao-Xiang Guo, Xiang Wen, <a href="https://www.yingcong.me/">Ying-Cong Chen</a>
 ---
 A pose-free multi-view 3D reconstruction methods based on Gaussian Splatting
