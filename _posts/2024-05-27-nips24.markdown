@@ -2,7 +2,7 @@
 layout: post
 title:  "HDR-GS: Efficient High Dynamic Range Novel View Synthesis at 1000x Speed via Gaussian Splatting"
 date:   2024-05-27 08:00:00 +00:00
-image: /images/hdr-gs.png
+image: /images/hdr_gs.gif
 categories: research
 author: "Yuanhao Cai"
 venue: "Advances in Neural Information Processing Systems (NeurIPS)"
