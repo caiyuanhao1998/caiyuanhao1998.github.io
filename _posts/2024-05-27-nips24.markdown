@@ -10,6 +10,10 @@ paper: https://arxiv.org/pdf/2405.15125
 project: https://github.com/caiyuanhao1998/HDR-GS
 media_AK: https://x.com/_akhaliq/status/1794921228462923925?s=46
 media_MrNeRF: https://x.com/janusch_patas/status/1794932286397489222?s=46
+zhihu: https://zhuanlan.zhihu.com/p/10016024329
+leaderboard: https://paperswithcode.com/dataset/x3d
+video: https://www.youtube.com/watch?v=wtU7Kcwe7ck
+bibtex: /bibtex/hdr_gs.txt
 authors: <strong>Yuanhao Cai </strong>, <a href="https://scholar.google.com/citations?user=ucb6UssAAAAJ&hl=en">Zihao Xiao</a>, <a href="https://yixunliang.github.io/">Yixun Liang</a>, <a href="https://minghanqin.github.io/">Minghan Qin</a>, <a href="https://yulunzhang.com/">Yulun Zhang</a>, <a href="https://english.seiee.sjtu.edu.cn/english/detail/842_802.htm">Xiaokang Yang</a>, <a href="https://www.cs.jhu.edu/~yyliu/">Yaoyao Liu</a>,  <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>
 ---
 The first 3D Gaussian splatting-based method for high dynamic range imaging
