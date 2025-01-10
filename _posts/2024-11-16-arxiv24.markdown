@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "VideoLifter: Lifting Videos to 3D with Fast Hierarchical Stereo Alignment"
+date:   2024-11-16 08:00:00 +00:00
+image: /images/videolifter.gif
+categories: research
+author: "Yuanhao Cai"
+venue: "arxiv"
+paper: https://arxiv.org/abs/2501.01949
+project: https://videolifter.github.io/
+authors:   <a href="https://wenyancong.com/">Wenyan Cong</a>, <a href="https://www.kevin-ai.com/">Kevin Wang</a>, <a href="https://www.cis.upenn.edu/~leijh/">Jiahui Lei</a>, <a href="https://coltonstearns.github.io/">Colton Stearns</a>, <strong>Yuanhao Cai</strong>, <a href="https://wdilin.github.io/">Dilin Wang</a>,  <a href="https://www.linkedin.com/in/rakesh-r-3848538/">Rakesh Ranjan</a>,  <a href="https://scholar.google.com/citations?user=A-wA73gAAAAJ&hl=en">Matt Feiszli</a>,  <a href="https://profiles.stanford.edu/leonidas-guibas">Leonidas Guibas</a>,  <a href="https://express.adobe.com/page/CAdrFMJ9QeI2y/">Zhangyang Wang</a>,  <a href="https://scholar.google.com/citations?user=d1-hNQoAAAAJ&hl=en">Weiyao Wang</a>,  <a href="https://zhiwenfan.github.io/">Zhiwen Fan</a>
+---
+A 3DGS-based reconstruction method for videos without SfM initilization
