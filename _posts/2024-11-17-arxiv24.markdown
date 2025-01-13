@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Motion-X++: A Large-Scale Multimodal 3D Whole-body Human Motion Dataset"
+date:   2024-11-17 08:00:00 +00:00
+image: /images/motionx_plus.gif
+categories: research
+author: "Yuanhao Cai"
+venue: "arxiv"
+paper: https://arxiv.org/abs/2501.05098
+project: https://motion-x-dataset.github.io/
+authors:   Yuhong Zhang, <a href="https://jinglin7.github.io/">Jing Lin</a>, <a href="https://ailingzeng.site/">Ailing Zeng</a>, <a href="https://guanlinwu123.github.io/">Guanlin Wu</a>, <a href="https://shunlinlu.github.io/">Shunlin Lu</a>,  Yurong Fu,  <strong>Yuanhao Cai</strong>, <a href="http://zhangruimao.site/">Ruimao Zhang</a>,  <a href="https://scholar.google.com/citations?user=eldgnIYAAAAJ&hl=zh-CN">Haoqian Wang</a>,  <a href="https://www.leizhang.org/">Lei Zhang</a>  
+---
+A Large-Scale Dataset for Multimodal 3D Whole-body Human Motion Generation
