@@ -177,7 +177,7 @@
               DiffusionGS directly outputs 3D Gaussian point clouds at each timestep to enforce view consistency and allow the model to generate robustly given prompt views of any directions, 
               beyond object-centric inputs. Plus, to improve the capability and generality of DiffusionGS, we scale up 3D training data by developing a scene-object mixed training strategy. 
               Experiments show that DiffusionGS yields improvements of 2.20 dB/23.25 and 1.34 dB/19.16 in PSNR/FID for objects and scenes than the state-of-the-art methods, without using 2D diffusion prior and depth estimator. 
-              Plus, our method enjoys over 5x faster speed (~6s on an A100 GPU).
+              In addition, our method enjoys over 5x faster inference speed (~6 seconds on a single A100 GPU). Code will be made publicly available.
             </p>
             <img src="./static/images/pipeline.png">
             <p> The Overall Framework of Our DiffusionGS Pipeline. (a) When selecting the data for our scene-object mixed training, we impose two angle constraints on the positions and orientations of the viewpoint vectors to guarantee the convergence of the training process. (b) The denoiser of DiffusionGS in a single timestep, which directly outputs pixel-aligned 3D Gaussian point clouds.</p>
