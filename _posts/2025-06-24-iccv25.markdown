@@ -8,7 +8,7 @@ author: "Yuanhao Cai"
 venue: "International Conference on Computer Vision (ICCV)"
 paper: https://arxiv.org/abs/2503.21779
 project: https://x2-gaussian.github.io/
-media_MrNeRF: https://x.com/janusch_patas/status/1859867424859856997?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet
-authors:   Weihao Yu, <strong>Yuanhao Cai</strong>, <a href="https://ruyi-zha.github.io/">Ruyi Zha</a>, <a href="https://zhiwenfan.github.io/">Zhiwen Fan</a>,  <a href="https://chenxinli001.github.io/">Chenxin Li</a>,  <a href="https://www.ee.cuhk.edu.hk/~yxyuan/">Yixuan Yuan</a>
+media_MrNeRF: https://x.com/janusch_patas/status/1905528815302087135
+authors:   <a href="https://scholar.google.com/citations?hl=en&user=fCzlLE4AAAAJ">Weihao Yu</a>, <strong>Yuanhao Cai</strong>, <a href="https://ruyi-zha.github.io/">Ruyi Zha</a>, <a href="https://zhiwenfan.github.io/">Zhiwen Fan</a>,  <a href="https://chenxinli001.github.io/">Chenxin Li</a>,  <a href="https://www.ee.cuhk.edu.hk/~yxyuan/">Yixuan Yuan</a>
 ---
 A 4D Gaussian Splatting method for dynamic CT reconstruction
