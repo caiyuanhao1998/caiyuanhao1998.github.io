@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction"
+date:   2025-06-25 08:00:00 +00:00
+image: /images/diffusiongs.gif
+categories: research
+author: "Yuanhao Cai"
+venue: "International Conference on Computer Vision (ICCV)"
+paper: https://arxiv.org/abs/2411.14384
+project: https://caiyuanhao1998.github.io/project/DiffusionGS/
+media_MrNeRF: https://x.com/janusch_patas/status/1859867424859856997?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet
+authors:   <strong>Yuanhao Cai</strong>, <a href="https://sites.google.com/site/hezhangsprinter">He Zhang</a>,  <a href="https://kai-46.github.io/website/">Kai Zhang</a>,  <a href="https://yixunliang.github.io/">Yixun Liang</a>,  <a href="https://www.mengweiren.com/">Mengwei Ren</a>,  <a href="https://luanfujun.com/">Fujun Luan</a>,  <a href="https://qliu24.github.io/">Qing Liu</a>,  <a href="https://sites.google.com/view/sooyekim">Soo Ye Kim</a>,  <a href="https://jimmie33.github.io/">Jianming Zhang</a>,  <a href="https://zzutk.github.io/">Zhifei Zhang</a>,  <a href="https://yzhouas.github.io/">Yuqian Zhou</a>,  <a href="https://yulunzhang.com/">Yulun Zhang</a>, <a href="https://english.seiee.sjtu.edu.cn/english/detail/842_802.htm">Xiaokang Yang</a>, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,  <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>
+---
+A 3DGS diffusion generates objects and reconstructs scenes from a single view in 6s
