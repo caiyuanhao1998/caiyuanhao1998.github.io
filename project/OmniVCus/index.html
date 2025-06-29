@@ -1,0 +1,2478 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-55V1E709SK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-55V1E709SK');
+  </script>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions">
+  <meta name="keywords" content="DiffusionGS, Gaussian Splatting, Diffusion Model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions
+  </title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script.js"></script>
+</head>
+
+<body>
+
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+              <span style="color: #48a7b5  ;font-weight: bolder;">OmniVCus</span>: Feedforward Subject-driven Video Customization with Multimodal Control Conditions
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">  
+                <a href="https://caiyuanhao1998.github.io/">Yuanhao Cai</a><sup>1</sup>, <a href="https://sites.google.com/site/hezhangsprinter">He Zhang</a><sup>2</sup>, <a href="https://xavierchen34.github.io/">Xi Chen</a><sup>3</sup>, <a href="https://doubiiu.github.io/">Jinbo Xing</a><sup>4</sup>, <a href="https://kai-46.github.io/website/">Kai Zhang</a><sup>2</sup>, 
+               <a href="https://yiweihu.netlify.app/">Yiwei Hu</a><sup>2</sup>, <a href="https://yzhouas.github.io/">Yuqian Zhou</a><sup>2</sup>, <br> <a href="https://zzutk.github.io/">Zhifei Zhang</a><sup>2</sup>,
+                <a href="https://sites.google.com/view/sooyekim">Soo Ye Kim</a><sup>2</sup>,  <a href="https://stevewongv.github.io/">Tianyu Wang</a><sup>2</sup>,
+                <a href="https://yulunzhang.com/">Yulun Zhang</a><sup>5</sup>, <a href="https://english.seiee.sjtu.edu.cn/english/detail/842_802.htm">Xiaokang Yang</a><sup>5</sup>,
+                <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a><sup>2</sup>, <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a><sup>1</sup>
+          </div>
+
+          <!-- affiliations -->
+          <div class="subtitle is-size-5">
+          <!-- <div class="is-size-5 publication-authors"> -->
+            <sup>1</sup> Johns Hopkins University &nbsp; <sup>2</sup> Adobe &nbsp; <sup>3</sup> HKU &nbsp; <sup>4</sup> CUHK &nbsp; <sup>5</sup> Shanghai Jiao Tong University &nbsp;
+          </div>
+
+          <!-- TODO: update paper and video link once upload -->
+          <div class="column has-text-centered">
+            <!-- <div class="publication-links"> -->
+              <!-- PDF Link. -->
+              <span class="link-block">
+              <a href="https://arxiv.org/pdf/2411.14384"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+              </span>
+              <span class="link-block">
+              <a href="https://arxiv.org/abs/2411.14384"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/caiyuanhao1998/Open-OmniVCus"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href=""
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span>🤗 Demo</span>
+                </a>
+              </span>
+            </div>
+
+          <!-- TODO: update paper and video link once upload -->
+            <div class="text-container">
+              <h2 class="subtitle has-text-centered">
+                <b>A data construction pipeline and a DiT method for controllable subject-driven video customization
+              </h2>
+            </div>
+
+          <!-- Video Link. -->
+          <!-- <span class="link-block">
+                  <a href="https://youtu.be/470hul75bSM" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a> -->
+          </span>
+          <br>
+          <h2 class="title is-3">Method Overview</h2>
+          <img src="./static/images/method.jpg">
+          <p>OmniVCus can compose different input signals to customize a video. We design: (a) Lottery Embedding (LE) enables more-subject customization in inference by activating more frame embeddings with training subjects. (b) Temporally Aligned Embedding (TAE) extracts the guidance from control signals by aligning the frame embeddings of condition and noise tokens.</p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <!-- ===== 目录 / Table of Contents ===== -->
+          <div class="toc-wrapper">
+            <nav id="toc" class="toc-box">
+              <p class="toc-title">Table of Contents for This Webpage</p>
+          
+              <ol class="toc-lv1">
+                <li>
+                  <a href="#part-a">(a) Main Subject-driven Video Customization Results</a>
+                  <ol class="toc-lv2">
+                    <li><a href="#part-a1">(a1) Single-subject Video Customization</a></li>
+                    <li><a href="#part-a2">(a2) Instructive Editing Subject-driven Video Customization</a></li>
+                    <li><a href="#part-a3">(a3) Double-subject Video Customization</a></li>
+                    <li><a href="#part-a4">(a4) Zero-shot More-subject Video Customization</a></li>
+                    <li><a href="#part-a5">(a5) Camera-controlled Subject-driven Video Customization</a></li>
+                    <li><a href="#part-a6">(a6) Depth-controlled Subject-driven Video Customization</a></li>
+                    <li><a href="#part-a7">(a7) Mask-controlled Subject-driven Video Customization</a></li>
+                  </ol>
+                </li>
+          
+                <li><a href="#part-b">(b) Challenging Cases: Composing Different Control Conditions</a></li>
+                <li><a href="#part-c">(c) Model Emergence Capability: Text-to-4D</a></li>
+                <li><a href="#part-d">(d) Comparison with State-of-the-Art Methods</a></li>
+              </ol>
+            </nav>
+          </div>
+          
+          <style>
+            /* ————— ① 外层容器：让里面的 nav 居中 ————— */
+            .toc-wrapper{
+              text-align:center;           /* 子元素 inline-block 时即可水平居中 */
+              margin-top:1rem;             /* 与上方内容留白，可按需调 */
+            }
+            
+            /* ————— ② 目录本身 ————— */
+            .toc-box{
+              display:inline-block;        /* 关键：让块宽度随内容收缩 */
+              text-align:left;             /* 内部条目仍然左对齐 */
+            }
+
+            /* ③ 标题单独居中 */
+            .toc-title{
+              text-align:center;      /* 覆写 .toc-box 的 left */
+              margin:0 0 0.8em 0;     /* 与列表稍微留白 */
+              font-size:2em;        /* 可按需调整字号 */
+              font-weight:600;
+            }
+            
+            /* 一级目录 (a)–(d) */
+            .toc-lv1{
+              list-style:none;
+              padding-left:0;
+              margin:0;          
+            }
+            .toc-lv1>li{
+              margin:0.8em 0;
+              font-size:1.4em;
+            }
+            
+            /* 二级目录 (a1)–(a7) */
+            .toc-lv2{
+              list-style:none;
+              padding-left:1.4em;          /* 控制缩进 */
+              margin:0.6em 0 0.4em 0;
+              font-size:0.8em;             /* 字号更小 */
+              line-height:1.4;
+            }
+            .toc-lv2>li{ margin:1em 0; }
+            
+            #toc a{
+              color:#1a73e8;
+              text-decoration:none;
+            }
+            #toc a:hover{ text-decoration:underline; }
+          </style>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+
+<section class="section" id="part-a">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-bottom: 10px;">(a) Main Subject-driven Video Customization Results</h2> <!-- 调整 margin-bottom 来控制标题和按钮间距 -->
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- IP-preserving Result -->
+<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;" id = "part-a1">
+  <!-- Centered Heading Text -->
+  <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 1.6em;">
+    (a1) Single-subject Video Customization
+  </h2>
+
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/1.png"
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p>The woman in <span style="color: lightgreen;">IMG1</span> is talking to a man on a street</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <!-- Video and Viewer Link 2 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="./static/videos/single_cus/4.jpg" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p>A giraffe from <span style="color: lightgreen;">IMG1</span> is standing in the winter</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="./static/videos/single_cus/4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/3.jpg" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p>A dog is playing with a yellow toy car of <span style="color: lightgreen;">IMG1</span> in a living room</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <!-- Video and Viewer Link 2 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/2.jpg" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p>A girl putting on a pair of glasses that turn into the effect of <span style="color: lightgreen;">IMG1</span></p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/8.jpg" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p>A boy of <span style="color: lightgreen;">IMG1</span> preying in a temple</p>
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/8.gif" 
+        alt="Thumbnail" 
+        style="width: 100%; margin: 0 auto 10px; display: block; cursor: pointer;">
+    </div>
+
+
+    <!-- Video and Viewer Link 2 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/5.jpg" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p>A woman of <span style="color: lightgreen;">IMG1</span> mopping the floor in a living room</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/5.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+
+
+<!-- IP-preserving Result -->
+<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;" id = "part-a2">
+  <!-- Centered Heading Text -->
+  <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 1.6em;">
+    (a2) Instructive Editing Subject-driven Video Customization
+  </h2>
+  <small style="display:block; text-align:center; font-size:1.2em; opacity:0.8;">
+    (The instructive editing texts are in <span style="color: rgb(217, 158, 238);">purple color</span>)
+  </small>
+  <br>
+
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/1.png" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p> (Style Transfer) </p>
+        <p> <span style="color: rgb(217, 158, 238);">Make</span> the stone <span style="color: rgb(217, 158, 238);">cross</span> as <span style="color: lightgreen;">IMG1</span> on a stone pavement <span style="color: rgb(217, 158, 238);">a sketch</span></p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/10.png" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p> (Color Change) </p>
+        <p> <span style="color: rgb(217, 158, 238);">Turn the color</span> of the toy car in <span style="color: lightgreen;">IMG1</span> <span style="color: rgb(217, 158, 238);">to red</span> playing with a dog</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/10.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/4.jpg" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p> (Removal) </p>
+        <p> <span style="color: rgb(217, 158, 238);">Remove the blazer</span> of the man in <span style="color: lightgreen;">IMG1</span> standing in a summer park</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/6.jpg" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p> (Replacement) </p>
+        <p> <span style="color: rgb(217, 158, 238);">Swap the T-shirt</span> of the boy in <span style="color: lightgreen;">IMG1</span> <span style="color: rgb(217, 158, 238);">with a blue shirt</span> preying in a temple</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/6.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  
+  <br>
+
+    <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/2.png" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p> (Addition) </p>
+        <p> <span style="color: rgb(217, 158, 238);">Add a necklace</span> to the woman in <span style="color: lightgreen;">IMG1</span> running in the winter</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/5.jpg" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p> (Expression Change) </p>
+        <p> <span style="color: rgb(217, 158, 238);">Make</span> the child in <span style="color: lightgreen;">IMG1</span> <span style="color: rgb(217, 158, 238);">happy</span> doing her homework</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_ins_cus/5.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+
+  </div>
+</section>
+
+
+<br>
+<br>
+<br>
+
+
+<!-- IP-preserving Result -->
+<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;" id = "part-a3">
+  <!-- Centered Heading Text -->
+  <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 1.6em;">
+    (a3) Double-subject Video Customization
+  </h2>
+
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/1_1.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/1_2.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> A man of <span style="color: lightgreen;">IMG1</span> running in front the church of <span style="color: rgb(255, 194, 39);">IMG2</span></p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+
+    <!-- ---------------------- Link for video 2 ---------------------- -->
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/4_1.png" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/4_2.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> A man pushing a wheelbarrow as <span style="color: lightgreen;">IMG1</span> with oranges as <span style="color: rgb(255, 194, 39);">IMG2</span> in an orchard</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <br>
+
+    <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/6_1.png" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/6_2.png" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.75em;"> <span style="color: rgb(217, 158, 238);">Turn the color</span> of the sweater of the man in <span style="color: lightgreen;">IMG1</span> <span style="color: rgb(217, 158, 238);">to gray</span> drinking a cup of coffee as <span style="color: rgb(255, 194, 39);">IMG2</span></p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/6.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+
+    <!-- ---------------------- Link for video 2 ---------------------- -->
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/7_1.png" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/7_2.png" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.75em;"> <span style="color: rgb(217, 158, 238);">Swap the skirt</span> of the woman as <span style="color: lightgreen;">IMG1</span> to <span style="color: rgb(217, 158, 238);">a gray legging</span> and a woman as <span style="color: rgb(255, 194, 39);">IMG2</span> running in a park</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/7_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+
+    <br>
+
+    <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/3_1.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/3_2.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> A man using a knife as <span style="color: lightgreen;">IMG1</span> to cut an orange as <span style="color: rgb(255, 194, 39);">IMG2</span> in the kitchen</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+
+    <!-- ---------------------- Link for video 2 ---------------------- -->
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/11_1.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/11_2.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> Tomoatoes as <span style="color: lightgreen;">IMG1</span> and sushi as <span style="color: rgb(255, 194, 39);">IMG2</span> on a table</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/11.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <br>
+
+    <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/9_1.png" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/9_2.png" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> The man as <span style="color: lightgreen;">IMG1</span> using a laptop as <span style="color: rgb(255, 194, 39);">IMG2</span> in a library</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/9.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+
+    <!-- ---------------------- Link for video 2 ---------------------- -->
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/10_1.png" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/10_2.png" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> <span style="color: rgb(217, 158, 238);">Add a black coat</span> to the man as <span style="color: lightgreen;">IMG1</span> using a laptop as <span style="color: rgb(255, 194, 39);">IMG2</span> in a library</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/10.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <br>
+
+    <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/2_1.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/2_2.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> A dog as <span style="color: lightgreen;">IMG1</span> playing with the yellow toy car as <span style="color: rgb(255, 194, 39);">IMG2</span> in a living room</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+
+    <!-- ---------------------- Link for video 2 ---------------------- -->
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/2_1.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/2_2.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> A dog as <span style="color: lightgreen;">IMG1</span> playing with the yellow toy car as <span style="color: rgb(255, 194, 39);">IMG2</span> in a plaza</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/double_cus/2_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    
+
+  </div>
+
+  </div>
+</section>
+
+
+
+<br>
+<br>
+<br>
+
+
+<!-- IP-preserving Result -->
+<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;" id = "part-a4">
+  <!-- Centered Heading Text -->
+  <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 1.6em;">
+    (a4) Zero-shot More-subject Video Customization
+  </h2>
+  <small style="display:block; text-align:center; font-size:1.2em; opacity:0.8;">
+    (Our model is trained with 2 subjects but can infer with 3 and 4 subjects)
+  </small>
+  <br>
+
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure class="w120">
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/three_cus/1_1.png" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure class="w160">
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/three_cus/1_2.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+      
+        <figure class="w200">
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/three_cus/1_3.png" alt="Thumbnail 3">
+          <figcaption><span style="color: rgb(116, 189, 249);">IMG3</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        .thumbs{
+          display:flex;
+          justify-content:center; /* ⬅︎ 水平居中 */
+          gap:20px;               /* 组内间距 */
+          /* 如需换行可加 flex-wrap:wrap; */
+        }
+
+        /* 统一去掉默认 margin、让 caption 居中 */
+        .thumbs figure{
+          margin:0;
+          text-align:center;
+        }
+
+        /* --- 指定各自宽度 --- */
+        .thumbs figure.w120{ flex:0 0 130px; }   /* 第一张 120px */
+        .thumbs figure.w160{ flex:0 0 130px; }   /* 第二张 160px */
+        .thumbs figure.w200{ flex:0 0 130px; }   /* 第三张 200px */
+
+        .thumbs img{
+          width:100%;     /* 填满各自 figure */
+          height:auto;    /* 保持纵横比 */
+          display:block;  /* 去掉行内空隙 */
+          cursor:pointer;
+        }
+      </style>
+      <p style="font-size: 1em;"> A man pushing a wheelbarrow as <span style="color: lightgreen;">IMG1</span> with oranges as <span style="color: rgb(255, 194, 39);">IMG2</span> and grapes as <span style="color: rgb(116, 189, 249);">IMG3</span> in an orchard</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/three_cus/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+
+    <!-- ---------------------- Link for video 2 ---------------------- -->
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/2_1.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/2_2.png" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/2_3.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(116, 189, 249);">IMG3</span></figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/2_4.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(244, 134, 0);">IMG4</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 1em;"> <span style="color: rgb(217, 158, 238);">Turn the color</span> of the T-shirt of the girl as <span style="color: lightgreen;">IMG1</span> <span style="color: rgb(217, 158, 238);">to light gray</span> using a laptop as <span style="color: rgb(255, 194, 39);">IMG2</span> at a table with a cup as <span style="color: rgb(116, 189, 249);">IMG3</span> and a tomato as <span style="color: rgb(244, 134, 0);">IMG4</span></p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <br>
+
+    <!-- Container for videos -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/3_1.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/3_2.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/3_3.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(116, 189, 249);">IMG3</span></figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/3_4.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(244, 134, 0);">IMG4</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 1em;"> A dog of <span style="color: lightgreen;">IMG1</span> running by a stone <span style="color: rgb(217, 158, 238);">cross</span> of <span style="color: rgb(116, 189, 249);">IMG3</span> and purple flowers of <span style="color: rgb(244, 134, 0);">IMG4</span> in front of the church of <span style="color: rgb(255, 194, 39);">IMG2</span> </p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+
+    <!-- ---------------------- Link for video 2 ---------------------- -->
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/1_1.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+      
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/1_2.png" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(255, 194, 39);">IMG2</span></figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/1_3.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(116, 189, 249);">IMG3</span></figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/1_4.jpg" alt="Thumbnail 2">
+          <figcaption><span style="color: rgb(244, 134, 0);">IMG4</span></figcaption>
+        </figure>
+      </div>
+      
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;                /* 图片组之间的间距 */
+        }
+      
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;                  /* 两张图各占 50% */
+          margin:0;
+          text-align:center;       /* 让 caption 居中 */
+        }
+      
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;              /* 占满各自的 flex 容器 */
+          cursor:pointer;
+          display:block;           /* 消除底部空隙 */
+        }
+      
+        /* caption 样式，可按需调整字号/颜色 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 1em;"> A sponge as <span style="color: rgb(255, 194, 39);">IMG2</span>, a cucumber in <span style="color: rgb(116, 189, 249);">IMG3</span>, and an orange as <span style="color: rgb(244, 134, 0);">IMG4</span> in the sink as <span style="color: lightgreen;">IMG1</span> with water flowing</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/four_cus/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <br>
+    
+
+  </div>
+
+  </div>
+</section>
+
+
+
+<br>
+<br>
+<br>
+
+
+<!-- IP-preserving Result -->
+<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;" id = "part-a5">
+  <!-- Centered Heading Text -->
+  <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 1.6em;">
+    (a5) Camera-controlled Subject-driven Video Customization
+  </h2>
+
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/3D_single_cus/3.png" 
+        alt="Thumbnail" 
+        style="width: 54%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p style="font-size: 0.8em;">A church as <span style="color: lightgreen;">IMG1</span> beside a cemetery in the winter</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/3D_single_cus/3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Video and Viewer Link 2 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/3D_single_cus/4.png" 
+        alt="Thumbnail" 
+        style="width: 52%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p style="font-size: 0.8em;">A woman in a mask as <span style="color: lightgreen;">IMG1</span> holding a book and sitting on a couch in a living room</p>
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/3D_single_cus/4.gif" 
+        alt="Thumbnail" 
+        style="width: 100%; margin: 0 auto 10px; display: block; cursor: pointer;">
+    </div>
+
+
+  </div>
+
+  <br>
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/3D_single_cus/6.png" 
+        alt="Thumbnail" 
+        style="width: 42%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p style="font-size: 0.8em;">A bridge like <span style="color: lightgreen;">IMG1</span> by the ocean</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/3D_single_cus/6.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/3D_single_cus/1.png" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p style="font-size: 0.8em;"><span style="color: rgb(217, 158, 238);">Tie the hair</span> of the child as <span style="color: lightgreen;">IMG1</span> doing her homework at the desk</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/3D_single_cus/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+  </div>
+</section>
+
+
+
+<br>
+<br>
+<br>
+
+
+
+<!-- IP-preserving Result -->
+<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;" id = "part-a6">
+  <!-- Centered Heading Text -->
+  <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 1.6em;">
+    (a6) Depth-controlled Subject-driven Video Customization
+  </h2>
+  <small style="display:block; text-align:center; font-size:1.2em; opacity:0.8;">
+    (Our model can force unmatched subjects to be filled into the depth control sequence, e.g., example 1 is man-to-woman, example 2 is woman-to-man, example 4 is orange-to-strawberry. These cases are more challenging and impressive.)
+  </small>
+  <br>
+
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <!-- 第一张仍然是图片 -->
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/1.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+    
+        <!-- 第二张改成视频 -->
+        <figure>
+          <!-- poster 可选：用一张静态图当封面 -->
+          <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+            <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/1_depth_color.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Input Depth</figcaption>
+        </figure>
+      </div>
+    
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;              /* 图片/视频之间的间距 */
+        }
+    
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;
+          margin:0;
+          text-align:center;
+        }
+    
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;
+          display:block;         /* 消除底部空隙 */
+          cursor:pointer;
+        }
+    
+        /* 让 video 跟 img 一样占满宽度 */
+        .thumbs video{
+          width:100%;
+          display:block;
+          cursor:pointer;        /* 如果想让用户知道可点击，可保留光标样式 */
+        }
+    
+        /* caption 样式 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> A man as <span style="color: lightgreen;">IMG1</span> standing in front of an old airplane</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <!-- 第一张仍然是图片 -->
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/4.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+    
+        <!-- 第二张改成视频 -->
+        <figure>
+          <!-- poster 可选：用一张静态图当封面 -->
+          <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+            <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/4_depth_color.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Input Depth</figcaption>
+        </figure>
+      </div>
+    
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;              /* 图片/视频之间的间距 */
+        }
+    
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;
+          margin:0;
+          text-align:center;
+        }
+    
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;
+          display:block;         /* 消除底部空隙 */
+          cursor:pointer;
+        }
+    
+        /* 让 video 跟 img 一样占满宽度 */
+        .thumbs video{
+          width:100%;
+          display:block;
+          cursor:pointer;        /* 如果想让用户知道可点击，可保留光标样式 */
+        }
+    
+        /* caption 样式 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> <span style="color: rgb(217, 158, 238);">Replace the shirt</span> of the woman as <span style="color: lightgreen;">IMG1</span> <span style="color: rgb(217, 158, 238);">with a suit</span> talking to her colleagues in an office</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  
+  <br>
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <!-- 第一张仍然是图片 -->
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/5.png" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+    
+        <!-- 第二张改成视频 -->
+        <figure>
+          <!-- poster 可选：用一张静态图当封面 -->
+          <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+            <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/5_depth_color.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Input Depth</figcaption>
+        </figure>
+      </div>
+    
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;              /* 图片/视频之间的间距 */
+        }
+    
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;
+          margin:0;
+          text-align:center;
+        }
+    
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;
+          display:block;         /* 消除底部空隙 */
+          cursor:pointer;
+        }
+    
+        /* 让 video 跟 img 一样占满宽度 */
+        .thumbs video{
+          width:100%;
+          display:block;
+          cursor:pointer;        /* 如果想让用户知道可点击，可保留光标样式 */
+        }
+    
+        /* caption 样式 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> A boy as <span style="color: lightgreen;">IMG1</span> looking into an open refrigerator with a tomato and a bottle of beer</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/5.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <!-- 第一张仍然是图片 -->
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/2.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+    
+        <!-- 第二张改成视频 -->
+        <figure>
+          <!-- poster 可选：用一张静态图当封面 -->
+          <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+            <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/2_depth_color.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Input Depth</figcaption>
+        </figure>
+      </div>
+    
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;              /* 图片/视频之间的间距 */
+        }
+    
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;
+          margin:0;
+          text-align:center;
+        }
+    
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;
+          display:block;         /* 消除底部空隙 */
+          cursor:pointer;
+        }
+    
+        /* 让 video 跟 img 一样占满宽度 */
+        .thumbs video{
+          width:100%;
+          display:block;
+          cursor:pointer;        /* 如果想让用户知道可点击，可保留光标样式 */
+        }
+    
+        /* caption 样式 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> An orange from <span style="color: lightgreen;">IMG1</span> being dipped into melted chocolate</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/depth_sin_cus/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    
+
+  </div>
+
+  </div>
+</section>
+
+
+<br>
+<br>
+<br>
+
+
+<!-- IP-preserving Result -->
+<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;" id = "part-a7">
+  <!-- Centered Heading Text -->
+  <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 1.6em;">
+    (a7) Mask-controlled Subject-driven Video Customization
+  </h2>
+  <small style="display:block; text-align:center; font-size:1.4em; opacity:0.8;">
+    (1) When the control mask is not complete or accurate, our model can still fill the subject and customize the video, e.g., the T-shirt of the boy in example 1.
+  </small>
+  <br>
+  <small style="display:block; text-align:center; font-size:1.4em; opacity:0.8;">
+    (2) Our model can force unmatched subjects to be filled into the mask control sequence, e.g., example 3 fills a dog to the mask of a leopard and example 4 fills a church to the mask of a stone house.
+  </small>
+  <br>
+
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <!-- 第一张仍然是图片 -->
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/1.png" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+    
+        <!-- 第二张改成视频 -->
+        <figure>
+          <!-- poster 可选：用一张静态图当封面 -->
+          <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+            <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/1_mask.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Input Depth</figcaption>
+        </figure>
+      </div>
+    
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;              /* 图片/视频之间的间距 */
+        }
+    
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;
+          margin:0;
+          text-align:center;
+        }
+    
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;
+          display:block;         /* 消除底部空隙 */
+          cursor:pointer;
+        }
+    
+        /* 让 video 跟 img 一样占满宽度 */
+        .thumbs video{
+          width:100%;
+          display:block;
+          cursor:pointer;        /* 如果想让用户知道可点击，可保留光标样式 */
+        }
+    
+        /* caption 样式 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 1em;"> A boy as <span style="color: lightgreen;">IMG1</span> playing table tennis in a room</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <!-- 第一张仍然是图片 -->
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/2.png" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+    
+        <!-- 第二张改成视频 -->
+        <figure>
+          <!-- poster 可选：用一张静态图当封面 -->
+          <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+            <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/2_mask.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Input Depth</figcaption>
+        </figure>
+      </div>
+    
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;              /* 图片/视频之间的间距 */
+        }
+    
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;
+          margin:0;
+          text-align:center;
+        }
+    
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;
+          display:block;         /* 消除底部空隙 */
+          cursor:pointer;
+        }
+    
+        /* 让 video 跟 img 一样占满宽度 */
+        .thumbs video{
+          width:100%;
+          display:block;
+          cursor:pointer;        /* 如果想让用户知道可点击，可保留光标样式 */
+        }
+    
+        /* caption 样式 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 1em;"> The woman as <span style="color: lightgreen;">IMG1</span> doing yoga in a living room</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  
+  <br>
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <!-- 第一张仍然是图片 -->
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/4.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+    
+        <!-- 第二张改成视频 -->
+        <figure>
+          <!-- poster 可选：用一张静态图当封面 -->
+          <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+            <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/4_mask.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Input Depth</figcaption>
+        </figure>
+      </div>
+    
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;              /* 图片/视频之间的间距 */
+        }
+    
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;
+          margin:0;
+          text-align:center;
+        }
+    
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;
+          display:block;         /* 消除底部空隙 */
+          cursor:pointer;
+        }
+    
+        /* 让 video 跟 img 一样占满宽度 */
+        .thumbs video{
+          width:100%;
+          display:block;
+          cursor:pointer;        /* 如果想让用户知道可点击，可保留光标样式 */
+        }
+    
+        /* caption 样式 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 1em;"> A dog as <span style="color: lightgreen;">IMG1</span> is walking in a living room</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <!-- 第一张仍然是图片 -->
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/5.jpg" alt="Thumbnail 1">
+          <figcaption><span style="color: lightgreen;">IMG1</span></figcaption>
+        </figure>
+    
+        <!-- 第二张改成视频 -->
+        <figure>
+          <!-- poster 可选：用一张静态图当封面 -->
+          <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+            <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/5_mask.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Input Depth</figcaption>
+        </figure>
+      </div>
+    
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;              /* 图片/视频之间的间距 */
+        }
+    
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;
+          margin:0;
+          text-align:center;
+        }
+    
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;
+          display:block;         /* 消除底部空隙 */
+          cursor:pointer;
+        }
+    
+        /* 让 video 跟 img 一样占满宽度 */
+        .thumbs video{
+          width:100%;
+          display:block;
+          cursor:pointer;        /* 如果想让用户知道可点击，可保留光标样式 */
+        }
+    
+        /* caption 样式 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 1em;"> A church as <span style="color: lightgreen;">IMG1</span> in a snowy day</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/seg_sin_cus/5.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    
+
+  </div>
+
+  </div>
+</section>
+
+
+<br>
+<br>
+<br>
+
+<section class="section" id="part-b">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-bottom: 10px;">(b) Challenging Cases: Composing Different Control Conditions</h2>
+        <small style="display:block; text-align:center; font-size:1.2em; opacity:0.8;">
+          Our model can flexibly compose different control conditions including images of subjects, text instructions, depth sequence, mask sequence, and camera trajectory to customize the video.
+        </small>
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- IP-preserving Result -->
+<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <!-- 第一张仍然是图片 -->
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/mix_control/4.png" alt="Thumbnail 1">
+          <figcaption>Multiple Subjects</figcaption>
+        </figure>
+    
+        <!-- 第二张改成视频 -->
+        <figure>
+          <!-- poster 可选：用一张静态图当封面 -->
+          <video poster="" id="tree1" autoplay controls muted loop style="width: 102%; max-width: 550px;">
+            <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/mix_control/4_mask.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Input Mask</figcaption>
+        </figure>
+      </div>
+    
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;              /* 图片/视频之间的间距 */
+        }
+    
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;
+          margin:0;
+          text-align:center;
+        }
+    
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;
+          display:block;         /* 消除底部空隙 */
+          cursor:pointer;
+        }
+    
+        /* 让 video 跟 img 一样占满宽度 */
+        .thumbs video{
+          width:100%;
+          display:block;
+          cursor:pointer;        /* 如果想让用户知道可点击，可保留光标样式 */
+        }
+    
+        /* caption 样式 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 0.8em;"> <span style="color: rgb(217, 158, 238);">Swap the skirt</span> of the woman as <span style="color: lightgreen;">IMG1</span> <span style="color: rgb(217, 158, 238);">with the legging</span> as <span style="color: rgb(255, 194, 39);">IMG2</span> doing yoga in a living room</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/mix_control/4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <figure>
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/mix_control/1.png" 
+        alt="Thumbnail" 
+        style="width: 58%; margin: 0 auto 10px; display: block; cursor: pointer;">
+      </figure>
+      <figcaption>Multiple Subjects + Camera</figcaption>
+        <p style="font-size: 0.8em;">A woman as <span style="color: rgb(255, 194, 39);">IMG2</span> standing by the flower as <span style="color: lightgreen;">IMG1</span> on a street</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/mix_control/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  
+  <br>
+
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <!-- 第一张仍然是图片 -->
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/mix_control/2_5.png" alt="Thumbnail 1">
+          <figcaption>Multiple Subjects</figcaption>
+        </figure>
+    
+        <!-- 第二张改成视频 -->
+        <figure>
+          <!-- poster 可选：用一张静态图当封面 -->
+          <video poster="" id="tree1" autoplay controls muted loop style="width: 99%; max-width: 550px;">
+            <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/mix_control/2_depth_color.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Input Depth</figcaption>
+        </figure>
+      </div>
+    
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;              /* 图片/视频之间的间距 */
+        }
+    
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;
+          margin:0;
+          text-align:center;
+        }
+    
+        /* 图片样式 */
+        .thumbs img{
+          width:220px;
+          display:block;         /* 消除底部空隙 */
+          cursor:pointer;
+        }
+    
+        /* 让 video 跟 img 一样占满宽度 */
+        .thumbs video{
+          width:220px;
+          display:block;
+          cursor:pointer;        /* 如果想让用户知道可点击，可保留光标样式 */
+        }
+    
+        /* caption 样式 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 1em;"> <span style="color: rgb(217, 158, 238);">Replace the clothes</span> of the woman as <span style="color: lightgreen;">IMG1</span> <span style="color: rgb(217, 158, 238);">with the T-shirt</span> as <span style="color: rgb(255, 194, 39);">IMG2</span> looking into an open refrigerator with a tomato and a cucumber as <span style="color: rgb(116, 189, 249);">IMG3</span></p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/mix_control/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <div class="video-viewer-container" style="text-align: center; max-width: 550px;">
+      <div class="thumbs">
+        <!-- 第一张仍然是图片 -->
+        <figure>
+          <img src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/mix_control/3_2.png" alt="Thumbnail 1">
+          <figcaption>Multiple Subjects</figcaption>
+        </figure>
+    
+        <!-- 第二张改成视频 -->
+        <figure>
+          <!-- poster 可选：用一张静态图当封面 -->
+          <video poster="" id="tree1" autoplay controls muted loop style="width: 99%; max-width: 550px;">
+            <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/mix_control/3_depth_color.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Input Depth</figcaption>
+        </figure>
+      </div>
+    
+      <style>
+        /* 横向并排 */
+        .thumbs{
+          display:flex;
+          gap:10px;              /* 图片/视频之间的间距 */
+        }
+    
+        /* 每个 figure 平分宽度、去默认 margin */
+        .thumbs figure{
+          flex:1;
+          margin:0;
+          text-align:center;
+        }
+    
+        /* 图片样式 */
+        .thumbs img{
+          width:100%;
+          display:block;         /* 消除底部空隙 */
+          cursor:pointer;
+        }
+    
+        /* 让 video 跟 img 一样占满宽度 */
+        .thumbs video{
+          width:100%;
+          display:block;
+          cursor:pointer;        /* 如果想让用户知道可点击，可保留光标样式 */
+        }
+    
+        /* caption 样式 */
+        .thumbs figcaption{
+          margin-top:4px;
+          font-size:0.9rem;
+          color:#666;
+        }
+      </style>
+      <p style="font-size: 1em;"> A woman as <span style="color: lightgreen;">IMG1</span> looking into an open refrigerator with an orange as <span style="color: rgb(255, 194, 39);">IMG2</span> and a cucumber as <span style="color: rgb(116, 189, 249);">IMG3</span></p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/mix_control/3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    
+
+  </div>
+
+  </div>
+</section>
+
+
+<br>
+<br>
+<br>
+
+<section class="section" id="part-c">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-bottom: 10px;">(c) Model Emergence Capability: Text-to-4D</h2> 
+        <small style="display:block; text-align:center; font-size:1em; opacity:0.8;">
+          Our model mixed trained with customization data (dynamic) and text-to-3D data (static) can perform text-to-4D generation. Please note that, the 4D here refers to dynamic multi-view. Our model does not directly contain 4D representation. 
+        </small>
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IP-preserving Result -->
+<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1100px; margin: auto;">
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 350px;">
+      <p style="font-size: 1em;"> A baby dragon hatching out of a stone egg</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/Text_to_4D/9.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 350px;">
+      <p style="font-size: 1em;"> A building on fire</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/Text_to_4D/4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 350px;">
+      <p style="font-size: 1em;"> A bulldozer clearing away a pile of snow</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/Text_to_4D/10.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  
+  
+  <br>
+  <br>
+  
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 350px;">
+      <p style="font-size: 1em;"> A space shuttle launching</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/Text_to_4D/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 350px;">
+      <p style="font-size: 1em;"> A clown fish swimming through the coral reef</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/Text_to_4D/5.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 350px;">
+      <p style="font-size: 1em;"> A Darth Vader with a flame thrower</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 550px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/Text_to_4D/6.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  
+    <br>
+    <br>
+  
+    <!-- Container for videos -->
+    <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+      <!-- Video and Viewer Link 1 -->
+      <div class="video-viewer-container" style="text-align: center; max-width: 350px;">
+        <p style="font-size: 1em;"> An elephant jumping on a trampoline</p>
+        <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 350px;">
+          <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/Text_to_4D/7.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    
+      <!-- Video and Viewer Link 1 -->
+      <div class="video-viewer-container" style="text-align: center; max-width: 350px;">
+        <p style="font-size: 1em;"> A wizard raccoon casting a spell</p>
+        <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 350px;">
+          <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/Text_to_4D/12_large.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+  
+      <!-- Video and Viewer Link 1 -->
+      <div class="video-viewer-container" style="text-align: center; max-width: 350px;">
+        <p style="font-size: 1em;"> A steaming basket of buns</p>
+        <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 350px;">
+          <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/Text_to_4D/8.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+
+  
+  <br>
+    
+</section>
+
+
+<section class="section" id="part-d">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-bottom: 10px;">(d) Comparison Example with State-of-the-Art Methods</h2>
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- IP-preserving Result -->
+<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+  <!-- Container for videos -->
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+    <!-- Video and Viewer Link 1 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 360px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/1.png" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p style="font-size: 0.8em;">The woman in <span style="color: lightgreen;">IMG1</span> is talking to a man on a street</p>
+      <video poster="" id="tree1" autoplay controls muted loop style="height: 100%; max-height: 200px;">
+        <source src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="font-size: 1.5em;">Our Method</p>
+    </div>
+
+
+    <!-- Video and Viewer Link 2 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 360px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/1.png" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p style="font-size: 0.8em;">The woman in <span style="color: lightgreen;">IMG1</span> is talking to a man on a street</p>
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/compare/skyreel.gif" 
+        alt="Thumbnail" 
+        style="height: 100%; max-height: 200px; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p style="font-size: 1.5em;">SkyReels-A2</p>
+    </div>
+
+
+    <!-- Video and Viewer Link 2 -->
+    <div class="video-viewer-container" style="text-align: center; max-width: 360px;">
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/single_cus/1.png" 
+        alt="Thumbnail" 
+        style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p style="font-size: 0.8em;">The woman in <span style="color: lightgreen;">IMG1</span> is talking to a man on a street</p>
+      <img 
+        src="https://huggingface.co/datasets/CaiYuanhao/OmniVCus/resolve/main/compare/wan.gif" 
+        alt="Thumbnail" 
+        style="height: 100%; max-height: 200px; margin: 0 auto 10px; display: block; cursor: pointer;">
+        <p style="font-size: 1.5em;">OmniGen + Wan2.1-I2V</p>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  new BeforeAfter({
+    id: '#example1'
+  });
+  new BeforeAfter({
+    id: '#example2'
+  });
+  new BeforeAfter({
+    id: '#example3'
+  });
+  new BeforeAfter({
+    id: '#example4'
+  });
+  new BeforeAfter({
+    id: '#example5'
+  });
+  new BeforeAfter({
+    id: '#example6'
+  });
+
+
+</script>
+
+  <!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Needs update
+          </p>
+         
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section> -->
+
+
+<!--   <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{,
+        title={}, 
+        author={},
+        year={},
+        eprint={},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={},
+      }</code></pre>
+    </div>
+  </section> -->
+
+
+<!-- Back-to-top 方块 -->
+<a href="#toc" id="backToTop">Back to top</a>
+
+<!-- ==== 也可放在单独的 JS/CSS 文件中 ==== -->
+<style>
+  #backToTop{
+    position: fixed;          /* 固定在视窗 */
+    bottom: 40px;             /* 距底 40px */
+    right: 40px;              /* 距右 40px */
+    width: 120px;             /* 方块大小 */
+    height: 120px;
+    display: flex;            /* 让文字居中 */
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+    border: 2px solid #bfbfbf;
+    border-radius: 8px;
+    font-size: 1.2em;
+    color: #1a73e8;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: opacity .3s ease, transform .3s ease;
+    opacity: 0;               /* 默认隐藏 */
+    pointer-events: none;     /* 隐藏时禁用点击 */
+  }
+  #backToTop.show{
+    opacity: 1;               /* 显示 */
+    pointer-events: auto;
+  }
+  #backToTop:hover{
+    transform: translateY(-4px); /* 轻微上浮动画 */
+  }
+</style>
+
+<script>
+  // 滚动超过 600px 时才显示按钮
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', ()=>{
+    if (window.scrollY > 600){
+      backBtn.classList.add('show');
+    }else{
+      backBtn.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+
+</html>
