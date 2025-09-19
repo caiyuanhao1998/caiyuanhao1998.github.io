@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+ FPS"
+date:   2025-09-18 08:00:00 +00:00
+image: /images/langsplatv2.gif
+categories: research
+author: "Yuanhao Cai"
+venue: "Advances in Neural Information Processing Systems (NeurIPS), 2025"
+paper: https://arxiv.org/abs/2507.07136
+project: https://langsplat-v2.github.io/
+authors:   <a href="https://li-wanhua.github.io/">Wanhua Li*</a>, <a href="https://github.com/ZhaoYujie2002">Yujie Zhao*</a>, <a href="https://minghanqin.github.io/">Minghan Qin*</a>, <a href="https://github.com/jimmyYliu">Yang Liu</a>, <strong>Yuanhao Cai</strong>, <a href="https://people.csail.mit.edu/ganchuang/">Chuang Gan</a>, <a href="https://vcg.seas.harvard.edu/people">Hanspeter Pfister</a>,
+---
+A super fast framework for real-time 3D open-vocabulary querying and high-dimensional feature splatting
