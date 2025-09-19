@@ -5,7 +5,7 @@ date:   2025-09-17 08:00:00 +00:00
 image: /images/care.png
 categories: research
 author: "Yuanhao Cai"
-venue: "Advances in Neural Information Processing Systems (NeurIPS), 2025"
+venue: "Advances in Neural Information Processing Systems (NeurIPS)"
 paper: https://arxiv.org/abs/2506.02093
 project: https://github.com/MrGiovanni/CARE
 authors:   <a href="https://lin-tianyu.github.io/">Tianyu Lin</a>, Xinran Li, Chuntung Zhuang,  <a href="https://scholar.google.com/citations?user=4Q5gs2MAAAAJ&hl=en">Qi Chen</a>, <strong>Yuanhao Cai</strong>, <a href="https://scholar.google.com/citations?user=OvpsAYgAAAAJ&hl=en&oi=ao">Kai Ding</a>, <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>, <a href="https://www.zongweiz.com/">Zongwei Zhou</a>
