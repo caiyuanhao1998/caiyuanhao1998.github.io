@@ -6,8 +6,8 @@ image: /images/editverse.gif
 categories: research
 author: "Yuanhao Cai"
 venue: "Advances in Neural Information Processing Systems (NeurIPS)"
-paper: https://arxiv.org/abs/2507.07136
-project: https://langsplat-v2.github.io/
+paper: https://arxiv.org/abs/2509.20360
+project: http://editverse.s3-website-us-east-1.amazonaws.com/
 authors:   <a href="https://juxuan27.github.io/">Xuan Ju</a>, <a href="https://scholar.google.com/citations?user=yRwZIN8AAAAJ&hl=zh-CN">Tianyu Wang</a>, <a href="https://yzhouas.github.io/">Yuqian Zhou</a>, <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a>, <a href="https://qliu24.github.io/">Qing Liu</a>, <a href="https://www.nxzhao.com/">Nanxuan Zhao</a>, <a href="https://zzutk.github.io/">Zhifei Zhang</a>, <a href="https://yijunmaverick.github.io/">Yijun Li</a>, <strong>Yuanhao Cai</strong>, <a href="https://www.shaotengliu.com/">Shaoteng Liu</a>, <a href="https://scholar.google.com/citations?user=UI10l34AAAAJ&hl=en">Daniil Pakhomov</a>, <a href="https://scholar.google.com/citations?user=UI10l34AAAAJ&hl=en">Daniil Pakhomov</a>, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>, <a href="https://sites.google.com/view/sooyekim">Soo Ye Kim</a>, <a href="https://www.cse.cuhk.edu.hk/people/faculty/qiang-xu/">Qiang Xu</a>
 ---
 Unifying a diverse range of generation and editing tasks for both images and videos within a single and powerful model
