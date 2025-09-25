@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions"
+date:   2025-09-19 08:00:00 +00:00
+image: /images/omnivcus.gif
+categories: research
+author: "Yuanhao Cai"
+venue: "Advances in Neural Information Processing Systems (NeurIPS)"
+paper: http://arxiv.org/abs/2506.23361
+project: https://caiyuanhao1998.github.io/project/OmniVCus
+authors:   <strong>Yuanhao Cai</strong>, <a href="https://sites.google.com/site/hezhangsprinter">He Zhang</a>,  <a href="https://xavierchen34.github.io/">Xi Chen</a>, <a href="https://doubiiu.github.io/">Jinbo Xing</a>, <a href="https://yiweihu.netlify.app/">Yiwei Hu</a>, <a href="https://yzhouas.github.io/">Yuqian Zhou</a>, <a href="https://kai-46.github.io/website/">Kai Zhang</a>,  <a href="https://zzutk.github.io/">Zhifei Zhang</a>, <a href="https://sites.google.com/view/sooyekim">Soo Ye Kim</a>, <a href="https://stevewongv.github.io/">Tianyu Wang</a>, <a href="https://yulunzhang.com/">Yulun Zhang</a>, <a href="https://english.seiee.sjtu.edu.cn/english/detail/842_802.htm">Xiaokang Yang</a>, <a href="https://sites.google.com/site/zhelin625/">Zhe Lin</a>,  <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>
+---
+A data construction pipeline and a unified diffusion Transformer for subject-driven video customization under different control conditions; 4D generation
