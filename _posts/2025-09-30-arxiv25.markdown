@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions"
+date:   2025-09-30 08:00:00 +00:00
+image: /images/phygdpo.gif
+categories: research
+author: "Yuanhao Cai"
+venue: "arxiv"
+paper: https://arxiv.org/abs/2512.24551
+project: https://caiyuanhao1998.github.io/project/PhyGDPO
+authors:   <strong>Yuanhao Cai</strong>, <a href="https://kunpengli1994.github.io/">Kunpeng Li</a>, <a href="https://kmnp.github.io/">Menglin Jia</a>, <a href="https://sites.google.com/view/jialiangwang/home">Jialiang Wang</a>, <a href="https://scholar.google.com/citations?user=wyi0bX0AAAAJ&hl=en">Junzhe Sun</a>, <a href="https://wfchen-umich.github.io/wfchen.github.io/">Weifeng Chen</a>, <a href="https://xujuefei.com/">Felix Juefei Xu</a>, <br> <a href="https://scholar.google.com/citations?user=5aaOtscAAAAJ&hl=en">Chu Wang</a>,<a href="https://www.alithabet.com/">Ali Thabet</a><sup>1</sup>,  <a href="https://sites.google.com/view/xiaoliangdai">Xiaoliang Dai</a>,<a href="https://juxuan27.github.io/">Xuan Ju</a>, <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>, <a href="https://sekunde.github.io/">Ji Hou</a>
+---
+A data construction pipeline and a new diret preference optimization framework for physically consistant video generation
