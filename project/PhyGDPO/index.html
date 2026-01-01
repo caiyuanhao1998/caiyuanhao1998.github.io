@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="PhyGDPO: Physics-Aware Groupwise Direct Preference Optimization for Physically Consistent Text-to-Video Generation">
+  <meta name="keywords" content="video generation model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhyGDPO: Physics-Aware Groupwise Direct Preference Optimization for Physically Consistent Text-to-Video Generation</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <!-- 自定义视频行样式 -->
+  <style>
+    .video-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      align-items: flex-end;      /* 让每个格子的底部对齐 */
+    }
+
+    .video-item {
+      flex: 0 0 30%;              /* 默认：一行三个 */
+      display: flex;              /* 纵向布局：video 在上，文字在下 */
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .video-item video {
+      width: 100%;
+      aspect-ratio: 16 / 9;       /* 强制统一高宽比例 */
+      object-fit: cover;          /* 保持画面铺满 */
+      display: block;
+    }
+
+    .video-label {
+      margin-top: 6px;
+      font-size: 1.2em;   /* 放大字体 */
+      font-weight: 600;   /* 可选：更清晰的加粗 */
+      min-height: 1.4em;  /* 保证每行底部依旧对齐 */
+    }
+
+    /* ===== (b) 部分单独设置为每行两个，各占 ~50% 宽度 ===== */
+    #dpo-section .video-item {
+      flex: 0 0 48%;
+      max-width: 48%;
+    }
+  </style>
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script.js"></script>
+</head>
+
+
+<body>
+
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+              <span style="color: #48a7b5  ;font-weight: bolder;">PhyGDPO</span>: Physics-Aware Groupwise Direct Preference Optimization for Physically Consistent Text-to-Video Generation
+            </h1>
+
+          <!-- TODO: update paper and video link once upload -->
+            <div class="text-container">
+              <h2 class="subtitle has-text-centered">
+                <b>A data construction pipeline and a new DPO framework for physically consistent Text-to-video generation
+              </h2>
+            </div>
+
+          <!-- Video Link. -->
+          <!-- <span class="link-block">
+                  <a href="https://youtu.be/470hul75bSM" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a> -->
+          </span>
+          <br>
+          <h2 class="title is-3">Data Construction Pipeline</h2>
+          <img src="./static/images/data_pipeline.png">
+          <p>Our physics-augmented video data construction pipeline first adopts a VLM, Qwen-2.5-72B-Instruct, following our designed chain-of-thought rule in (b) to select text-video pairs that contain rich physics interactions and phenomena from a large-scale high-quality text-video data pool in (a). Then in (d), we perform action clustering on the filtered data pairs from (c) through the semantics matching via a sentence Transformer. Subsequently, in (e), we adopt a physics-aware VLM to evaluate the difficulty of different action categories and then sample the text-video pairs accordingly as the wining cases of training data.</p>
+          <br>
+          <br>
+          <h2 class="title is-3">Method Overview</h2>
+          <img src="./static/images/method.png">
+          <p>Overview of our PhyGDPO. The text prompts without physics reasoning extension in (a) are feed into the T2V model. We propose a LoRA-switch reference scheme in (b) to save the GPU memory and increase training stability. In (c),  PhyGDPO is based on the groupwise Plackett-Luce (PL) probabilistic model and adopts a physics-aware VLM to reward the DPO training.</p>
+          <br>
+          <br>
+          <!-- ===== 目录 / Table of Contents ===== -->
+          <div class="toc-wrapper">
+            <nav id="toc" class="toc-box">
+              <p class="toc-title">Table of Contents for This Webpage</p>
+          
+              <ol class="toc-lv1">
+                <li><a href="#part-a">(a) Main Comparison with State-of-the-Art Methods</a></li>
+                <li><a href="#part-b">(b) Comparison with State-of-the-Art DPO Frameworks</a></li>
+                <li><a href="#part-c">(c) Break-down Ablation Study of PhyGDPO</a></li>
+                <li><a href="#part-d">(d) Ablation Study of LoRA-SR Mechanism</a></li>
+              </ol>
+            </nav>
+          </div>
+          
+          <style>
+            /* ————— ① 外层容器：让里面的 nav 居中 ————— */
+            .toc-wrapper{
+              text-align:center;           /* 子元素 inline-block 时即可水平居中 */
+              margin-top:1rem;             /* 与上方内容留白，可按需调 */
+            }
+            
+            /* ————— ② 目录本身 ————— */
+            .toc-box{
+              display:inline-block;        /* 关键：让块宽度随内容收缩 */
+              text-align:left;             /* 内部条目仍然左对齐 */
+            }
+
+            /* ③ 标题单独居中 */
+            .toc-title{
+              text-align:center;      /* 覆写 .toc-box 的 left */
+              margin:0 0 0.8em 0;     /* 与列表稍微留白 */
+              font-size:2em;        /* 可按需调整字号 */
+              font-weight:600;
+            }
+            
+            /* 一级目录 (a)–(d) */
+            .toc-lv1{
+              list-style:none;
+              padding-left:0;
+              margin:0;          
+            }
+            .toc-lv1>li{
+              margin:0.8em 0;
+              font-size:1.4em;
+            }
+            
+            /* 二级目录 (a1)–(a7) */
+            .toc-lv2{
+              list-style:none;
+              padding-left:1.4em;          /* 控制缩进 */
+              margin:0.6em 0 0.4em 0;
+              font-size:0.8em;             /* 字号更小 */
+              line-height:1.4;
+            }
+            .toc-lv2>li{ margin:1em 0; }
+            
+            #toc a{
+              color:#1a73e8;
+              text-decoration:none;
+            }
+            #toc a:hover{ text-decoration:underline; }
+          </style>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+
+<section class="section" id="part-a">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-bottom: 10px;">(a) Main Comparison with State-of-the-Art Methods</h2> <!-- 调整 margin-bottom 来控制标题和按钮间距 -->
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- IP-preserving Result -->
+<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1800px; margin: auto;" id = "part-a1">
+  <!-- Prompt -->
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a1) A player rides their horse, preparing to strike the ball, their mallet poised.
+  </p>
+
+  <p style="text-align:center; font-size: 1em; margin-bottom: 25px;">
+    (Hint: Previouse methods all fail to generate the striking interaction between the mallet and the ball)
+  </p>
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/234/phyt2v_234.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/234/videodpo_234.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/234/wan_234.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/234/sora_234.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/234/veo_234.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/234/ours_234.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+
+  <br>
+  <br>
+
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a2) A soccer player runs, plants their foot, and drop kicks a soccer ball high into the air, the ball arcing visibly.
+  </p>
+
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/195/phyt2v_195.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/195/videodpo_195.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/195/wan_195.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/195/sora_195.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/195/veo3_195.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/195/ours_195.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+
+  <br>
+  <br>
+
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a3) A gymnast drops from the parallel bars and lands safely on the mat below.
+  </p>
+
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72_videophy/phyt2v_72_videophy.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72_videophy/videodpo_72_videophy.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72_videophy/wan_72_videophy.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72_videophy/sora_72_videophy.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72_videophy/veo_72_videophy.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72_videophy/ours_72_videophy.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+
+  <br>
+  <br>
+
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a4) A gymnast performs a transition from a front support to a back support on the pommel horse.
+  </p>
+
+  <!-- ===== Row 4 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/254/phyt2v_254.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/254/videodpo_254.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/254/wan_254.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/254/sora_254.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/254/veo_254.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/254/ours_254.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a5) A player dunks the basketball, the basketball soaring upward before slamming through the net.
+  </p>
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/basketball_2/phyt2v_basketball_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/basketball_2/videodpo_basketball_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/basketball_2/wan_basketball_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/basketball_2/sora2_basketball_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/basketball_2/veo3_basketball_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/basketball_2/ours_basketball_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a6) A person wearing a helmet performs a handspring over a platform.
+  </p>
+
+  <!-- ===== Row 6 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_1/PhyT2V_wild_1.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_1/videodpo_wild_1.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_1/wan_wild_1.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 7 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_1/sora2_wild_1.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_1/veo3_wild_1.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_1/ours_wild_1.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a7) A person plays squash on an indoor court.
+  </p>
+
+  <!-- ===== Row 8 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_2/PhyT2V_wild_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_2/videodpo_wild_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_2/wan_wild_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 9 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_2/sora2_wild_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_2/veo3_wild_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_2/ours_wild_2.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a8) A gymnast stands on a balance beam, then performs a forward roll, landing smoothly.
+  </p>
+
+  <!-- ===== Row 10 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/210/phyt2v_210.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/210/videodpo_210.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/210/wan_210.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 11 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/210/sora_210.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/210/veo_210.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/210/ours_210.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a9) A wooden pencil is carefully dipped into a glass of crystal-clear water, showing the intriguing visual shifts and reflections caused by the interaction between the pencil and the liquid.
+  </p>
+
+  <p style="text-align:center; font-size: 1em; margin-bottom: 25px;">
+    (Hint: The curved cup wall together with the water forms a convex-lens-like structure that produces a magnifying effect, and the water surface also introduces refraction. However, previous methods all fail in generating such complex physical phenomena.)
+  </p>
+
+  <!-- ===== Row 12 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72/phyt2v_72.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72/videodpo_72.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72/wan_72.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 13 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72/sora_72.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72/veo3_72.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72/ours_72.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a10) A small burning ball of paper was thrown into a pile of dry paper.
+  </p>
+
+  <p style="text-align:center; font-size: 1em; margin-bottom: 25px;">
+    (Hint: In Sora2’s generated videos, the burning ball fails to ignite the surrounding dry paper. In Veo3.1’s generated video, the burning ball exhibits an unrealistic violent explosion, producing scattered sparks.)
+  </p>
+
+  <!-- ===== Row 14 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/140/phyt2v_140.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/140/videodpo_140.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/140/wan_140.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 15 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/140/sora2_140.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/140/veo3_140.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/140/ours_140.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a11) A golfer addresses the ball, takes a backswing, and hits the ball, sending it arcing high into the air.
+  </p>
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/32/phyt2v_32.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/32/videodpo_32.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/32/wan_32.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/32/sora_32.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/32/veo_32.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/32/ours_32.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a12) A metal pipe smashes a pumpkin, causing its insides to spill out.
+  </p>
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/264/phyt2v_264.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/264/videodpo_264.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/264/wan_264.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/264/sora_264.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/264/veo_264.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/264/ours_264.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a13) A baseball bat smashes a glass bottle, sending shards flying in all directions.
+  </p>
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/92/phyt2v_92.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/92/videodpo_92.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/92/wan_92.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/92/sora2_92.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/92/veo3_92.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/92/ours_92.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a14) A timelapse captures the transformation as fog in a mountainous region comes into contact with a cold car windshield.
+  </p>
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/113/phyt2v_113.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/113/videodpo_113.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/113/wan_113.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/113/sora_113.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/113/veo3_113.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/113/ours_113.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a15) A volleyball player takes a hard swing, the ball contacting the palm and fingers, followed by a rapid downward motion sending the ball over the net.
+  </p>
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/14/phyt2v_14.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/14/videodpo_14.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/14/wan_14.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/14/sora_14.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/14/veo_14.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/14/ours_14.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+
+  <br>
+  <br>
+
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    (a16) A surfer dives underwater to avoid a breaking wave, resurfacing seconds later.
+  </p>
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/110/phyt2v_110.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">PhyT2V (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/110/videodpo_110.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/110/wan_110.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/110/sora_110.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">OpenAI Sora2</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/110/veo_110.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Google DeepMind Veo3.1</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/110/ours_110.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-14B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+
+</section>
+
+<br>
+<br>
+<br>
+
+
+<section class="section" id="part-b">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-bottom: 10px;">(b) Comparison with State-of-the-Art DPO Frameworks</h2> <!-- 调整 margin-bottom 来控制标题和按钮间距 -->
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- IP-preserving Result -->
+<section id="dpo-section" class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1800px; margin: auto;">
+  <!-- Prompt -->
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    A weightlifter completes a snatch with a 25kg barbell, holding it momentarily overhead.
+  </p>
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/DPO_comparison/wan.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-1.3B</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/DPO_comparison/videodpo.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-1.3B + VideoDPO (CVPR 2025)</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/DPO_comparison/flowdpo.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-1.3B + Flow-DPO (NeurIPS 2025)</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/DPO_comparison/ours.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-1.3B + PhyGDPO (Ours)</div>
+    </div>
+
+  </div>
+</section>
+
+
+<br>
+<br>
+
+
+<section class="section" id="part-c">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-bottom: 10px;">(c) Break-down Ablation Study of PhyGDPO</h2> <!-- 调整 margin-bottom 来控制标题和按钮间距 -->
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- IP-preserving Result -->
+<section id="dpo-section" class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1800px; margin: auto;">
+  <!-- Prompt -->
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    A tennis ball is gently placed on the surface of a bucket filled with water.
+  </p>
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Breakdown_ablation/baseline.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Breakdown_ablation/lora_sr.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan + LoRA-SR</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Breakdown_ablation/groupwise.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan + LoRA-SR + Groupwise Model</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Breakdown_ablation/ours.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan + LoRA-SR  + Groupwise Model + Physics Rewarding</div>
+    </div>
+
+  </div>
+</section>
+
+
+<br>
+<br>
+
+
+<section class="section" id="part-d">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-bottom: 10px;">(d) Ablation Study of LoRA-SR</h2> <!-- 调整 margin-bottom 来控制标题和按钮间距 -->
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- IP-preserving Result -->
+<section id="dpo-section" class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1800px; margin: auto;">
+  <!-- Prompt -->
+  <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
+    A person shovels snow from a garden path, leaving a clear path.
+  </p>
+
+  <!-- ===== Row 1 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/ablation_lorasr/wan.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-1.3B</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/ablation_lorasr/sft.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-1.3B + LoRA-SFT</div>
+    </div>
+
+  </div>
+
+  <!-- ===== Row 2 ===== -->
+  <div class="video-row">
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/ablation_lorasr/no_lora.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-1.3B + PhyGDPO w/o LoRA-SR</div>
+    </div>
+
+    <div class="video-item">
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/ablation_lorasr/lora.mp4" 
+             autoplay loop muted controls></video>
+      <div class="video-label">Wan2.1-T2V-1.3B + PhyGDPO with LoRA-SR</div>
+    </div>
+
+  </div>
+</section>
+
+
+<br>
+<br>
+
+<script>
+  new BeforeAfter({
+    id: '#example1'
+  });
+  new BeforeAfter({
+    id: '#example2'
+  });
+  new BeforeAfter({
+    id: '#example3'
+  });
+  new BeforeAfter({
+    id: '#example4'
+  });
+  new BeforeAfter({
+    id: '#example5'
+  });
+  new BeforeAfter({
+    id: '#example6'
+  });
+</script>
+
+<!-- Back-to-top 方块 -->
+<a href="#toc" id="backToTop">Back to top</a>
+
+<!-- ==== 也可放在单独的 JS/CSS 文件中 ==== -->
+<style>
+  #backToTop{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;        /* ← 改这里 */
+  height: 50px;       /* ← 改这里 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+  border: 2px solid #bfbfbf;
+  border-radius: 8px;
+  font-size: 1em;     /* 字体也稍微小一点 */
+  color: #1a73e8;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: opacity .3s ease, transform .3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+  #backToTop.show{
+    opacity: 1;               /* 显示 */
+    pointer-events: auto;
+  }
+  #backToTop:hover{
+    transform: translateY(-4px); /* 轻微上浮动画 */
+  }
+</style>
+
+<script>
+  // 滚动超过 600px 时才显示按钮
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', ()=>{
+    if (window.scrollY > 600){
+      backBtn.classList.add('show');
+    }else{
+      backBtn.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+
+</html>
