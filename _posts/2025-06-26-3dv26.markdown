@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "X-LRM: X-ray Large Reconstruction Model for Extremely Sparse-View Computed Tomography Recovery in One Second"
-date:   2026-01-01 08:00:00 +00:00
+date:   2025-06-26 08:00:00 +00:00
 image: /images/xlrm.png
 categories: research
 author: "Yuanhao Cai"

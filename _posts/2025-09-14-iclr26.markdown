@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "EditVerse: Unifying Image and Video Editing and Generation with In-Context Learning"
-date:   2026-01-02 08:00:00 +00:00
+date:   2025-09-14 08:00:00 +00:00
 image: /images/editverse.gif
 categories: research
 author: "Yuanhao Cai"
