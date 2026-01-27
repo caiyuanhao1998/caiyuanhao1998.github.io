@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "X-LRM: X-ray Large Reconstruction Model for Extremely Sparse-View Computed Tomography Recovery in One Second"
-date:   2025-06-26 08:00:00 +00:00
+date:   2026-06-26 08:00:00 +00:00
 image: /images/xlrm.png
 categories: research
 author: "Yuanhao Cai"
-venue: "arxiv"
+venue: "International Conference on 3D Vision (3DV)"
 paper: https://arxiv.org/abs/2503.06382
 project: https://github.com/caiyuanhao1998/X-LRM
 authors:   <a href="https://scholar.google.com/citations?hl=en&user=vl0mzhEAAAAJ">Guofeng Zhang *</a>, <a href="https://ruyi-zha.github.io/">Ruyi Zha *</a>, <a href="https://heye0507.github.io/">Hao He</a>, <a href="https://yixunliang.github.io/">Yixun Liang</a>, <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a>, <a href="https://users.cecs.anu.edu.au/~hongdong/">Hongdong Li</a>, <strong>Yuanhao Cai</strong>
