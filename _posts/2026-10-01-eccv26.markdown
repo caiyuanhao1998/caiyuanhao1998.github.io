@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "PhyGDPO: Physics-Aware Groupwise Direct Preference Optimization for Physically Consistent Text-to-Video Generation"
-date:   2026-10-01 08:00:00 +00:00
+date:   2026-07-01 08:00:00 +00:00
 image: /images/phygdpo.gif
 categories: research
 author: "Yuanhao Cai"
