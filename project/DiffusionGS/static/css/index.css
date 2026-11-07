@@ -2,6 +2,26 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+/* 手动调整整页最大宽度：数值越大，两侧留白越少。 */
+:root {
+  --page-max-width: 1200px;
+}
+
+.container.is-max-desktop {
+  max-width: var(--page-max-width);
+}
+
+/* 与正文共用 section 留白和 container 宽度，整行视频两侧对齐。 */
+.results-section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.results-section video {
+  width: 100% !important;
+  display: block;
+}
+
 
 .footer .icon-link {
     font-size: 25px;

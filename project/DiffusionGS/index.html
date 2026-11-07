@@ -60,7 +60,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-4 publication-title"><span
+            <h1 class="title is-4 publication-title" style="font-size: 36px;"><span
               style="color: #48a7b5  ;font-weight: bolder;">DiffusionGS</span>: Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction
             </h1>
             <div class="is-size-5" style="margin-top: 0.0em; margin-bottom: 0.6em;">
@@ -119,14 +119,23 @@
                   <span class="icon">
                     <i class="fab fa-github"></i>
                   </span>
-                  <span>Code & Models</span>
+                  <span>Code</span>
                 </a>
               </span>
-              <!-- Demo Link. -->
+              <!-- Model Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://huggingface.co/CaiYuanhao/DiffusionGS"
                   class="external-link button is-normal is-rounded is-dark">
-                  <span>🤗 Demo</span>
+                  <span class="icon" aria-hidden="true">🤗</span>
+                  <span>Model</span>
+                </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon" aria-hidden="true">🤗</span>
+                  <span>Dataset</span>
                 </a>
               </span>
             </div>
@@ -212,7 +221,8 @@
 
 
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Centered Heading Text -->
   <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 2.0em;">
     ABO Hard Cases
@@ -220,14 +230,14 @@
 
 
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/868.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/868.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -238,12 +248,12 @@
 
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/490.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/490.mp4" type="video/mp4">
       </video>
       <div class="viewer-link" style="margin-top: 10px;">
@@ -252,12 +262,12 @@
     </div>
 
     <!-- Video and Viewer Link 3 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/281.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/281.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -268,20 +278,22 @@
 
   </div>
 </section>
+</div>
 
 <br>
 
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/504.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/504.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -292,12 +304,12 @@
 
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/621.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/621.mp4" type="video/mp4">
       </video>
       <div class="viewer-link" style="margin-top: 10px;">
@@ -306,12 +318,12 @@
     </div>
 
     <!-- Video and Viewer Link 3 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/142.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/ABO/142.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -322,26 +334,28 @@
 
   </div>
 </section>
+</div>
 
 <br>
 <br>
 <br>
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Centered Heading Text -->
   <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 2.0em;">
     GSO Hard Cases
   </h2>
 
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/128.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/128.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -351,12 +365,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/72.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/72.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -366,12 +380,12 @@
     </div>
 
     <!-- Video and Viewer Link 3 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/656.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/656.mp4" type="video/mp4">
       </video>
       <div class="viewer-link" style="margin-top: 10px;">
@@ -380,20 +394,22 @@
     </div>
   </div>
 </section>
+</div>
 
 <br>
 
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/5.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/5.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -403,12 +419,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/834.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/834.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -418,12 +434,12 @@
     </div>
 
     <!-- Video and Viewer Link 3 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/car.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/GSO/car.mp4" type="video/mp4">
       </video>
       <div class="viewer-link" style="margin-top: 10px;">
@@ -432,27 +448,29 @@
     </div>
   </div>
 </section>
+</div>
 
 <br>
 <br>
 <br>
 
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Centered Heading Text -->
   <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 2.0em;">
     Open Illumination (Real Camera)
   </h2>
 
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/green_bird_cup.png"
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/green_bird_cup.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -462,12 +480,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/bonsai.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/bonsai.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -477,12 +495,12 @@
     </div>
 
     <!-- Video and Viewer Link 3 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/banana.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/banana.mp4" type="video/mp4">
       </video>
       <div class="viewer-link" style="margin-top: 10px;">
@@ -491,20 +509,22 @@
     </div>
   </div>
 </section>
+</div>
 
 <br>
 
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/red_bottle.png"
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/red_bottle.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -514,12 +534,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/pumpkin.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/pumpkin.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -529,12 +549,12 @@
     </div>
 
     <!-- Video and Viewer Link 3 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/white_cup.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/real_camera/white_cup.mp4" type="video/mp4">
       </video>
       <div class="viewer-link" style="margin-top: 10px;">
@@ -543,26 +563,28 @@
     </div>
   </div>
 </section>
+</div>
 
 <br>
 <br>
 <br>
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Centered Heading Text -->
   <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 2.0em;">
     Text-to-Image (Prompted by Stable Diffusion)
   </h2>
 
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD/warrier.webp"
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD/warrier.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -572,12 +594,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD/blue_monster.webp" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD/blue_monster.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -587,12 +609,12 @@
     </div>
 
     <!-- Video and Viewer Link 3 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD/red_glove.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD/red_glove.mp4" type="video/mp4">
       </video>
       <div class="viewer-link" style="margin-top: 10px;">
@@ -601,20 +623,22 @@
     </div>
   </div>
 </section>
+</div>
 
 <br>
 
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD_more/skull.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD_more/skull.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -624,12 +648,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD/avocado.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD/avocado.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -639,12 +663,12 @@
     </div>
 
     <!-- Video and Viewer Link 3 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD/mushroom.webp" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/SD/mushroom.mp4" type="video/mp4">
       </video>
       <div class="viewer-link" style="margin-top: 10px;">
@@ -653,26 +677,28 @@
     </div>
   </div>
 </section>
+</div>
 
 <br>
 <br>
 <br>
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Centered Heading Text -->
   <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 2.0em;">
     Text-to-Image (Prompted by FLUX)
   </h2>
 
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/doctor.png"
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/doctor.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -682,12 +708,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/green_man.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/green_man.mp4" type="video/mp4">
       </video>
       <div class="viewer-link" style="margin-top: 10px;">
@@ -696,12 +722,12 @@
     </div>
 
     <!-- Video and Viewer Link 3 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/guard.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/guard.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -712,20 +738,22 @@
 
   </div>
 </section>
+</div>
 
 <br>
 
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/super_boy.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/super_boy.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -735,12 +763,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/devil.jpg" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree3" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/devil.mp4" type="video/mp4">
       </video>
       <div class="viewer-link" style="margin-top: 10px;">
@@ -749,12 +777,12 @@
     </div>
 
     <!-- Video and Viewer Link 3 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 300px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 280px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/harry_porter.png" 
         alt="Thumbnail" 
         style="width: 50%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 300px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/flux/pink_boy.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -765,6 +793,7 @@
 
   </div>
 </section>
+</div>
 
 
 <br>
@@ -800,7 +829,8 @@
 </section>
 
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Centered Heading Text -->
   <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 2.0em;">
     Indoor Scene Reconstruction
@@ -808,14 +838,14 @@
   </h2>
 
 <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/indoor/302.png"
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 500px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/indoor/302.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -825,12 +855,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/indoor/374.png" 
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 500px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/indoor/374.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -843,14 +873,14 @@
 
 <br>
 <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/indoor/50.png"
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 500px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/indoor/50.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -860,12 +890,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/indoor/91.png" 
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 500px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/indoor/91.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -875,25 +905,27 @@
     </div>
   </div>
 </section>
+</div>
 
 <br><br>
 
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Centered Heading Text -->
   <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 2.0em;">
     Outdoor Scene Reconstruction
   </h2>
 
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/outdoor/718.png"
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 500px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/outdoor/718.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -903,12 +935,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/outdoor/265.png" 
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 500px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/outdoor/265.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -921,14 +953,14 @@
 
 <br>
 <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/outdoor/112.png"
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 500px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/outdoor/112.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -938,12 +970,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/outdoor/424.png" 
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 500px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 100%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/outdoor/424.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -953,13 +985,15 @@
     </div>
   </div>
 </section>
+</div>
 
 
 <br>
 <br>
 
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1200px; margin: auto;">
+<div class="section results-section">
+<section class="hero is-small container is-max-desktop" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; ">
   <!-- Centered Heading Text -->
   <h2 class="subtitle has-text-centered" style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 2.0em;">
     Text-to-Image (The first frame is prompted by Sora)
@@ -967,14 +1001,14 @@
   </h2>
 
   <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/sora/plaza.png"
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 103%; max-width: 500px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 103%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/sora/plaza.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -984,12 +1018,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/sora/town.png" 
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 97%; max-width: 500px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 97%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/sora/town.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -1002,14 +1036,14 @@
   <br>
 
 <!-- Container for videos -->
-  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; flex-wrap: wrap;">
+  <div class="gif-container" style="display: flex; justify-content: center; gap: 20px; width: 100%; max-width: var(--page-max-width); flex-wrap: wrap;">
     <!-- Video and Viewer Link 1 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/sora/cliff.png"
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree1" autoplay controls muted loop style="width: 101%; max-width: 500px;">
+      <video poster="" id="tree1" autoplay controls muted loop style="width: 101%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/sora/cliff.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -1019,12 +1053,12 @@
     </div>
 
     <!-- Video and Viewer Link 2 -->
-    <div class="video-viewer-container" style="text-align: center; max-width: 500px;">
+    <div class="video-viewer-container" style="text-align: center; flex: 1 1 400px; min-width: 0;">
       <img 
         src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/sora/art_gallery.png" 
         alt="Thumbnail" 
         style="width: 30%; margin: 0 auto 10px; display: block; cursor: pointer;">
-      <video poster="" id="tree2" autoplay controls muted loop style="width: 99%; max-width: 500px;">
+      <video poster="" id="tree2" autoplay controls muted loop style="width: 99%; max-width: 100%;">
         <source src="https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/sora/art_gallery.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -1034,6 +1068,7 @@
     </div>
   </div>
 </section>
+</div>
 
 
   <script>
