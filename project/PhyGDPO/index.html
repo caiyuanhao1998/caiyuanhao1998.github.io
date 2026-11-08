@@ -21,20 +21,65 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
-  <!-- 自定义视频行样式 -->
+  <!-- Page width and responsive comparison layout -->
   <style>
+    :root {
+      --page-max-width: 1300px;
+      --page-gutter: 48px;
+    }
+
+    .container {
+      max-width: var(--page-max-width);
+    }
+
+    .hero-body.page-header {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .page-header > .container.page-container {
+      width: calc(100% - 2 * var(--page-gutter));
+      max-width: var(--page-max-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .overview-figure {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .comparison-section {
+      width: calc(100% - 2 * var(--page-gutter));
+      max-width: var(--page-max-width);
+      margin: 0 auto 20px;
+      padding: 10px 0;
+    }
+
+    .comparison-section > p {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      text-wrap: pretty;
+    }
+
     .video-row {
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
       margin-bottom: 25px;
-      flex-wrap: wrap;
-      align-items: flex-end;      /* 让每个格子的底部对齐 */
+      align-items: start;
     }
 
     .video-item {
-      flex: 0 0 30%;              /* 默认：一行三个 */
-      display: flex;              /* 纵向布局：video 在上，文字在下 */
+      min-width: 0;
+      display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
@@ -42,22 +87,33 @@
 
     .video-item video {
       width: 100%;
-      aspect-ratio: 16 / 9;       /* 强制统一高宽比例 */
-      object-fit: cover;          /* 保持画面铺满 */
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
       display: block;
     }
 
     .video-label {
+      max-width: 100%;
       margin-top: 6px;
-      font-size: 1.2em;   /* 放大字体 */
-      font-weight: 600;   /* 可选：更清晰的加粗 */
-      min-height: 1.4em;  /* 保证每行底部依旧对齐 */
+      font-size: 1.2em;
+      font-weight: 600;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
     }
 
-    /* ===== (b) 部分单独设置为每行两个，各占 ~50% 宽度 ===== */
-    #dpo-section .video-item {
-      flex: 0 0 48%;
-      max-width: 48%;
+    #dpo-section .video-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media screen and (max-width: 768px) {
+      :root {
+        --page-gutter: 24px;
+      }
+
+      .video-row,
+      #dpo-section .video-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
   </style>
 
@@ -76,8 +132,8 @@
 
 
   <section class="hero">
-    <div class="hero-body">
-      <div class="container">
+    <div class="hero-body page-header">
+      <div class="container page-container">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title">
@@ -184,12 +240,12 @@
           </span>
           <br>
           <h2 class="title is-3">Data Construction Pipeline</h2>
-          <img src="./static/images/data_pipeline.png">
+          <img class="overview-figure" src="./static/images/data_pipeline.png" alt="Data construction pipeline">
           <p>Our physics-augmented video data construction pipeline first adopts a VLM, Qwen-2.5-72B-Instruct, following our designed chain-of-thought rule in (b) to select text-video pairs that contain rich physics interactions and phenomena from a large-scale high-quality text-video data pool in (a). Then in (d), we perform action clustering on the filtered data pairs from (c) through the semantics matching via a sentence Transformer. Subsequently, in (e), we adopt a physics-aware VLM to evaluate the difficulty of different action categories and then sample the text-video pairs accordingly as the wining cases of training data.</p>
           <br>
           <br>
           <h2 class="title is-3">Method Overview</h2>
-          <img src="./static/images/method.png">
+          <img class="overview-figure" src="./static/images/method.png" alt="PhyGDPO method overview">
           <p>Overview of our PhyGDPO. The text prompts without physics reasoning extension in (a) are feed into the T2V model. We propose a LoRA-switch reference scheme in (b) to save the GPU memory and increase training stability. In (c),  PhyGDPO is based on the groupwise Plackett-Luce (PL) probabilistic model and adopts a physics-aware VLM to reward the DPO training.</p>
           <br>
           <br>
@@ -278,7 +334,7 @@
 
 
 <!-- IP-preserving Result -->
-<section class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1800px; margin: auto;" id = "part-a1">
+<section class="hero is-small comparison-section" id = "part-a1">
   <!-- Prompt -->
   <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
     (a1) A player rides their horse, preparing to strike the ball, their mallet poised.
@@ -292,15 +348,15 @@
   <div class="video-row">
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/234/phyt2v_234.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/234/videodpo_234.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">PhyT2V (CVPR 2025)</div>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/234/videodpo_234.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/234/seedance_234.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -354,9 +410,9 @@
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/195/videodpo_195.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/195/seedance_195.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -404,15 +460,15 @@
   <div class="video-row">
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72_videophy/phyt2v_72_videophy.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72_videophy/videodpo_72_videophy.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">PhyT2V (CVPR 2025)</div>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72_videophy/videodpo_72_videophy.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72_videophy/seedance_72_videophy.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -465,9 +521,9 @@
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/254/videodpo_254.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/254/seedance_254.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -512,15 +568,15 @@
   <div class="video-row">
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/basketball_2/phyt2v_basketball_2.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/basketball_2/videodpo_basketball_2.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">PhyT2V (CVPR 2025)</div>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/basketball_2/videodpo_basketball_2.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/basketball_2/seedance_basketball_2.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -571,9 +627,9 @@
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_1/videodpo_wild_1.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_1/seedance_wild_1.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -618,15 +674,15 @@
   <div class="video-row">
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_2/PhyT2V_wild_2.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_2/videodpo_wild_2.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">PhyT2V (CVPR 2025)</div>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_2/videodpo_wild_2.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/wild_2/seedance_wild_2.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -678,9 +734,9 @@
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/210/videodpo_210.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/210/seedance_210.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -730,15 +786,15 @@
   <div class="video-row">
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72/phyt2v_72.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72/videodpo_72.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">PhyT2V (CVPR 2025)</div>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72/videodpo_72.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/72/seedance_72.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -794,9 +850,9 @@
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/140/videodpo_140.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/140/seedance_140.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -841,15 +897,15 @@
   <div class="video-row">
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/32/phyt2v_32.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/32/videodpo_32.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">PhyT2V (CVPR 2025)</div>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/32/videodpo_32.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/32/seedance_32.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -900,9 +956,9 @@
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/264/videodpo_264.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/264/seedance_264.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -947,15 +1003,15 @@
   <div class="video-row">
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/92/phyt2v_92.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/92/videodpo_92.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">PhyT2V (CVPR 2025)</div>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/92/videodpo_92.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/92/seedance_92.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -1006,9 +1062,9 @@
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/113/videodpo_113.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/113/seedance_113.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -1053,15 +1109,15 @@
   <div class="video-row">
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/14/phyt2v_14.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/14/videodpo_14.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">PhyT2V (CVPR 2025)</div>
+      <div class="video-label">VideoDPO (CVPR 2025)</div>
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/14/videodpo_14.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/14/seedance_14.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -1113,9 +1169,9 @@
     </div>
 
     <div class="video-item">
-      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/110/videodpo_110.mp4" 
+      <video src="https://huggingface.co/datasets/CaiYuanhao/PhyGDPO_demo/resolve/main/Main_Comparison/110/seedance_110.mp4"
              autoplay loop muted controls></video>
-      <div class="video-label">VideoDPO (CVPR 2025)</div>
+      <div class="video-label">Seedance 2.0</div>
     </div>
 
     <div class="video-item">
@@ -1170,7 +1226,7 @@
 
 
 <!-- IP-preserving Result -->
-<section id="dpo-section" class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1800px; margin: auto;">
+<section id="dpo-section" class="hero is-small comparison-section">
   <!-- Prompt -->
   <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
     A weightlifter completes a snatch with a 25kg barbell, holding it momentarily overhead.
@@ -1230,7 +1286,7 @@
 
 
 <!-- IP-preserving Result -->
-<section id="dpo-section" class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1800px; margin: auto;">
+<section id="dpo-section" class="hero is-small comparison-section">
   <!-- Prompt -->
   <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
     A tennis ball is gently placed on the surface of a bucket filled with water.
@@ -1290,7 +1346,7 @@
 
 
 <!-- IP-preserving Result -->
-<section id="dpo-section" class="hero is-small" style="border-radius: 50px; padding: 10px 0; margin-bottom: 20px; max-width: 1800px; margin: auto;">
+<section id="dpo-section" class="hero is-small comparison-section">
   <!-- Prompt -->
   <p style="text-align:center; font-size: 1.5em; margin-bottom: 25px;">
     A person shovels snow from a garden path, leaving a clear path.
