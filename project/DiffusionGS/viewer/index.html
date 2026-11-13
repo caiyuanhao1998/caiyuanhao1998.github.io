@@ -157,6 +157,50 @@
 				top: 10px;
 				z-index: 999;
 				right: 10px;
+				display: flex;
+				align-items: center;
+				gap: 16px;
+			}
+			.viewer-action {
+				color: #3475a8;
+				font-size: 13px;
+				text-decoration: none;
+				white-space: nowrap;
+				background: rgba(255,255,255,.95);
+				border: 1px solid #dbe4ec;
+				border-radius: 8px;
+				padding: 9px 13px;
+			}
+			.viewer-action[hidden] {
+				display: none;
+			}
+			.viewer-action:hover {
+				text-decoration: underline;
+			}
+			.viewer-action:focus-visible {
+				outline: 2px solid #4d90c3;
+				outline-offset: 3px;
+			}
+			@media (max-width: 640px) {
+				#caminfo {
+					max-width: calc(100vw - 20px);
+					flex-wrap: wrap;
+					justify-content: flex-end;
+					gap: 8px;
+				}
+				body.has-cloud-download #camid {
+					flex-basis: 100%;
+					text-align: right;
+					font-size: 12px;
+				}
+				body.has-cloud-download #info {
+					top: 82px;
+				}
+			}
+			@media (max-width: 365px) {
+				body.has-exported-mesh #info {
+					top: 130px;
+				}
 			}
 			#canvas {
 				display: block;
@@ -270,6 +314,8 @@ other
 		</div>
 		<div id="caminfo">
 			<span id="camid">cam  0</span>
+			<a id="download-point-cloud" class="viewer-action" download hidden>Download Point Clouds</a>
+			<a id="exported-mesh" class="viewer-action" hidden>View Exported Mesh</a>
 		</div>
+		<script src="./js/viewer-links.js" defer></script>
 		<script src="./js/main.js"></script>
-	
