@@ -1,0 +1,12 @@
+.mesh-gallery-hint { text-align: center; color: #8893a2; font-size: 13px; margin: -8px 0 24px; }
+.exported-mesh-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.mesh-result { position: relative; min-width: 0; overflow: hidden; border: 1px solid #e7ebef; border-radius: 12px; background: white; text-align: center; }
+.mesh-result model-viewer { display: block; width: 100%; height: 320px; background: white; --poster-color: white; }
+.mesh-result-name { margin: 10px 0 6px; font-size: 16px; font-weight: 600; }
+.mesh-result .viewer-link { font-size: 13px; margin: 0 6px 15px; }
+.mesh-gallery-progress { position: absolute; top: 0; left: 0; width: 100%; height: 3px; }
+.mesh-gallery-progress span { display: block; height: 100%; width: 0; background: #4d90c3; transition: width .15s linear; }
+.mesh-gallery-progress[hidden], .mesh-gallery-error[hidden] { display: none; }
+.mesh-gallery-error { position: absolute; top: 140px; left: 10px; right: 10px; color: #657387; font-size: 13px; }
+@media (max-width: 900px) { .exported-mesh-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .exported-mesh-grid { grid-template-columns: 1fr; } }

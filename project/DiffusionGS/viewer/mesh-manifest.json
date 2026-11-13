@@ -569,6 +569,12 @@
       "source_path": "real_camera/yellow_chicken.ply",
       "glb_path": "meshes/real_camera/yellow_chicken.glb",
       "obj_path": "meshes/real_camera/yellow_chicken.obj.zip"
+    },
+    {
+      "id": "demo/jige",
+      "source_path": "demo/jige.ply",
+      "glb_path": "meshes/demo/jige.glb",
+      "obj_path": "meshes/demo/jige.obj.zip"
     }
   ]
 }
