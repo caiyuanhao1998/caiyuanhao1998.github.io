@@ -1,0 +1,574 @@
+{
+  "objects": [
+    {
+      "id": "ABO/142",
+      "source_path": "ABO/142.ply",
+      "glb_path": "meshes/ABO/142.glb",
+      "obj_path": "meshes/ABO/142.obj.zip"
+    },
+    {
+      "id": "ABO/204",
+      "source_path": "ABO/204.ply",
+      "glb_path": "meshes/ABO/204.glb",
+      "obj_path": "meshes/ABO/204.obj.zip"
+    },
+    {
+      "id": "ABO/214",
+      "source_path": "ABO/214.ply",
+      "glb_path": "meshes/ABO/214.glb",
+      "obj_path": "meshes/ABO/214.obj.zip"
+    },
+    {
+      "id": "ABO/281",
+      "source_path": "ABO/281.ply",
+      "glb_path": "meshes/ABO/281.glb",
+      "obj_path": "meshes/ABO/281.obj.zip"
+    },
+    {
+      "id": "ABO/313",
+      "source_path": "ABO/313.ply",
+      "glb_path": "meshes/ABO/313.glb",
+      "obj_path": "meshes/ABO/313.obj.zip"
+    },
+    {
+      "id": "ABO/340",
+      "source_path": "ABO/340.ply",
+      "glb_path": "meshes/ABO/340.glb",
+      "obj_path": "meshes/ABO/340.obj.zip"
+    },
+    {
+      "id": "ABO/349",
+      "source_path": "ABO/349.ply",
+      "glb_path": "meshes/ABO/349.glb",
+      "obj_path": "meshes/ABO/349.obj.zip"
+    },
+    {
+      "id": "ABO/449",
+      "source_path": "ABO/449.ply",
+      "glb_path": "meshes/ABO/449.glb",
+      "obj_path": "meshes/ABO/449.obj.zip"
+    },
+    {
+      "id": "ABO/490",
+      "source_path": "ABO/490.ply",
+      "glb_path": "meshes/ABO/490.glb",
+      "obj_path": "meshes/ABO/490.obj.zip"
+    },
+    {
+      "id": "ABO/491",
+      "source_path": "ABO/491.ply",
+      "glb_path": "meshes/ABO/491.glb",
+      "obj_path": "meshes/ABO/491.obj.zip"
+    },
+    {
+      "id": "ABO/504",
+      "source_path": "ABO/504.ply",
+      "glb_path": "meshes/ABO/504.glb",
+      "obj_path": "meshes/ABO/504.obj.zip"
+    },
+    {
+      "id": "ABO/512",
+      "source_path": "ABO/512.ply",
+      "glb_path": "meshes/ABO/512.glb",
+      "obj_path": "meshes/ABO/512.obj.zip"
+    },
+    {
+      "id": "ABO/538",
+      "source_path": "ABO/538.ply",
+      "glb_path": "meshes/ABO/538.glb",
+      "obj_path": "meshes/ABO/538.obj.zip"
+    },
+    {
+      "id": "ABO/568",
+      "source_path": "ABO/568.ply",
+      "glb_path": "meshes/ABO/568.glb",
+      "obj_path": "meshes/ABO/568.obj.zip"
+    },
+    {
+      "id": "ABO/621",
+      "source_path": "ABO/621.ply",
+      "glb_path": "meshes/ABO/621.glb",
+      "obj_path": "meshes/ABO/621.obj.zip"
+    },
+    {
+      "id": "ABO/640",
+      "source_path": "ABO/640.ply",
+      "glb_path": "meshes/ABO/640.glb",
+      "obj_path": "meshes/ABO/640.obj.zip"
+    },
+    {
+      "id": "ABO/671",
+      "source_path": "ABO/671.ply",
+      "glb_path": "meshes/ABO/671.glb",
+      "obj_path": "meshes/ABO/671.obj.zip"
+    },
+    {
+      "id": "ABO/694",
+      "source_path": "ABO/694.ply",
+      "glb_path": "meshes/ABO/694.glb",
+      "obj_path": "meshes/ABO/694.obj.zip"
+    },
+    {
+      "id": "ABO/71",
+      "source_path": "ABO/71.ply",
+      "glb_path": "meshes/ABO/71.glb",
+      "obj_path": "meshes/ABO/71.obj.zip"
+    },
+    {
+      "id": "ABO/730",
+      "source_path": "ABO/730.ply",
+      "glb_path": "meshes/ABO/730.glb",
+      "obj_path": "meshes/ABO/730.obj.zip"
+    },
+    {
+      "id": "ABO/731",
+      "source_path": "ABO/731.ply",
+      "glb_path": "meshes/ABO/731.glb",
+      "obj_path": "meshes/ABO/731.obj.zip"
+    },
+    {
+      "id": "ABO/755",
+      "source_path": "ABO/755.ply",
+      "glb_path": "meshes/ABO/755.glb",
+      "obj_path": "meshes/ABO/755.obj.zip"
+    },
+    {
+      "id": "ABO/77",
+      "source_path": "ABO/77.ply",
+      "glb_path": "meshes/ABO/77.glb",
+      "obj_path": "meshes/ABO/77.obj.zip"
+    },
+    {
+      "id": "ABO/868",
+      "source_path": "ABO/868.ply",
+      "glb_path": "meshes/ABO/868.glb",
+      "obj_path": "meshes/ABO/868.obj.zip"
+    },
+    {
+      "id": "ABO/886",
+      "source_path": "ABO/886.ply",
+      "glb_path": "meshes/ABO/886.glb",
+      "obj_path": "meshes/ABO/886.obj.zip"
+    },
+    {
+      "id": "ABO/901",
+      "source_path": "ABO/901.ply",
+      "glb_path": "meshes/ABO/901.glb",
+      "obj_path": "meshes/ABO/901.obj.zip"
+    },
+    {
+      "id": "ABO/946",
+      "source_path": "ABO/946.ply",
+      "glb_path": "meshes/ABO/946.glb",
+      "obj_path": "meshes/ABO/946.obj.zip"
+    },
+    {
+      "id": "GSO/105",
+      "source_path": "GSO/105.ply",
+      "glb_path": "meshes/GSO/105.glb",
+      "obj_path": "meshes/GSO/105.obj.zip"
+    },
+    {
+      "id": "GSO/110",
+      "source_path": "GSO/110.ply",
+      "glb_path": "meshes/GSO/110.glb",
+      "obj_path": "meshes/GSO/110.obj.zip"
+    },
+    {
+      "id": "GSO/128",
+      "source_path": "GSO/128.ply",
+      "glb_path": "meshes/GSO/128.glb",
+      "obj_path": "meshes/GSO/128.obj.zip"
+    },
+    {
+      "id": "GSO/183",
+      "source_path": "GSO/183.ply",
+      "glb_path": "meshes/GSO/183.glb",
+      "obj_path": "meshes/GSO/183.obj.zip"
+    },
+    {
+      "id": "GSO/27",
+      "source_path": "GSO/27.ply",
+      "glb_path": "meshes/GSO/27.glb",
+      "obj_path": "meshes/GSO/27.obj.zip"
+    },
+    {
+      "id": "GSO/271",
+      "source_path": "GSO/271.ply",
+      "glb_path": "meshes/GSO/271.glb",
+      "obj_path": "meshes/GSO/271.obj.zip"
+    },
+    {
+      "id": "GSO/400",
+      "source_path": "GSO/400.ply",
+      "glb_path": "meshes/GSO/400.glb",
+      "obj_path": "meshes/GSO/400.obj.zip"
+    },
+    {
+      "id": "GSO/420",
+      "source_path": "GSO/420.ply",
+      "glb_path": "meshes/GSO/420.glb",
+      "obj_path": "meshes/GSO/420.obj.zip"
+    },
+    {
+      "id": "GSO/421",
+      "source_path": "GSO/421.ply",
+      "glb_path": "meshes/GSO/421.glb",
+      "obj_path": "meshes/GSO/421.obj.zip"
+    },
+    {
+      "id": "GSO/442",
+      "source_path": "GSO/442.ply",
+      "glb_path": "meshes/GSO/442.glb",
+      "obj_path": "meshes/GSO/442.obj.zip"
+    },
+    {
+      "id": "GSO/486",
+      "source_path": "GSO/486.ply",
+      "glb_path": "meshes/GSO/486.glb",
+      "obj_path": "meshes/GSO/486.obj.zip"
+    },
+    {
+      "id": "GSO/487",
+      "source_path": "GSO/487.ply",
+      "glb_path": "meshes/GSO/487.glb",
+      "obj_path": "meshes/GSO/487.obj.zip"
+    },
+    {
+      "id": "GSO/5",
+      "source_path": "GSO/5.ply",
+      "glb_path": "meshes/GSO/5.glb",
+      "obj_path": "meshes/GSO/5.obj.zip"
+    },
+    {
+      "id": "GSO/58",
+      "source_path": "GSO/58.ply",
+      "glb_path": "meshes/GSO/58.glb",
+      "obj_path": "meshes/GSO/58.obj.zip"
+    },
+    {
+      "id": "GSO/656",
+      "source_path": "GSO/656.ply",
+      "glb_path": "meshes/GSO/656.glb",
+      "obj_path": "meshes/GSO/656.obj.zip"
+    },
+    {
+      "id": "GSO/67",
+      "source_path": "GSO/67.ply",
+      "glb_path": "meshes/GSO/67.glb",
+      "obj_path": "meshes/GSO/67.obj.zip"
+    },
+    {
+      "id": "GSO/72",
+      "source_path": "GSO/72.ply",
+      "glb_path": "meshes/GSO/72.glb",
+      "obj_path": "meshes/GSO/72.obj.zip"
+    },
+    {
+      "id": "GSO/777",
+      "source_path": "GSO/777.ply",
+      "glb_path": "meshes/GSO/777.glb",
+      "obj_path": "meshes/GSO/777.obj.zip"
+    },
+    {
+      "id": "GSO/781",
+      "source_path": "GSO/781.ply",
+      "glb_path": "meshes/GSO/781.glb",
+      "obj_path": "meshes/GSO/781.obj.zip"
+    },
+    {
+      "id": "GSO/782",
+      "source_path": "GSO/782.ply",
+      "glb_path": "meshes/GSO/782.glb",
+      "obj_path": "meshes/GSO/782.obj.zip"
+    },
+    {
+      "id": "GSO/810",
+      "source_path": "GSO/810.ply",
+      "glb_path": "meshes/GSO/810.glb",
+      "obj_path": "meshes/GSO/810.obj.zip"
+    },
+    {
+      "id": "GSO/834",
+      "source_path": "GSO/834.ply",
+      "glb_path": "meshes/GSO/834.glb",
+      "obj_path": "meshes/GSO/834.obj.zip"
+    },
+    {
+      "id": "GSO/918",
+      "source_path": "GSO/918.ply",
+      "glb_path": "meshes/GSO/918.glb",
+      "obj_path": "meshes/GSO/918.obj.zip"
+    },
+    {
+      "id": "GSO/919",
+      "source_path": "GSO/919.ply",
+      "glb_path": "meshes/GSO/919.glb",
+      "obj_path": "meshes/GSO/919.obj.zip"
+    },
+    {
+      "id": "GSO/947",
+      "source_path": "GSO/947.ply",
+      "glb_path": "meshes/GSO/947.glb",
+      "obj_path": "meshes/GSO/947.obj.zip"
+    },
+    {
+      "id": "GSO/car",
+      "source_path": "GSO/car.ply",
+      "glb_path": "meshes/GSO/car.glb",
+      "obj_path": "meshes/GSO/car.obj.zip"
+    },
+    {
+      "id": "SD/avocado",
+      "source_path": "SD/avocado.ply",
+      "glb_path": "meshes/SD/avocado.glb",
+      "obj_path": "meshes/SD/avocado.obj.zip"
+    },
+    {
+      "id": "SD/blue_doll",
+      "source_path": "SD/blue_doll.ply",
+      "glb_path": "meshes/SD/blue_doll.glb",
+      "obj_path": "meshes/SD/blue_doll.obj.zip"
+    },
+    {
+      "id": "SD/blue_monster",
+      "source_path": "SD/blue_monster.ply",
+      "glb_path": "meshes/SD/blue_monster.glb",
+      "obj_path": "meshes/SD/blue_monster.obj.zip"
+    },
+    {
+      "id": "SD/mushroom",
+      "source_path": "SD/mushroom.ply",
+      "glb_path": "meshes/SD/mushroom.glb",
+      "obj_path": "meshes/SD/mushroom.obj.zip"
+    },
+    {
+      "id": "SD/paladin",
+      "source_path": "SD/paladin.ply",
+      "glb_path": "meshes/SD/paladin.glb",
+      "obj_path": "meshes/SD/paladin.obj.zip"
+    },
+    {
+      "id": "SD/red_glove",
+      "source_path": "SD/red_glove.ply",
+      "glb_path": "meshes/SD/red_glove.glb",
+      "obj_path": "meshes/SD/red_glove.obj.zip"
+    },
+    {
+      "id": "SD/turtle",
+      "source_path": "SD/turtle.ply",
+      "glb_path": "meshes/SD/turtle.glb",
+      "obj_path": "meshes/SD/turtle.obj.zip"
+    },
+    {
+      "id": "SD/warrier",
+      "source_path": "SD/warrier.ply",
+      "glb_path": "meshes/SD/warrier.glb",
+      "obj_path": "meshes/SD/warrier.obj.zip"
+    },
+    {
+      "id": "SD/white_cat",
+      "source_path": "SD/white_cat.ply",
+      "glb_path": "meshes/SD/white_cat.glb",
+      "obj_path": "meshes/SD/white_cat.obj.zip"
+    },
+    {
+      "id": "SD_more/bird",
+      "source_path": "SD_more/bird.ply",
+      "glb_path": "meshes/SD_more/bird.glb",
+      "obj_path": "meshes/SD_more/bird.obj.zip"
+    },
+    {
+      "id": "SD_more/bowl",
+      "source_path": "SD_more/bowl.ply",
+      "glb_path": "meshes/SD_more/bowl.glb",
+      "obj_path": "meshes/SD_more/bowl.obj.zip"
+    },
+    {
+      "id": "SD_more/cactus",
+      "source_path": "SD_more/cactus.ply",
+      "glb_path": "meshes/SD_more/cactus.glb",
+      "obj_path": "meshes/SD_more/cactus.obj.zip"
+    },
+    {
+      "id": "SD_more/crown",
+      "source_path": "SD_more/crown.ply",
+      "glb_path": "meshes/SD_more/crown.glb",
+      "obj_path": "meshes/SD_more/crown.obj.zip"
+    },
+    {
+      "id": "SD_more/dinosaur",
+      "source_path": "SD_more/dinosaur.ply",
+      "glb_path": "meshes/SD_more/dinosaur.glb",
+      "obj_path": "meshes/SD_more/dinosaur.obj.zip"
+    },
+    {
+      "id": "SD_more/ghost",
+      "source_path": "SD_more/ghost.ply",
+      "glb_path": "meshes/SD_more/ghost.glb",
+      "obj_path": "meshes/SD_more/ghost.obj.zip"
+    },
+    {
+      "id": "SD_more/golden_cup",
+      "source_path": "SD_more/golden_cup.ply",
+      "glb_path": "meshes/SD_more/golden_cup.glb",
+      "obj_path": "meshes/SD_more/golden_cup.obj.zip"
+    },
+    {
+      "id": "SD_more/hamburger",
+      "source_path": "SD_more/hamburger.ply",
+      "glb_path": "meshes/SD_more/hamburger.glb",
+      "obj_path": "meshes/SD_more/hamburger.obj.zip"
+    },
+    {
+      "id": "SD_more/poly_tree",
+      "source_path": "SD_more/poly_tree.ply",
+      "glb_path": "meshes/SD_more/poly_tree.glb",
+      "obj_path": "meshes/SD_more/poly_tree.obj.zip"
+    },
+    {
+      "id": "SD_more/pot",
+      "source_path": "SD_more/pot.ply",
+      "glb_path": "meshes/SD_more/pot.glb",
+      "obj_path": "meshes/SD_more/pot.obj.zip"
+    },
+    {
+      "id": "SD_more/rabbit",
+      "source_path": "SD_more/rabbit.ply",
+      "glb_path": "meshes/SD_more/rabbit.glb",
+      "obj_path": "meshes/SD_more/rabbit.obj.zip"
+    },
+    {
+      "id": "SD_more/red_mushroom",
+      "source_path": "SD_more/red_mushroom.ply",
+      "glb_path": "meshes/SD_more/red_mushroom.glb",
+      "obj_path": "meshes/SD_more/red_mushroom.obj.zip"
+    },
+    {
+      "id": "SD_more/rolling_pin",
+      "source_path": "SD_more/rolling_pin.ply",
+      "glb_path": "meshes/SD_more/rolling_pin.glb",
+      "obj_path": "meshes/SD_more/rolling_pin.obj.zip"
+    },
+    {
+      "id": "SD_more/skull",
+      "source_path": "SD_more/skull.ply",
+      "glb_path": "meshes/SD_more/skull.glb",
+      "obj_path": "meshes/SD_more/skull.obj.zip"
+    },
+    {
+      "id": "SD_more/snail",
+      "source_path": "SD_more/snail.ply",
+      "glb_path": "meshes/SD_more/snail.glb",
+      "obj_path": "meshes/SD_more/snail.obj.zip"
+    },
+    {
+      "id": "SD_more/vege_robot",
+      "source_path": "SD_more/vege_robot.ply",
+      "glb_path": "meshes/SD_more/vege_robot.glb",
+      "obj_path": "meshes/SD_more/vege_robot.obj.zip"
+    },
+    {
+      "id": "SD_more/volcano",
+      "source_path": "SD_more/volcano.ply",
+      "glb_path": "meshes/SD_more/volcano.glb",
+      "obj_path": "meshes/SD_more/volcano.obj.zip"
+    },
+    {
+      "id": "SD_more/yellow_mushroom",
+      "source_path": "SD_more/yellow_mushroom.ply",
+      "glb_path": "meshes/SD_more/yellow_mushroom.glb",
+      "obj_path": "meshes/SD_more/yellow_mushroom.obj.zip"
+    },
+    {
+      "id": "flux/devil",
+      "source_path": "flux/devil.ply",
+      "glb_path": "meshes/flux/devil.glb",
+      "obj_path": "meshes/flux/devil.obj.zip"
+    },
+    {
+      "id": "flux/doctor",
+      "source_path": "flux/doctor.ply",
+      "glb_path": "meshes/flux/doctor.glb",
+      "obj_path": "meshes/flux/doctor.obj.zip"
+    },
+    {
+      "id": "flux/green_man",
+      "source_path": "flux/green_man.ply",
+      "glb_path": "meshes/flux/green_man.glb",
+      "obj_path": "meshes/flux/green_man.obj.zip"
+    },
+    {
+      "id": "flux/guard",
+      "source_path": "flux/guard.ply",
+      "glb_path": "meshes/flux/guard.glb",
+      "obj_path": "meshes/flux/guard.obj.zip"
+    },
+    {
+      "id": "flux/pink_boy",
+      "source_path": "flux/pink_boy.ply",
+      "glb_path": "meshes/flux/pink_boy.glb",
+      "obj_path": "meshes/flux/pink_boy.obj.zip"
+    },
+    {
+      "id": "flux/princess",
+      "source_path": "flux/princess.ply",
+      "glb_path": "meshes/flux/princess.glb",
+      "obj_path": "meshes/flux/princess.obj.zip"
+    },
+    {
+      "id": "flux/super_boy",
+      "source_path": "flux/super_boy.ply",
+      "glb_path": "meshes/flux/super_boy.glb",
+      "obj_path": "meshes/flux/super_boy.obj.zip"
+    },
+    {
+      "id": "real_camera/banana",
+      "source_path": "real_camera/banana.ply",
+      "glb_path": "meshes/real_camera/banana.glb",
+      "obj_path": "meshes/real_camera/banana.obj.zip"
+    },
+    {
+      "id": "real_camera/bonsai",
+      "source_path": "real_camera/bonsai.ply",
+      "glb_path": "meshes/real_camera/bonsai.glb",
+      "obj_path": "meshes/real_camera/bonsai.obj.zip"
+    },
+    {
+      "id": "real_camera/captain",
+      "source_path": "real_camera/captain.ply",
+      "glb_path": "meshes/real_camera/captain.glb",
+      "obj_path": "meshes/real_camera/captain.obj.zip"
+    },
+    {
+      "id": "real_camera/green_bird_cup",
+      "source_path": "real_camera/green_bird_cup.ply",
+      "glb_path": "meshes/real_camera/green_bird_cup.glb",
+      "obj_path": "meshes/real_camera/green_bird_cup.obj.zip"
+    },
+    {
+      "id": "real_camera/pumpkin",
+      "source_path": "real_camera/pumpkin.ply",
+      "glb_path": "meshes/real_camera/pumpkin.glb",
+      "obj_path": "meshes/real_camera/pumpkin.obj.zip"
+    },
+    {
+      "id": "real_camera/red_bottle",
+      "source_path": "real_camera/red_bottle.ply",
+      "glb_path": "meshes/real_camera/red_bottle.glb",
+      "obj_path": "meshes/real_camera/red_bottle.obj.zip"
+    },
+    {
+      "id": "real_camera/white_cup",
+      "source_path": "real_camera/white_cup.ply",
+      "glb_path": "meshes/real_camera/white_cup.glb",
+      "obj_path": "meshes/real_camera/white_cup.obj.zip"
+    },
+    {
+      "id": "real_camera/yellow_chicken",
+      "source_path": "real_camera/yellow_chicken.ply",
+      "glb_path": "meshes/real_camera/yellow_chicken.glb",
+      "obj_path": "meshes/real_camera/yellow_chicken.obj.zip"
+    }
+  ]
+}

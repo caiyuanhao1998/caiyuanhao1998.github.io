@@ -1,0 +1,32 @@
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #222a35; background: #fff; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 280px; }
+header { min-height: 76px; padding: 18px 28px; display: flex; align-items: center; gap: 13px; border-bottom: 1px solid #edf0f3; position: relative; z-index: 2; }
+a { color: #3475a8; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.brand { font-weight: 750; font-size: 20px; color: #252e3a; }
+.divider { color: #b2bac5; }
+h1 { font-size: 15px; font-weight: 500; margin: 0; overflow-wrap: anywhere; }
+nav { margin-left: auto; display: flex; align-items: center; justify-content: flex-end; gap: 20px; font-size: 13px; white-space: nowrap; }
+.download { border: 1px solid #dbe4ec; border-radius: 8px; padding: 9px 13px; background: #f8fafc; }
+main { position: relative; height: calc(100svh - 77px); min-height: 350px; }
+model-viewer { display: block; width: 100%; height: 100%; background: #fff; --poster-color: #fff; }
+#mesh-status { position: absolute; left: 50%; top: 48%; transform: translate(-50%, -50%); margin: 0; max-width: 80%; color: #657387; text-align: center; padding: 12px 16px; border-radius: 10px; background: rgba(255,255,255,.94); pointer-events: none; }
+#mesh-status[hidden] { display: none; }
+#progress { position: absolute; left: 0; top: 0; width: 100%; height: 3px; }
+#progress span { display: block; height: 100%; background: #4d90c3; width: 0; transition: width .15s linear; }
+.controls { display: flex; gap: 8px; position: absolute; right: 24px; bottom: 24px; }
+button { color: #4b5c70; background: rgba(255,255,255,.95); border: 1px solid #dce2e9; border-radius: 9px; padding: 9px 12px; cursor: pointer; font: inherit; font-size: 12px; }
+button:hover { background: #f0f5fa; }
+button:focus-visible, a:focus-visible { outline: 2px solid #4d90c3; outline-offset: 3px; }
+.hint { position: absolute; left: 24px; bottom: 21px; color: #8893a2; font-size: 12px; pointer-events: none; }
+.hint span { margin: 0 6px; }
+@media (max-width: 680px) {
+ header { flex-wrap: wrap; padding: 14px 16px; gap: 9px; }
+ .brand { font-size: 18px; }
+ h1 { font-size: 13px; }
+ nav { width: 100%; justify-content: flex-start; gap: 16px; font-size: 12px; }
+ main { height: calc(100svh - 111px); }
+ .hint { left: 16px; bottom: 68px; font-size: 11px; }
+ .controls { right: 16px; bottom: 20px; }
+}
