@@ -1,7 +1,7 @@
 function showError(error){const status=document.getElementById('status');status.hidden=false;status.textContent='Unable to open this X-ray view: '+error.message;document.getElementById('retry').hidden=false;console.error(error);}
 try{
 const query=new URLSearchParams(location.search);
-const indexResponse=await fetch(new URL('../assets/scene-manifest.json',import.meta.url));
+const indexResponse=await fetch(new URL('../assets/scene-manifest.json?v=front15',import.meta.url));
 if(!indexResponse.ok)throw new Error('Scene index unavailable.');
 const index=await indexResponse.json();
 const entry=index.scenes.find(s=>s.scene===(query.get('scene')||'head'))||index.scenes.find(s=>s.scene==='head');

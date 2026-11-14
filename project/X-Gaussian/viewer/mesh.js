@@ -2,11 +2,13 @@ const viewer = document.getElementById('mesh');
 const status = document.getElementById('mesh-status');
 const progress = document.querySelector('#progress span');
 const rotation = document.getElementById('rotation');
-let initialOrbit = '-35deg 65deg 135%';
+let initialOrbit = '0deg 75deg 135%';
 viewer.addEventListener('progress', ({detail}) => {
   progress.style.width = `${Math.round(detail.totalProgress * 100)}%`;
 });
 viewer.addEventListener('load', () => {
+  viewer.resetTurntableRotation(0);
+  viewer.jumpCameraToGoal();
   status.hidden = true;
   document.getElementById('progress').hidden = true;
 });
@@ -22,10 +24,11 @@ rotation.addEventListener('click', () => {
 document.getElementById('reset').addEventListener('click', () => {
   viewer.cameraOrbit = initialOrbit;
   viewer.cameraTarget = 'auto auto auto';
+  viewer.resetTurntableRotation(0);
   viewer.jumpCameraToGoal();
 });
 try {
-  const response = await fetch(new URL('../assets/scene-manifest.json', import.meta.url));
+  const response = await fetch(new URL('../assets/scene-manifest.json?v=front15', import.meta.url));
   if (!response.ok) throw new Error('Scene index unavailable');
   const manifest = await response.json();
   const scene = new URLSearchParams(location.search).get('scene') || 'head';

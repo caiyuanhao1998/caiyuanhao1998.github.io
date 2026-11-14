@@ -43,8 +43,8 @@
       ],
       "threshold": 0.40566277265548706,
       "exposure": 6.0,
-      "yaw": -35,
-      "pitch": 65,
+      "yaw": -90,
+      "pitch": 75,
       "field_path": "ct_viewer/synthetic/chest.bin.gz",
       "mesh_path": "meshes/synthetic/chest.glb",
       "bytes": 2371115,
@@ -52,8 +52,8 @@
       "mesh_sha256": "7c0d94d015b3b490a3d88a8afeb0a889164a97d1c647549635adb0f4e0cccd2b",
       "source_checkpoint_sha256": "d306c8c8a5a189f3e4a8df414dd237ebd5a07481ef19cbe62f0861302f231f5a",
       "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/chest/point_cloud/iteration_45000/point_cloud.ply",
-      "poster": "posters/chest.webp",
-      "mesh_orbit": "-35deg 65deg 135%"
+      "poster": "posters/chest-front15.webp",
+      "mesh_orbit": "-90deg 75deg 135%"
     },
     {
       "scene": "foot",
@@ -94,8 +94,8 @@
       ],
       "threshold": 0.035,
       "exposure": 4.0,
-      "yaw": -35,
-      "pitch": 65,
+      "yaw": 90,
+      "pitch": 75,
       "group": "synthetic",
       "field_path": "ct_viewer/synthetic/foot.bin.gz",
       "mesh_path": "meshes/synthetic/foot.glb",
@@ -104,8 +104,8 @@
       "mesh_sha256": "ab46535aaf4f21e9817b92eea8d13cd6ce9292540405b765d52ac11d002e2e6e",
       "source_checkpoint_sha256": "331d7a746b55a2d32696e5b1c2e4696510119a31fdbfb9668f0441570a70d45e",
       "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/foot/point_cloud/iteration_45000/point_cloud.ply",
-      "poster": "posters/foot.webp",
-      "mesh_orbit": "-35deg 65deg 135%"
+      "poster": "posters/foot-front15.webp",
+      "mesh_orbit": "90deg 75deg 135%"
     },
     {
       "scene": "head",
@@ -146,7 +146,7 @@
       ],
       "threshold": 0.30270435810089114,
       "exposure": 7.0,
-      "yaw": -35,
+      "yaw": 180,
       "pitch": 75,
       "group": "synthetic",
       "field_path": "ct_viewer/synthetic/head.bin.gz",
@@ -156,8 +156,8 @@
       "mesh_sha256": "1f8d90450efc4b11a53ce7037731c9db5caa8dd014f3e8bbb22978c005cdfd0d",
       "source_checkpoint_sha256": "9cc677772ba18d683c07941fb18ddeb44d07ebcf50fedd390be7129a612f278e",
       "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/head/point_cloud/iteration_45000/point_cloud.ply",
-      "poster": "posters/head.webp",
-      "mesh_orbit": "-35deg 75deg 135%"
+      "poster": "posters/head-front15.webp",
+      "mesh_orbit": "180deg 75deg 135%"
     },
     {
       "scene": "abdomen",
@@ -199,8 +199,8 @@
       ],
       "threshold": 0.3050303041934967,
       "exposure": 10.0,
-      "yaw": -35,
-      "pitch": 65,
+      "yaw": 180,
+      "pitch": 75,
       "field_path": "ct_viewer/synthetic/abdomen.bin.gz",
       "mesh_path": "meshes/synthetic/abdomen.glb",
       "bytes": 111958147,
@@ -208,8 +208,8 @@
       "mesh_sha256": "b658e50f047c1f2dda0702379bd488942b476dc94916bc20808946652038deba",
       "source_checkpoint_sha256": "b6e124f70afaad15c911859de65e8af9a8bad5db22b7b4f80edbed6a7d1253aa",
       "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/abdomen/point_cloud/iteration_45000/point_cloud.ply",
-      "poster": "posters/abdomen.webp",
-      "mesh_orbit": "-35deg 65deg 135%",
+      "poster": "posters/abdomen-front15.webp",
+      "mesh_orbit": "180deg 75deg 135%",
       "preview": {
         "dimensions": [
           256,
@@ -262,8 +262,8 @@
       ],
       "threshold": 0.035,
       "exposure": 3.0,
-      "yaw": -35,
-      "pitch": 65,
+      "yaw": 0,
+      "pitch": 75,
       "field_path": "ct_viewer/synthetic/pancreas.bin.gz",
       "mesh_path": "meshes/synthetic/pancreas.glb",
       "bytes": 43400167,
@@ -271,8 +271,8 @@
       "mesh_sha256": "325bddfc5e877c3f1d136c974b6f58c974c0aed98dae9cf395b9602cbb870939",
       "source_checkpoint_sha256": "ae7d52e1e6d550264c61f23c25d5b2ff1021f38871bfb8321e241a6f028d0c4e",
       "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/pancreas/point_cloud/iteration_45000/point_cloud.ply",
-      "poster": "posters/pancreas.webp",
-      "mesh_orbit": "-35deg 65deg 135%",
+      "poster": "posters/pancreas-front15.webp",
+      "mesh_orbit": "0deg 75deg 135%",
       "preview": {
         "dimensions": [
           256,
@@ -326,7 +326,7 @@
       "threshold": 0.02,
       "exposure": 14.0,
       "yaw": -35,
-      "pitch": 60,
+      "pitch": 75,
       "field_path": "ct_viewer/real/pine.bin.gz",
       "mesh_path": "meshes/real/pine.glb",
       "bytes": 9390560,
@@ -334,8 +334,8 @@
       "mesh_sha256": "83c4456fd2c6b39d73f73d9eb42a55b2629e1081bb89451369a12eea91d20795",
       "source_checkpoint_sha256": "9ed706b37b7bb33de1d6533969a1b9c9d4488afac23c20b76a1411240985d245",
       "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/real/pine/point_cloud/iteration_30000/point_cloud.ply",
-      "poster": "posters/pine.webp",
-      "mesh_orbit": "-35deg 60deg 135%"
+      "poster": "posters/pine-front15.webp",
+      "mesh_orbit": "-35deg 75deg 135%"
     },
     {
       "scene": "seashell",
@@ -377,7 +377,7 @@
       "threshold": 0.085,
       "exposure": 6.0,
       "yaw": 35,
-      "pitch": 55,
+      "pitch": 75,
       "group": "real",
       "field_path": "ct_viewer/real/seashell.bin.gz",
       "mesh_path": "meshes/real/seashell.glb",
@@ -386,8 +386,8 @@
       "mesh_sha256": "bc53a6d233bff5eca15594356dd79b9ae9c7a529e8af2faadb5d7cca7ccb8a40",
       "source_checkpoint_sha256": "58ec018f21289724725af0358a61c334a544070d477da012f37e2d7d974b7fe1",
       "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/real/seashell/point_cloud/iteration_30000/point_cloud.ply",
-      "poster": "posters/seashell.webp",
-      "mesh_orbit": "35deg 55deg 135%"
+      "poster": "posters/seashell-front15.webp",
+      "mesh_orbit": "35deg 75deg 135%"
     },
     {
       "scene": "walnut",
@@ -429,8 +429,8 @@
       ],
       "threshold": 0.06,
       "exposure": 8.0,
-      "yaw": -35,
-      "pitch": 60,
+      "yaw": 0,
+      "pitch": 75,
       "field_path": "ct_viewer/real/walnut.bin.gz",
       "mesh_path": "meshes/real/walnut.glb",
       "bytes": 14378662,
@@ -438,8 +438,8 @@
       "mesh_sha256": "9c5cabc1c13b9e38544d873c5a45e88811520e3d8bba1af00746257c08285abf",
       "source_checkpoint_sha256": "3eaa4a4394448e49cafedd2d28e61978c84a724a9d23135df75a353bca000bbb",
       "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/real/walnut/point_cloud/iteration_30000/point_cloud.ply",
-      "poster": "posters/walnut.webp",
-      "mesh_orbit": "-35deg 60deg 135%"
+      "poster": "posters/walnut-front15.webp",
+      "mesh_orbit": "0deg 75deg 135%"
     }
   ],
   "display_preview_available": [
