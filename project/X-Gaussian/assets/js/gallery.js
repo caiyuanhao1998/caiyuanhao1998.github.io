@@ -1,5 +1,5 @@
 import '../vendor/model-viewer.min.js';
-const response=await fetch(new URL('../scene-manifest.json?v=front15',import.meta.url));if(!response.ok)throw new Error('CT mesh index unavailable');const manifest=await response.json();
+const response=await fetch(new URL('../scene-manifest.json?v=clean-ring',import.meta.url));if(!response.ok)throw new Error('CT mesh index unavailable');const manifest=await response.json();
 for(const viewer of document.querySelectorAll('.ct-card model-viewer')){
  const entry=manifest.scenes.find(s=>s.scene===viewer.dataset.scene);if(!entry)continue;const card=viewer.closest('.ct-card'),progress=viewer.querySelector('.card-progress'),error=card.querySelector('.card-error');
  viewer.cameraOrbit=entry.mesh_orbit||`${entry.yaw}deg ${entry.pitch}deg 155%`;

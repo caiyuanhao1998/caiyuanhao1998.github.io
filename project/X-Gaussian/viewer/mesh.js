@@ -28,7 +28,7 @@ document.getElementById('reset').addEventListener('click', () => {
   viewer.jumpCameraToGoal();
 });
 try {
-  const response = await fetch(new URL('../assets/scene-manifest.json?v=front15', import.meta.url));
+  const response = await fetch(new URL('../assets/scene-manifest.json?v=clean-ring', import.meta.url));
   if (!response.ok) throw new Error('Scene index unavailable');
   const manifest = await response.json();
   const scene = new URLSearchParams(location.search).get('scene') || 'head';

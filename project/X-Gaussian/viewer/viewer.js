@@ -1,7 +1,7 @@
 function showError(error){const status=document.getElementById('status');status.hidden=false;status.textContent='Unable to open this X-ray view: '+error.message;document.getElementById('retry').hidden=false;console.error(error);}
 try{
 const query=new URLSearchParams(location.search);
-const indexResponse=await fetch(new URL('../assets/scene-manifest.json?v=front15',import.meta.url));
+const indexResponse=await fetch(new URL('../assets/scene-manifest.json?v=clean-ring',import.meta.url));
 if(!indexResponse.ok)throw new Error('Scene index unavailable.');
 const index=await indexResponse.json();
 const entry=index.scenes.find(s=>s.scene===(query.get('scene')||'head'))||index.scenes.find(s=>s.scene==='head');
@@ -13,7 +13,7 @@ sceneMenu.addEventListener('change',()=>{const params=new URLSearchParams({scene
 const qualityMenu=document.getElementById('quality');
 if(entry.preview){document.getElementById('detail-control').hidden=false;qualityMenu.value=native?'native':'preview';qualityMenu.addEventListener('change',()=>{const params=new URLSearchParams({scene:entry.scene});if(qualityMenu.value==='native')params.set('quality','native');location.search=params.toString();});}
 document.getElementById('resolution').textContent=spec.dimensions.join(' × ');
-document.getElementById('field-download').href=index.asset_base+entry.field_path;
+document.getElementById('field-download').href=index.asset_base+(entry.display_cleanup?.source_field_path||entry.field_path);
 
 const $=id=>document.getElementById(id);
 $('title').textContent=spec.name;document.title=`${spec.name} · X-ray · X-Gaussian`;

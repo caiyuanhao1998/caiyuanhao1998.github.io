@@ -37,23 +37,35 @@
         ]
       ],
       "target": [
-        0.07035855802723945,
-        -0.01455737822657105,
-        -0.00045712412160592297
+        0.11959236860275269,
+        -0.013676881790161133,
+        -0.0008516311645507812
       ],
       "threshold": 0.40566277265548706,
       "exposure": 6.0,
       "yaw": -90,
       "pitch": 75,
-      "field_path": "ct_viewer/synthetic/chest.bin.gz",
-      "mesh_path": "meshes/synthetic/chest.glb",
-      "bytes": 2371115,
-      "sha256": "d0aa08bd231cd120e31f59394aa2fb59599eee1193e051424cef694a6fd4049f",
-      "mesh_sha256": "7c0d94d015b3b490a3d88a8afeb0a889164a97d1c647549635adb0f4e0cccd2b",
+      "field_path": "ct_viewer/cleaned/synthetic/chest.bin.gz",
+      "mesh_path": "meshes/cleaned/synthetic/chest.glb",
+      "bytes": 461411,
+      "sha256": "1630fe896d4a40e552db0f4eb693c807d786024e510d2b4c98b16a3412341ae5",
+      "mesh_sha256": "e2dbf9f529c824e8342480c73c14008455815a1bfc20bc116eff27c67c7b2717",
       "source_checkpoint_sha256": "d306c8c8a5a189f3e4a8df414dd237ebd5a07481ef19cbe62f0861302f231f5a",
       "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/chest/point_cloud/iteration_45000/point_cloud.ply",
-      "poster": "posters/chest-front15.webp",
-      "mesh_orbit": "-90deg 75deg 135%"
+      "poster": "posters/chest-clean-ring.webp",
+      "mesh_orbit": "-90deg 75deg 135%",
+      "camera_radius": 1.773844080785089,
+      "display_cleanup": {
+        "visualization_only": true,
+        "method": "high-density structure display",
+        "source_mesh_path": "meshes/synthetic/chest.glb",
+        "source_mesh_sha256": "7c0d94d015b3b490a3d88a8afeb0a889164a97d1c647549635adb0f4e0cccd2b",
+        "source_field_path": "ct_viewer/synthetic/chest.bin.gz",
+        "source_field_sha256": "d0aa08bd231cd120e31f59394aa2fb59599eee1193e051424cef694a6fd4049f",
+        "mask_path": "ct_viewer/cleaned/masks/synthetic/chest.bin.gz",
+        "mask_sha256": "d89f5e639fb4b6d9874ec14b330dc50e7caa2c079fed214147ccc72ab670d4ff",
+        "retained_density_values_unchanged": true
+      }
     },
     {
       "scene": "foot",
@@ -193,22 +205,22 @@
         ]
       ],
       "target": [
-        6.517137760569947e-05,
-        0.0017732679692971098,
-        0.06949560036238855
+        6.514787673950195e-05,
+        0.0007021427154541016,
+        0.0915265679359436
       ],
       "threshold": 0.3050303041934967,
       "exposure": 10.0,
       "yaw": 180,
       "pitch": 75,
-      "field_path": "ct_viewer/synthetic/abdomen.bin.gz",
-      "mesh_path": "meshes/synthetic/abdomen.glb",
-      "bytes": 111958147,
-      "sha256": "2e71b4b4f5b94b33cb19558e16abab87c99d7c64d7c267f10bfbb24171acaf3e",
-      "mesh_sha256": "b658e50f047c1f2dda0702379bd488942b476dc94916bc20808946652038deba",
+      "field_path": "ct_viewer/cleaned/synthetic/abdomen.bin.gz",
+      "mesh_path": "meshes/cleaned/synthetic/abdomen.glb",
+      "bytes": 103656802,
+      "sha256": "2aaf79c689b79a54baf06c26087d233a641a67e5b01fceda518991417468a8f4",
+      "mesh_sha256": "6e6768d6c7d0c438d14fb9c38236826d82457bb85682fdf8dc979e2a459e42de",
       "source_checkpoint_sha256": "b6e124f70afaad15c911859de65e8af9a8bad5db22b7b4f80edbed6a7d1253aa",
       "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/abdomen/point_cloud/iteration_45000/point_cloud.ply",
-      "poster": "posters/abdomen-front15.webp",
+      "poster": "posters/abdomen-clean-ring.webp",
       "mesh_orbit": "180deg 75deg 135%",
       "preview": {
         "dimensions": [
@@ -216,10 +228,22 @@
           256,
           232
         ],
-        "field_path": "ct_viewer/synthetic/abdomen-preview.bin.gz",
-        "bytes": 16381572,
-        "sha256": "6d3c6a150cee3c1e58a19a741cdcb53bc58aa85dcf1d733dbea6b9f4c73e42c1",
+        "field_path": "ct_viewer/cleaned/synthetic/abdomen-preview.bin.gz",
+        "bytes": 15024935,
+        "sha256": "0533de4a48992c6e40296e1e33ee40ae2672c71b346f759d6b63b3951f88a347",
         "description": "Direct Gaussian query on a browser preview grid; native grid remains available."
+      },
+      "camera_radius": 1.520718068770208,
+      "display_cleanup": {
+        "visualization_only": true,
+        "method": "guarded external support-arc removal",
+        "source_mesh_path": "meshes/synthetic/abdomen.glb",
+        "source_mesh_sha256": "b658e50f047c1f2dda0702379bd488942b476dc94916bc20808946652038deba",
+        "source_field_path": "ct_viewer/synthetic/abdomen.bin.gz",
+        "source_field_sha256": "2e71b4b4f5b94b33cb19558e16abab87c99d7c64d7c267f10bfbb24171acaf3e",
+        "mask_path": "ct_viewer/cleaned/masks/synthetic/abdomen.bin.gz",
+        "mask_sha256": "03ae5389ba4726f8ff4c9b66ef315e9a00eb8cfaa32690deb31040aefb34ec00",
+        "retained_density_values_unchanged": true
       }
     },
     {
@@ -256,22 +280,22 @@
         ]
       ],
       "target": [
-        -0.003288074996217638,
-        -0.0014522602190984446,
-        -0.21931497237787212
+        0.010922521352767944,
+        0.0009400248527526855,
+        -0.07479450106620789
       ],
       "threshold": 0.035,
       "exposure": 3.0,
       "yaw": 0,
       "pitch": 75,
-      "field_path": "ct_viewer/synthetic/pancreas.bin.gz",
-      "mesh_path": "meshes/synthetic/pancreas.glb",
-      "bytes": 43400167,
-      "sha256": "f0c5c3b21a9c07278bb3a963713a664af3dfb6d86755360af57867608942d893",
-      "mesh_sha256": "325bddfc5e877c3f1d136c974b6f58c974c0aed98dae9cf395b9602cbb870939",
+      "field_path": "ct_viewer/cleaned/synthetic/pancreas.bin.gz",
+      "mesh_path": "meshes/cleaned/synthetic/pancreas.glb",
+      "bytes": 33557028,
+      "sha256": "551ea8feed81bc6af96c05bc46fbc9885fc7454b14ad6a95765306c2d2d20cfc",
+      "mesh_sha256": "455774f978bcff3ef48c4ae544964e3cbc99b13f483860280b3bfab3d56086af",
       "source_checkpoint_sha256": "ae7d52e1e6d550264c61f23c25d5b2ff1021f38871bfb8321e241a6f028d0c4e",
       "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/pancreas/point_cloud/iteration_45000/point_cloud.ply",
-      "poster": "posters/pancreas-front15.webp",
+      "poster": "posters/pancreas-clean-ring.webp",
       "mesh_orbit": "0deg 75deg 135%",
       "preview": {
         "dimensions": [
@@ -279,10 +303,22 @@
           256,
           120
         ],
-        "field_path": "ct_viewer/synthetic/pancreas-preview.bin.gz",
-        "bytes": 6603757,
-        "sha256": "046040f503b3774e6586cc99c8b64ed06061376b46095cc936a0e0ca66e75656",
+        "field_path": "ct_viewer/cleaned/synthetic/pancreas-preview.bin.gz",
+        "bytes": 5048743,
+        "sha256": "28d57c813c2451ebbdcdfbd79fae63a82ab16a59ebcfa30e14b0d1177e1c3111",
         "description": "Direct Gaussian query on a browser preview grid; native grid remains available."
+      },
+      "camera_radius": 1.1068239407192726,
+      "display_cleanup": {
+        "visualization_only": true,
+        "method": "guarded external support-arc removal",
+        "source_mesh_path": "meshes/synthetic/pancreas.glb",
+        "source_mesh_sha256": "325bddfc5e877c3f1d136c974b6f58c974c0aed98dae9cf395b9602cbb870939",
+        "source_field_path": "ct_viewer/synthetic/pancreas.bin.gz",
+        "source_field_sha256": "f0c5c3b21a9c07278bb3a963713a664af3dfb6d86755360af57867608942d893",
+        "mask_path": "ct_viewer/cleaned/masks/synthetic/pancreas.bin.gz",
+        "mask_sha256": "3969f6f075ce41dfb9bb10caec66faf5b56ac539b8d91a719cb2014dc9d31dcf",
+        "retained_density_values_unchanged": true
       }
     },
     {
@@ -446,5 +482,5 @@
     "abdomen",
     "pancreas"
   ],
-  "asset_base": "https://huggingface.co/datasets/CaiYuanhao/X-Gaussian/resolve/1ad40c39881ac582ca5b1c53398c58302ad0e65c/"
+  "asset_base": "https://huggingface.co/datasets/CaiYuanhao/X-Gaussian/resolve/acfce78982e21e13351ef917a92c94c6c685dc6f/"
 }
