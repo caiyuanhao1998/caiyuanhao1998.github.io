@@ -42,6 +42,7 @@ figure { width: 100%; margin: 20px 0 0; }
 figure img { display: block; width: 100%; height: auto; }
 figcaption { margin: 12px 0 0; color: #747474; font-size: 14px; line-height: 1.55; text-align: center; }
 .evolution video { display: block; width: 100%; height: auto; border-radius: 8px; background: #fff; }
+.optimization-card video { border-radius: 0; aspect-ratio: 320 / 308; }
 .abstract, .intro { text-align: justify; }
 .text p { margin: 0 0 16px; }
 .intro { margin: 0 0 24px; }
@@ -96,7 +97,8 @@ footer p { margin: 5px 0; }
   h3 { font-size: 19px; }
   .ct-grid { grid-template-columns: 1fr; gap: 19px; }
   .ct-card model-viewer { height: 320px; }
-  .abstract, .intro { text-align: left; }
+  .optimization-card video { border-radius: 0; aspect-ratio: 320 / 308; }
+.abstract, .intro { text-align: left; }
   .equation { font-size: 18px; }
   .section-hint { font-size: 12px; }
   .bibtex-wrap pre { padding: 22px 13px; font-size: 11px; }
