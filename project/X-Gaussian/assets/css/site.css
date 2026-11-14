@@ -100,6 +100,6 @@ footer p { margin: 5px 0; }
   .equation { font-size: 18px; }
   .section-hint { font-size: 12px; }
   .bibtex-wrap pre { padding: 22px 13px; font-size: 11px; }
-  .section.text { font-size: 15px; }
+  .section { font-size: 15px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
