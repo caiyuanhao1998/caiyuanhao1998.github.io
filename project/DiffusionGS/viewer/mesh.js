@@ -2,7 +2,7 @@ const viewer = document.getElementById('mesh');
 const status = document.getElementById('mesh-status');
 const progress = document.querySelector('#progress span');
 const rotation = document.getElementById('rotation');
-const initialOrbit = '-45deg 70deg 120%';
+const initialOrbit = '-45deg 70deg 160%';
 const dataset = 'https://huggingface.co/datasets/CaiYuanhao/DiffusionGS/resolve/main/';
 
 viewer.addEventListener('progress', ({detail}) => {
