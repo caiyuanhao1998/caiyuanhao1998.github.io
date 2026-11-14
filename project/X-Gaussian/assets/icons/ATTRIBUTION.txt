@@ -1,0 +1,5 @@
+PDF, GitHub and YouTube icons: Font Awesome Free5.15.1, CC BY4.0.
+https://fontawesome.com/license/free
+arXiv icon: Academicons, CC BY4.0.
+https://github.com/jpswalsh/academicons
+Hugging Face logo: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
