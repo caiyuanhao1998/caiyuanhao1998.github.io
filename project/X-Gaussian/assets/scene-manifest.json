@@ -1,0 +1,450 @@
+{
+  "encoding": "12-bit density in RG8, x-fast texture, gzip",
+  "reference_ct_used": false,
+  "native_grids": true,
+  "scenes": [
+    {
+      "scene": "chest",
+      "name": "Chest",
+      "group": "synthetic",
+      "dimensions": [
+        128,
+        128,
+        128
+      ],
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "scale": 1.0675336122512817,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.123233995736766e-17,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ]
+      ],
+      "target": [
+        0.07035855802723945,
+        -0.01455737822657105,
+        -0.00045712412160592297
+      ],
+      "threshold": 0.40566277265548706,
+      "exposure": 6.0,
+      "yaw": -35,
+      "pitch": 65,
+      "field_path": "ct_viewer/synthetic/chest.bin.gz",
+      "mesh_path": "meshes/synthetic/chest.glb",
+      "bytes": 2371115,
+      "sha256": "d0aa08bd231cd120e31f59394aa2fb59599eee1193e051424cef694a6fd4049f",
+      "mesh_sha256": "7c0d94d015b3b490a3d88a8afeb0a889164a97d1c647549635adb0f4e0cccd2b",
+      "source_checkpoint_sha256": "d306c8c8a5a189f3e4a8df414dd237ebd5a07481ef19cbe62f0861302f231f5a",
+      "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/chest/point_cloud/iteration_45000/point_cloud.ply",
+      "poster": "posters/chest.webp",
+      "mesh_orbit": "-35deg 65deg 135%"
+    },
+    {
+      "scene": "foot",
+      "name": "Foot",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "scale": 1.3431925773620605,
+      "quantization": 4095,
+      "rotation": [
+        [
+          -1.0,
+          -7.498798913309288e-33,
+          -1.2246467991473532e-16
+        ],
+        [
+          1.2246467991473532e-16,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ]
+      ],
+      "target": [
+        -0.10831953807209022,
+        0.07206150856083404,
+        0.0338004886445647
+      ],
+      "threshold": 0.035,
+      "exposure": 4.0,
+      "yaw": -35,
+      "pitch": 65,
+      "group": "synthetic",
+      "field_path": "ct_viewer/synthetic/foot.bin.gz",
+      "mesh_path": "meshes/synthetic/foot.glb",
+      "bytes": 9826409,
+      "sha256": "efdd84ab60b2b20a773fdc442e605eff92e8c33597133ffab9c4e97134d474ea",
+      "mesh_sha256": "ab46535aaf4f21e9817b92eea8d13cd6ce9292540405b765d52ac11d002e2e6e",
+      "source_checkpoint_sha256": "331d7a746b55a2d32696e5b1c2e4696510119a31fdbfb9668f0441570a70d45e",
+      "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/foot/point_cloud/iteration_45000/point_cloud.ply",
+      "poster": "posters/foot.webp",
+      "mesh_orbit": "-35deg 65deg 135%"
+    },
+    {
+      "scene": "head",
+      "name": "Head",
+      "dimensions": [
+        256,
+        256,
+        128
+      ],
+      "size": [
+        1.9759734912745421,
+        2.0,
+        1.5652648392313264
+      ],
+      "scale": 1.0810869932174683,
+      "quantization": 4095,
+      "rotation": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.022933191193138247,
+        -0.02246533115616378,
+        -0.0410389911481428
+      ],
+      "threshold": 0.30270435810089114,
+      "exposure": 7.0,
+      "yaw": -35,
+      "pitch": 75,
+      "group": "synthetic",
+      "field_path": "ct_viewer/synthetic/head.bin.gz",
+      "mesh_path": "meshes/synthetic/head.glb",
+      "bytes": 8268273,
+      "sha256": "bb0055aee9db1fbbd2c69ff7cdecc4f2ab56ce68aefa1223232aca42dfcaee9f",
+      "mesh_sha256": "1f8d90450efc4b11a53ce7037731c9db5caa8dd014f3e8bbb22978c005cdfd0d",
+      "source_checkpoint_sha256": "9cc677772ba18d683c07941fb18ddeb44d07ebcf50fedd390be7129a612f278e",
+      "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/head/point_cloud/iteration_45000/point_cloud.ply",
+      "poster": "posters/head.webp",
+      "mesh_orbit": "-35deg 75deg 135%"
+    },
+    {
+      "scene": "abdomen",
+      "name": "Abdomen",
+      "group": "synthetic",
+      "dimensions": [
+        512,
+        512,
+        463
+      ],
+      "size": [
+        1.3822894168466522,
+        1.3822894168466522,
+        2.0
+      ],
+      "scale": 0.871515154838562,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.123233995736766e-17,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ]
+      ],
+      "target": [
+        6.517137760569947e-05,
+        0.0017732679692971098,
+        0.06949560036238855
+      ],
+      "threshold": 0.3050303041934967,
+      "exposure": 10.0,
+      "yaw": -35,
+      "pitch": 65,
+      "field_path": "ct_viewer/synthetic/abdomen.bin.gz",
+      "mesh_path": "meshes/synthetic/abdomen.glb",
+      "bytes": 111958147,
+      "sha256": "2e71b4b4f5b94b33cb19558e16abab87c99d7c64d7c267f10bfbb24171acaf3e",
+      "mesh_sha256": "b658e50f047c1f2dda0702379bd488942b476dc94916bc20808946652038deba",
+      "source_checkpoint_sha256": "b6e124f70afaad15c911859de65e8af9a8bad5db22b7b4f80edbed6a7d1253aa",
+      "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/abdomen/point_cloud/iteration_45000/point_cloud.ply",
+      "poster": "posters/abdomen.webp",
+      "mesh_orbit": "-35deg 65deg 135%",
+      "preview": {
+        "dimensions": [
+          256,
+          256,
+          232
+        ],
+        "field_path": "ct_viewer/synthetic/abdomen-preview.bin.gz",
+        "bytes": 16381572,
+        "sha256": "6d3c6a150cee3c1e58a19a741cdcb53bc58aa85dcf1d733dbea6b9f4c73e42c1",
+        "description": "Direct Gaussian query on a browser preview grid; native grid remains available."
+      }
+    },
+    {
+      "scene": "pancreas",
+      "name": "Pancreas",
+      "group": "synthetic",
+      "dimensions": [
+        512,
+        512,
+        240
+      ],
+      "size": [
+        2.0,
+        2.0,
+        1.0875
+      ],
+      "scale": 2.275402545928955,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.123233995736766e-17,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ]
+      ],
+      "target": [
+        -0.003288074996217638,
+        -0.0014522602190984446,
+        -0.21931497237787212
+      ],
+      "threshold": 0.035,
+      "exposure": 3.0,
+      "yaw": -35,
+      "pitch": 65,
+      "field_path": "ct_viewer/synthetic/pancreas.bin.gz",
+      "mesh_path": "meshes/synthetic/pancreas.glb",
+      "bytes": 43400167,
+      "sha256": "f0c5c3b21a9c07278bb3a963713a664af3dfb6d86755360af57867608942d893",
+      "mesh_sha256": "325bddfc5e877c3f1d136c974b6f58c974c0aed98dae9cf395b9602cbb870939",
+      "source_checkpoint_sha256": "ae7d52e1e6d550264c61f23c25d5b2ff1021f38871bfb8321e241a6f028d0c4e",
+      "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/synthetic/pancreas/point_cloud/iteration_45000/point_cloud.ply",
+      "poster": "posters/pancreas.webp",
+      "mesh_orbit": "-35deg 65deg 135%",
+      "preview": {
+        "dimensions": [
+          256,
+          256,
+          120
+        ],
+        "field_path": "ct_viewer/synthetic/pancreas-preview.bin.gz",
+        "bytes": 6603757,
+        "sha256": "046040f503b3774e6586cc99c8b64ed06061376b46095cc936a0e0ca66e75656",
+        "description": "Direct Gaussian query on a browser preview grid; native grid remains available."
+      }
+    },
+    {
+      "scene": "pine",
+      "name": "Pine",
+      "group": "real",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "scale": 0.9837552905082703,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.123233995736766e-17,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ]
+      ],
+      "target": [
+        0.038037185418695274,
+        -0.0012220232702433442,
+        0.0512736807511861
+      ],
+      "threshold": 0.02,
+      "exposure": 14.0,
+      "yaw": -35,
+      "pitch": 60,
+      "field_path": "ct_viewer/real/pine.bin.gz",
+      "mesh_path": "meshes/real/pine.glb",
+      "bytes": 9390560,
+      "sha256": "cf2ace469add2bd3adce4294c006f11fb6a83501f78c9633aeb5fd2a0d82cd7b",
+      "mesh_sha256": "83c4456fd2c6b39d73f73d9eb42a55b2629e1081bb89451369a12eea91d20795",
+      "source_checkpoint_sha256": "9ed706b37b7bb33de1d6533969a1b9c9d4488afac23c20b76a1411240985d245",
+      "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/real/pine/point_cloud/iteration_30000/point_cloud.ply",
+      "poster": "posters/pine.webp",
+      "mesh_orbit": "-35deg 60deg 135%"
+    },
+    {
+      "scene": "seashell",
+      "name": "Seashell",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "scale": 0.9619230031967163,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.123233995736766e-17,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ]
+      ],
+      "target": [
+        0.049791897071037206,
+        0.035449534453961984,
+        -0.04634039469673257
+      ],
+      "threshold": 0.085,
+      "exposure": 6.0,
+      "yaw": 35,
+      "pitch": 55,
+      "group": "real",
+      "field_path": "ct_viewer/real/seashell.bin.gz",
+      "mesh_path": "meshes/real/seashell.glb",
+      "bytes": 11688052,
+      "sha256": "70e4f7a2a64fd6609bdaa5030bcc942349b1dcf0dd3908eac118f8a76b7f1b1d",
+      "mesh_sha256": "bc53a6d233bff5eca15594356dd79b9ae9c7a529e8af2faadb5d7cca7ccb8a40",
+      "source_checkpoint_sha256": "58ec018f21289724725af0358a61c334a544070d477da012f37e2d7d974b7fe1",
+      "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/real/seashell/point_cloud/iteration_30000/point_cloud.ply",
+      "poster": "posters/seashell.webp",
+      "mesh_orbit": "35deg 55deg 135%"
+    },
+    {
+      "scene": "walnut",
+      "name": "Walnut",
+      "group": "real",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "scale": 0.9062612056732178,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.123233995736766e-17,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ]
+      ],
+      "target": [
+        -0.03595762784557238,
+        -0.000855574195384734,
+        0.03157721037576716
+      ],
+      "threshold": 0.06,
+      "exposure": 8.0,
+      "yaw": -35,
+      "pitch": 60,
+      "field_path": "ct_viewer/real/walnut.bin.gz",
+      "mesh_path": "meshes/real/walnut.glb",
+      "bytes": 14378662,
+      "sha256": "c25a14a55453876b3342c3c2a4672bac764d600a711387dc83d0f7b66684235e",
+      "mesh_sha256": "9c5cabc1c13b9e38544d873c5a45e88811520e3d8bba1af00746257c08285abf",
+      "source_checkpoint_sha256": "3eaa4a4394448e49cafedd2d28e61978c84a724a9d23135df75a353bca000bbb",
+      "source_checkpoint": "https://huggingface.co/CaiYuanhao/X-Gaussian/resolve/b0d90c871b0ff83ffefbabaee15028b3a048baea/real/walnut/point_cloud/iteration_30000/point_cloud.ply",
+      "poster": "posters/walnut.webp",
+      "mesh_orbit": "-35deg 60deg 135%"
+    }
+  ],
+  "display_preview_available": [
+    "abdomen",
+    "pancreas"
+  ],
+  "asset_base": "https://huggingface.co/datasets/CaiYuanhao/X-Gaussian/resolve/1ad40c39881ac582ca5b1c53398c58302ad0e65c/"
+}
