@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exported Mesh · X-Gaussian</title>
+  <meta name="description" content="Explore and download a Gaussian-derived X-Gaussian CT mesh.">
+  <link rel="stylesheet" href="mesh.css">
+  <script type="module" src="../assets/vendor/model-viewer.min.js"></script>
+  <script type="module" src="mesh.js"></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="../">X-Gaussian</a>
+    <span class="divider" aria-hidden="true">/</span>
+    <h1 id="case-title">Exported Mesh</h1>
+    <nav aria-label="Mesh resources">
+      <a id="xray" hidden>Interactive X-ray Viewer</a>
+      <a id="download-glb" class="download" hidden>Download GLB</a>
+    </nav>
+  </header>
+  <main>
+    <model-viewer id="mesh" aria-label="Interactive exported CT mesh"
+      camera-controls auto-rotate rotation-per-second="14deg"
+      field-of-view="35deg" min-camera-orbit="auto 5deg 40%"
+      max-camera-orbit="auto 175deg 350%" shadow-intensity="0.25"
+      shadow-softness="0.9" environment-image="neutral" exposure="0.9"
+      interaction-prompt="none" touch-action="pan-y">
+      <div slot="progress-bar" id="progress" aria-label="Loading progress"><span></span></div>
+    </model-viewer>
+    <p id="mesh-status" role="status">Loading mesh…</p>
+    <div class="controls" aria-label="Viewer controls">
+      <button id="rotation" type="button" aria-pressed="true">Pause rotation</button>
+      <button id="reset" type="button">Reset view</button>
+    </div>
+    <p class="hint">Drag to orbit · Scroll or pinch to zoom</p>
+  </main>
+</body>
+</html>
