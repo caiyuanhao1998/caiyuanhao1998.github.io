@@ -81,8 +81,8 @@ function draw(moving=false){
  gl.uniform1i(uniforms.invert,invert);gl.uniform1i(uniforms.cool,cool);gl.uniform1i(uniforms.steps,moving?128:320);
  gl.drawArrays(gl.TRIANGLES,0,3);drawCount++;
 }
-function schedule(moving=false){if(autoRotate){if(!frame)frame=requestAnimationFrame(animate);return;}if(frame)cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{frame=0;draw(moving);});if(moving){clearTimeout(settleTimer);settleTimer=setTimeout(()=>schedule(false),180);}}
-function animate(time){if(!autoRotate)return;if(lastTime)yaw+=(time-lastTime)*.00011;lastTime=time;draw(true);frame=requestAnimationFrame(animate);}
+function schedule(moving=false){if(!ready)return;if(autoRotate){if(!frame)frame=requestAnimationFrame(animate);return;}if(frame)cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{frame=0;draw(moving);});if(moving){clearTimeout(settleTimer);settleTimer=setTimeout(()=>schedule(false),180);}}
+function animate(time){if(!autoRotate||!ready){frame=0;lastTime=0;return;}if(lastTime)yaw+=(time-lastTime)*.00011;lastTime=time;draw(true);frame=requestAnimationFrame(animate);}
 function stopRotation(){autoRotate=false;lastTime=0;if(frame)cancelAnimationFrame(frame);frame=0;$('rotation').textContent='Start rotation';$('rotation').setAttribute('aria-pressed','false');}
 function reset(){stopRotation();yaw=spec.yaw*Math.PI/180;polar=spec.pitch*Math.PI/180;distance=initialDistance;target=originalTarget.slice();autoRotate=true;$('rotation').textContent='Pause rotation';$('rotation').setAttribute('aria-pressed','true');lastTime=0;schedule();}
 $('rotation').addEventListener('click',()=>{autoRotate=!autoRotate;$('rotation').textContent=autoRotate?'Pause rotation':'Start rotation';$('rotation').setAttribute('aria-pressed',String(autoRotate));if(autoRotate){lastTime=0;frame=requestAnimationFrame(animate);}else{stopRotation();schedule();}});
