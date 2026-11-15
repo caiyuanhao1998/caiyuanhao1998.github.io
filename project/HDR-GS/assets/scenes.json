@@ -35,7 +35,7 @@
       "fx": 641.4003516799271,
       "fy": 641.9994212279187
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   },
   {
     "id": "bear",
@@ -73,7 +73,7 @@
       "fx": 859.5836932956672,
       "fy": 857.610385644129
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   },
   {
     "id": "chair",
@@ -111,7 +111,7 @@
       "fx": 1037.843814358146,
       "fy": 1050.3698942638548
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   },
   {
     "id": "desk",
@@ -149,7 +149,7 @@
       "fx": 962.0168802935061,
       "fy": 966.5182342150388
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   },
   {
     "id": "diningroom",
@@ -187,7 +187,7 @@
       "fx": 683.4654311182028,
       "fy": 727.3961299483179
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   },
   {
     "id": "dog",
@@ -225,7 +225,7 @@
       "fx": 869.9988208984613,
       "fy": 868.2376183677075
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   },
   {
     "id": "sofa",
@@ -263,7 +263,7 @@
       "fx": 725.0426081420944,
       "fy": 725.8975912781352
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   },
   {
     "id": "sponza",
@@ -301,7 +301,7 @@
       "fx": 1800.3940138988098,
       "fy": 1652.4806534304025
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   },
   {
     "id": "flower",
@@ -309,7 +309,7 @@
     "label": "Flower",
     "iteration": 30000,
     "sourcePointCount": 1660581,
-    "webPointCount": 500000,
+    "webPointCount": 400000,
     "sourceSHA256": "446137ba81084929518c2590c4a2d0e5c8787101a6015547bb5f59cb28cd5017",
     "exposure": 0.08598023028580466,
     "hdrWhite": 53.679710388183594,
@@ -339,7 +339,7 @@
       "fx": 1359.6761982107453,
       "fy": 1358.3632328714566
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   },
   {
     "id": "computer",
@@ -377,7 +377,7 @@
       "fx": 1380.1560094952172,
       "fy": 1391.3342879192135
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   },
   {
     "id": "box",
@@ -415,7 +415,7 @@
       "fx": 1339.434888117094,
       "fy": 1341.063655705396
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   },
   {
     "id": "luckycat",
@@ -453,6 +453,6 @@
       "fx": 1401.2917173941948,
       "fy": 1396.4882050012573
     },
-    "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+    "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
   }
 ]

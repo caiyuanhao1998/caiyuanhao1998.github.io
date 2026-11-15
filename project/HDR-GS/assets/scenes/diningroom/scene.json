@@ -34,5 +34,5 @@
     "fx": 683.4654311182028,
     "fy": 727.3961299483179
   },
-  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
+  "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
 }
