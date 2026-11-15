@@ -8,7 +8,7 @@
   "sourceSHA256": "d618525b3665634b711a0e0ebe448e4a306cd29554c635e669c052a589456869",
   "exposure": 2.449489742783178,
   "hdrWhite": 45.23721158294625,
-  "frames": 120,
+  "frames": 240,
   "fps": 30,
   "camera": {
     "worldToCam": [
@@ -34,5 +34,16 @@
     "fx": 859.5836932956672,
     "fy": 857.610385644129
   },
-  "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
+  "webColorPolicy": "Reference-view SH radiance, log-encoded and tone-mapped after alpha composition; adjustable display exposure. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255.",
+  "video": "assets/scenes/bear/exposure.mp4",
+  "poster": "assets/scenes/bear/exposure.webp",
+  "videoWidth": 720,
+  "videoHeight": 720,
+  "exposureSweep": {
+    "minimum": 0.010731734429397064,
+    "maximum": 17.743476630814655,
+    "spanEV": 10.691189742746966,
+    "seconds": 8,
+    "curve": "continuous calibrated cosine brightness cycle"
+  }
 }

@@ -8,7 +8,7 @@
   "sourceSHA256": "7ab292e8d932f9cdeb4edf05edd90b0849e0d366a6b540b24f84b353d2b6f947",
   "exposure": 2.0,
   "hdrWhite": 96.79806644820317,
-  "frames": 120,
+  "frames": 240,
   "fps": 30,
   "camera": {
     "worldToCam": [
@@ -34,5 +34,16 @@
     "fx": 641.4003516799271,
     "fy": 641.9994212279187
   },
-  "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
+  "webColorPolicy": "Reference-view SH radiance, log-encoded and tone-mapped after alpha composition; adjustable display exposure. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255.",
+  "video": "assets/scenes/bathroom/exposure.mp4",
+  "poster": "assets/scenes/bathroom/exposure.webp",
+  "videoWidth": 720,
+  "videoHeight": 720,
+  "exposureSweep": {
+    "minimum": 0.07673421496783814,
+    "maximum": 92.4173547311791,
+    "spanEV": 10.234078076875019,
+    "seconds": 8,
+    "curve": "continuous calibrated cosine brightness cycle"
+  }
 }

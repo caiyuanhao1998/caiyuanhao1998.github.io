@@ -8,7 +8,7 @@
   "sourceSHA256": "54976c6654c07d1675ddc4d95056a9edbad591c83baf3f5732cc772fc7d80af2",
   "exposure": 0.2,
   "hdrWhite": 45.08756049231108,
-  "frames": 120,
+  "frames": 240,
   "fps": 30,
   "camera": {
     "worldToCam": [
@@ -34,5 +34,16 @@
     "fx": 1401.2917173941948,
     "fy": 1396.4882050012573
   },
-  "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
+  "webColorPolicy": "Reference-view SH radiance, log-encoded and tone-mapped after alpha composition; adjustable display exposure. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255.",
+  "video": "assets/scenes/luckycat/exposure.mp4",
+  "poster": "assets/scenes/luckycat/exposure.webp",
+  "videoWidth": 720,
+  "videoHeight": 478,
+  "exposureSweep": {
+    "minimum": 0.015368326006720235,
+    "maximum": 1.0390496998684786,
+    "spanEV": 6.07916082453418,
+    "seconds": 8,
+    "curve": "continuous calibrated cosine brightness cycle"
+  }
 }

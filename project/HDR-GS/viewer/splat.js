@@ -1,3 +1,42 @@
+/** Read decoded response bytes. HTTP Content-Length can describe compressed
+ * bytes or be absent, so it must never size a decoded .splat buffer. */
+async function readGaussianStream(response, onProgress = () => {}) {
+    if (!response.ok) throw new Error('Unable to load Gaussian data (HTTP ' + response.status + ').');
+    const limit = 128 * 1024 * 1024;
+    let bytes;
+    if (response.body && typeof response.body.getReader === 'function') {
+        const reader = response.body.getReader();
+        const chunks = [];
+        let total = 0;
+        while (true) {
+            const {done, value} = await reader.read();
+            if (done) break;
+            if (!value || !value.byteLength) continue;
+            total += value.byteLength;
+            if (total > limit) {
+                await reader.cancel();
+                throw new Error('Gaussian data is too large for this web preview.');
+            }
+            chunks.push(value);
+            onProgress(total);
+        }
+        bytes = new Uint8Array(total);
+        let offset = 0;
+        for (const chunk of chunks) {
+            bytes.set(chunk, offset);
+            offset += chunk.byteLength;
+        }
+    } else {
+        bytes = new Uint8Array(await response.arrayBuffer());
+        if (bytes.byteLength > limit) throw new Error('Gaussian data is too large for this web preview.');
+        onProgress(bytes.byteLength);
+    }
+    if (!bytes.byteLength || bytes.byteLength % 32 !== 0) {
+        throw new Error('Gaussian download is incomplete or invalid. Please retry.');
+    }
+    return bytes;
+}
+
 // Adapted from antimatter15/splat (MIT). HDR-GS scene loading and HDR display.
 let cameras=[];let camera;
 function getProjectionMatrix(fx, fy, width, height) {
@@ -578,18 +617,17 @@ async function main() {
     const sceneId=params.get('scene')||'bathroom';
     const scene=manifest.find(s=>s.id===sceneId);
     if(!scene)throw new Error('Scene not found. Return to the project page to choose a scene.');
-    const mode=params.get('mode')==='hdr'?'hdr':'ldr';
+    const mode='hdr';
     const isHDR=mode==='hdr';
     camera={...scene.camera};cameras=Array.from({length:10},()=>camera);
     defaultViewMatrix=getViewMatrix(camera);viewMatrix=defaultViewMatrix.slice();
-    document.title=scene.label+' · '+mode.toUpperCase()+' Point Clouds · HDR-GS';
+    document.title=scene.label+' · Interactive Point Clouds · HDR-GS';
     document.getElementById('scene-title').textContent=scene.label;
-    document.getElementById('mode-description').textContent=isHDR?'High Dynamic Range · tone-mapped display':'Low Dynamic Range';
+    document.getElementById('mode-description').textContent='Interactive reconstruction · adjustable exposure';
     document.getElementById('point-count').textContent=scene.webPointCount.toLocaleString()+' Gaussians';
     document.getElementById('back').href='../index.html#scene-'+sceneId;
     document.getElementById('download').href='../assets/scenes/'+sceneId+'/'+mode+'.splat';
     document.getElementById('download').download=sceneId+'-'+mode+'.splat';
-    for(const m of ['ldr','hdr']){const link=document.getElementById('mode-'+m);link.href='?scene='+sceneId+'&mode='+m;link.setAttribute('aria-current',m===mode?'page':'false');link.addEventListener('click',()=>{link.hash=encodeURIComponent(JSON.stringify(viewMatrix))})}
     const select=document.getElementById('scene-select');
     for(const group of ['synthetic','real']){const optgroup=document.createElement('optgroup');optgroup.label=group==='synthetic'?'Synthetic Scenes':'Real Scenes';for(const sc of manifest.filter(s=>s.group===group)){const option=document.createElement('option');option.value=sc.id;option.textContent=sc.label;option.selected=sc.id===sceneId;optgroup.append(option)}select.append(optgroup)}
     select.addEventListener('change',()=>location.href='?scene='+encodeURIComponent(select.value)+'&mode='+mode);
@@ -613,8 +651,13 @@ async function main() {
         throw new Error(req.status + " Unable to load " + req.url);
 
     const rowLength = 3 * 4 + 3 * 4 + 4 + 4;
-    const reader = req.body.getReader();
-    let splatData = new Uint8Array(req.headers.get("content-length"));
+    let splatData = await readGaussianStream(req, bytes => {
+        const expected = scene.webPointCount * rowLength;
+        const percent = Math.min(99, bytes * 100 / expected);
+        const progress = document.getElementById('progress');
+        progress.style.width = percent + '%';
+        progress.setAttribute('aria-valuenow', String(Math.round(percent)));
+    });
 
     const downsample = 1;
     console.log(splatData.length / rowLength, downsample);
@@ -748,7 +791,9 @@ async function main() {
     window.addEventListener("resize", resize);
     resize();
 
+    let uploadRevision = 0;
     worker.onmessage = (e) => {
+        uploadRevision++;
         if (e.data.buffer) {
             splatData = new Uint8Array(e.data.buffer);
             if (e.data.save) {
@@ -1235,7 +1280,7 @@ async function main() {
         const currentFps = 1000 / (now - lastFrame) || 0;
         avgFps = avgFps * 0.9 + currentFps * 0.1;
 
-        const renderKey=actualViewMatrix.map(n=>n.toFixed(7)).join(',')+','+vertexCount+','+canvas.width+','+canvas.height+','+displayExposure;
+        const renderKey=actualViewMatrix.map(n=>n.toFixed(7)).join(',')+','+vertexCount+','+canvas.width+','+canvas.height+','+displayExposure+','+uploadRevision;
         if(renderKey!==lastRendered){
         lastRendered=renderKey;
         gl.useProgram(program);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,texture);
@@ -1243,6 +1288,7 @@ async function main() {
         gl.enable(gl.BLEND);
         if (vertexCount > 0) {
             document.body.dataset.loaded='true';
+            document.getElementById('progress').setAttribute('aria-valuenow','100');
             document.getElementById("spinner").style.display = "none";
             gl.uniformMatrix4fv(u_view, false, actualViewMatrix);
             gl.clear(gl.COLOR_BUFFER_BIT);
@@ -1339,38 +1385,8 @@ async function main() {
         selectFile(e.dataTransfer.files[0]);
     });
 
-    let bytesRead = 0;
-    let lastVertexCount = -1;
     let stopLoading = false;
-
-    while (true) {
-        const { done, value } = await reader.read();
-        if (done || stopLoading) break;
-
-        splatData.set(value, bytesRead);
-        bytesRead += value.length;
-
-        if (vertexCount > lastVertexCount) {
-            if (!isPly(splatData)) {
-                worker.postMessage({
-                    buffer: splatData.buffer,
-                    vertexCount: Math.floor(bytesRead / rowLength),
-                });
-            }
-            lastVertexCount = vertexCount;
-        }
-    }
-    if (!stopLoading) {
-        if (isPly(splatData)) {
-            // ply file magic header means it should be handled differently
-            worker.postMessage({ ply: splatData.buffer, save: false });
-        } else {
-            worker.postMessage({
-                buffer: splatData.buffer,
-                vertexCount: Math.floor(bytesRead / rowLength),
-            });
-        }
-    }
+    worker.postMessage({buffer:splatData.buffer, vertexCount:splatData.byteLength/rowLength});
 }
 
 main().catch((err) => {

@@ -8,7 +8,7 @@
   "sourceSHA256": "1fe1bf84303ea4076f62d47dfb8090ec276d4c916dc8b894e73c97f4179058b6",
   "exposure": 0.08598023028580466,
   "hdrWhite": 95.36023751449582,
-  "frames": 120,
+  "frames": 240,
   "fps": 30,
   "camera": {
     "worldToCam": [
@@ -34,5 +34,16 @@
     "fx": 683.4654311182028,
     "fy": 727.3961299483179
   },
-  "webColorPolicy": "SH evaluated at the initial camera; learned MLP LDR; log-encoded linear HDR, tone-mapped after alpha composition. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255."
+  "webColorPolicy": "Reference-view SH radiance, log-encoded and tone-mapped after alpha composition; adjustable display exposure. Flower retains the largest 400k opacity-weighted splats; other scenes retain splats above alpha 1/255.",
+  "video": "assets/scenes/diningroom/exposure.mp4",
+  "poster": "assets/scenes/diningroom/exposure.webp",
+  "videoWidth": 720,
+  "videoHeight": 720,
+  "exposureSweep": {
+    "minimum": 0.06292001149114151,
+    "maximum": 60.904574513463196,
+    "spanEV": 9.918815942763478,
+    "seconds": 8,
+    "curve": "continuous calibrated cosine brightness cycle"
+  }
 }
