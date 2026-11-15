@@ -41,14 +41,14 @@
   "videoHeight": 478,
   "exposureSweep": {
     "minimum": 0.0029346578958353597,
-    "maximum": 0.12661870362319605,
-    "spanEV": 5.431154386868713,
+    "maximum": 0.04603960100175772,
+    "spanEV": 3.9716110926965724,
     "seconds": 8,
     "curve": "constant-rate triangular cycle",
     "brightnessMinimum": 0.065,
-    "brightnessMaximum": 0.65
+    "brightnessMaximum": 0.45
   },
-  "videoRevision": "linear-065-motion-safe-v1",
+  "videoRevision": "linear-highlight-safe-v2",
   "cameraMotion": {
     "radiusScale": 0.15,
     "radiusRatioToPrevious": 0.6,

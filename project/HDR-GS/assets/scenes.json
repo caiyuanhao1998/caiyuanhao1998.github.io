@@ -42,14 +42,14 @@
     "videoHeight": 720,
     "exposureSweep": {
       "minimum": 0.09347452997315568,
-      "maximum": 48.642765817416844,
-      "spanEV": 9.023436235450529,
+      "maximum": 11.827998122370877,
+      "spanEV": 6.983416892551759,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2",
     "cameraMotion": {
       "radiusScale": 0.5,
       "radiusRatioToPrevious": 2.0,
@@ -102,14 +102,14 @@
     "videoHeight": 720,
     "exposureSweep": {
       "minimum": 0.012008585288932993,
-      "maximum": 8.158266351101144,
-      "spanEV": 9.40805259918736,
+      "maximum": 1.877813014512952,
+      "spanEV": 7.288843402228197,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2",
     "cameraMotion": {
       "radiusScale": 0.5,
       "radiusRatioToPrevious": 2.0,
@@ -162,14 +162,14 @@
     "videoHeight": 720,
     "exposureSweep": {
       "minimum": 0.02817425686605596,
-      "maximum": 15.254303942786896,
-      "spanEV": 9.080623077715497,
+      "maximum": 3.4827521302604367,
+      "spanEV": 6.94970643093049,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2",
     "cameraMotion": {
       "radiusScale": 0.5,
       "radiusRatioToPrevious": 2.0,
@@ -222,14 +222,14 @@
     "videoHeight": 720,
     "exposureSweep": {
       "minimum": 0.03725732072950799,
-      "maximum": 27.905906169364922,
-      "spanEV": 9.548830849387862,
+      "maximum": 6.4697297187953415,
+      "spanEV": 7.440037702756968,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2",
     "cameraMotion": {
       "radiusScale": 0.5,
       "radiusRatioToPrevious": 2.0,
@@ -282,14 +282,14 @@
     "videoHeight": 720,
     "exposureSweep": {
       "minimum": 0.06694621925361721,
-      "maximum": 27.631854701232673,
-      "spanEV": 8.689114103885268,
+      "maximum": 6.9178757352256435,
+      "spanEV": 6.691182706262787,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2",
     "cameraMotion": {
       "radiusScale": 0.5,
       "radiusRatioToPrevious": 2.0,
@@ -342,14 +342,14 @@
     "videoHeight": 720,
     "exposureSweep": {
       "minimum": 0.018030464934524825,
-      "maximum": 11.074729007566445,
-      "spanEV": 9.262619083271659,
+      "maximum": 2.5628465326818697,
+      "spanEV": 7.151166681461106,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2",
     "cameraMotion": {
       "radiusScale": 0.5,
       "radiusRatioToPrevious": 2.0,
@@ -402,14 +402,14 @@
     "videoHeight": 720,
     "exposureSweep": {
       "minimum": 0.004343486315502199,
-      "maximum": 20.639263244926227,
-      "spanEV": 12.214250359465883,
+      "maximum": 2.0194565132847884,
+      "spanEV": 8.860897872021278,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2",
     "cameraMotion": {
       "radiusScale": 0.5,
       "radiusRatioToPrevious": 2.0,
@@ -462,14 +462,14 @@
     "videoHeight": 720,
     "exposureSweep": {
       "minimum": 0.012010380545013459,
-      "maximum": 105.90532733502256,
-      "spanEV": 13.106205679219917,
+      "maximum": 7.465661008314655,
+      "spanEV": 9.279844328662964,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2",
     "cameraMotion": {
       "radiusScale": 0.5,
       "radiusRatioToPrevious": 2.0,
@@ -522,14 +522,14 @@
     "videoHeight": 478,
     "exposureSweep": {
       "minimum": 0.0029346578958353597,
-      "maximum": 0.12661870362319605,
-      "spanEV": 5.431154386868713,
+      "maximum": 0.04603960100175772,
+      "spanEV": 3.9716110926965724,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2",
     "cameraMotion": {
       "radiusScale": 0.15,
       "radiusRatioToPrevious": 0.6,
@@ -582,14 +582,14 @@
     "videoHeight": 478,
     "exposureSweep": {
       "minimum": 0.014908686855370936,
-      "maximum": 0.5656238794388804,
-      "spanEV": 5.245617931992448,
+      "maximum": 0.24968266716817727,
+      "spanEV": 4.0658705766940795,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2",
     "cameraMotion": {
       "radiusScale": 0.1,
       "radiusRatioToPrevious": 0.4,
@@ -641,18 +641,18 @@
     "videoWidth": 720,
     "videoHeight": 478,
     "exposureSweep": {
-      "minimum": 0.014462718514308396,
-      "maximum": 0.5213436156155169,
-      "spanEV": 5.171823898874333,
+      "minimum": 0.014089846211140875,
+      "maximum": 0.18113673074055728,
+      "spanEV": 3.684351354318749,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2-box-wide-v2",
     "cameraMotion": {
-      "radiusScale": 0.03,
-      "radiusRatioToPrevious": 0.12,
+      "radiusScale": 0.09,
+      "radiusRatioToPrevious": 0.36,
       "rotations": 4,
       "angularSpeedRatio": 2,
       "viewportCrop": 1.2,
@@ -702,14 +702,14 @@
     "videoHeight": 478,
     "exposureSweep": {
       "minimum": 0.016260598184501707,
-      "maximum": 0.5508254084517863,
-      "spanEV": 5.0821428731396665,
+      "maximum": 0.2057489051378737,
+      "spanEV": 3.6614325171350965,
       "seconds": 8,
       "curve": "constant-rate triangular cycle",
       "brightnessMinimum": 0.065,
-      "brightnessMaximum": 0.65
+      "brightnessMaximum": 0.45
     },
-    "videoRevision": "linear-065-motion-safe-v1",
+    "videoRevision": "linear-highlight-safe-v2",
     "cameraMotion": {
       "radiusScale": 0.15,
       "radiusRatioToPrevious": 0.6,
