@@ -1,0 +1,712 @@
+{
+  "method": "SAX-NeRF",
+  "reference_ct_used": false,
+  "extraction": "Published predicted CT \u2192 marching cubes \u2192 small component removal \u2192 mesh simplification and Taubin smoothing. Scanner voxel spacing is preserved in the exported geometry.",
+  "scenes": [
+    {
+      "display_version": 2,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.55,
+      "scene": "chest",
+      "source_url": "https://drive.google.com/file/d/1jRAxkl3Iq1OmnPSCJfyUuHBSmhbqx_7I/view?usp=drivesdk",
+      "source_prediction_sha256": "771a03870e309206eae949561ea33a2ac1edd02a69795dc3049bd01d6c00f2ae",
+      "reference_ct_used": false,
+      "native_grid": [
+        128,
+        128,
+        128
+      ],
+      "marching_cubes_threshold": 0.5461081206798554,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 167494,
+      "faces": 100000,
+      "vertices": 49230,
+      "mesh_path": "assets/meshes/chest.glb",
+      "mesh_sha256": "f003e0b090c9a7b6b3390e52268dcb42029bd0a6b977c1f7c14a387bd9979b32",
+      "mesh_bytes": 2382908,
+      "seconds": 2.8836381435394287,
+      "orbit": "0deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "physical_size_mm": [
+        128.0,
+        128.0,
+        128.0
+      ],
+      "viewer_axis_spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "marching_cubes_stride": 1
+    },
+    {
+      "display_version": 2,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.45,
+      "scene": "foot",
+      "source_url": "https://drive.google.com/file/d/1lny_B31y4bzH9lkvy1k5qFhA1WMyLqbw/view?usp=drivesdk",
+      "source_prediction_sha256": "cceafa14c8a671a3bc5fd808111cad33a50563d4bc073fc7d9ec65b0e90135aa",
+      "reference_ct_used": false,
+      "native_grid": [
+        256,
+        256,
+        256
+      ],
+      "marching_cubes_threshold": 0.4499725341796875,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 581086,
+      "faces": 100000,
+      "vertices": 48152,
+      "mesh_path": "assets/meshes/foot.glb",
+      "mesh_sha256": "a6ba2e13b491c3eb2436592ea3c1be7977a4cfe04870bd6959bb94322ddc01cd",
+      "mesh_bytes": 2357036,
+      "seconds": 15.694862842559814,
+      "orbit": "0deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "physical_size_mm": [
+        256.0,
+        256.0,
+        256.0
+      ],
+      "viewer_axis_spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "marching_cubes_stride": 1
+    },
+    {
+      "display_version": 2,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.4,
+      "scene": "head",
+      "source_url": "https://drive.google.com/file/d/10W3orAWgUlY2s83amZ4t8yLnck-VWRv0/view?usp=drivesdk",
+      "source_prediction_sha256": "5b6956755fa01a45f87930252ec09678be1ad4162e0a089618c957a3051d9369",
+      "reference_ct_used": false,
+      "native_grid": [
+        256,
+        256,
+        128
+      ],
+      "marching_cubes_threshold": 0.3899044990539551,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 632624,
+      "faces": 100000,
+      "vertices": 48862,
+      "mesh_path": "assets/meshes/head.glb",
+      "mesh_sha256": "85fe51eff60d8297861fd15bb8cea4fb80713574b8d4aac2443fa446e1fec98b",
+      "mesh_bytes": 2374076,
+      "seconds": 11.143686294555664,
+      "orbit": "0deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        0.995861,
+        1.00797,
+        1.57774
+      ],
+      "physical_size_mm": [
+        254.940416,
+        258.04032,
+        201.95072
+      ],
+      "viewer_axis_spacing": [
+        1.57774,
+        0.995861,
+        1.00797
+      ],
+      "marching_cubes_stride": 1
+    },
+    {
+      "display_version": 2,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.68,
+      "scene": "abdomen",
+      "source_url": "https://drive.google.com/file/d/1vzx85uEBb7kAghuAK8C_gG2yPsTEZ0NN/view?usp=drivesdk",
+      "source_prediction_sha256": "e2a9b94afce53deabaa7adfae5e34cd3380ccebdf964b5a0c280362c9f6e250f",
+      "reference_ct_used": false,
+      "native_grid": [
+        512,
+        512,
+        463
+      ],
+      "marching_cubes_threshold": 0.5240565705299378,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 150540,
+      "faces": 100000,
+      "vertices": 50448,
+      "mesh_path": "assets/meshes/abdomen.glb",
+      "mesh_sha256": "ab59b6ac211ae46be91ba01b94c6f0a955cf92e8c5f6abbe7ba49ef4bb15e372",
+      "mesh_bytes": 2412140,
+      "seconds": 27.450592517852783,
+      "orbit": "0deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        0.625,
+        0.625,
+        1.0
+      ],
+      "physical_size_mm": [
+        320.0,
+        320.0,
+        463.0
+      ],
+      "viewer_axis_spacing": [
+        0.625,
+        1.0,
+        0.625
+      ],
+      "marching_cubes_stride": 2
+    },
+    {
+      "display_version": 2,
+      "marching_cubes_stride": 2,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.6,
+      "scene": "pancreas",
+      "source_url": "https://drive.google.com/file/d/17o9bkgYLEynJto5IQAnjbTbm9S3T-zYt/view?usp=drivesdk",
+      "source_prediction_sha256": "66459429f35d20beca3fbc05265218a9662faaf13a95ece71da6f532330ff4ac",
+      "reference_ct_used": false,
+      "native_grid": [
+        512,
+        512,
+        240
+      ],
+      "marching_cubes_threshold": 0.599969458580017,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 1253918,
+      "faces": 99999,
+      "vertices": 42428,
+      "mesh_path": "assets/meshes/pancreas.glb",
+      "mesh_sha256": "4978080a3c3fe14c8fb9a780ee4cf2816f9e252bff20f7168b6d2bb6e750e84a",
+      "mesh_bytes": 2219644,
+      "seconds": 44.08613300323486,
+      "orbit": "0deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        1.0,
+        1.0,
+        1.16
+      ],
+      "physical_size_mm": [
+        512.0,
+        512.0,
+        278.4
+      ],
+      "viewer_axis_spacing": [
+        1.0,
+        1.16,
+        1.0
+      ]
+    },
+    {
+      "display_version": 2,
+      "marching_cubes_stride": 2,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.45,
+      "scene": "pelvis",
+      "source_url": "https://drive.google.com/file/d/1S_eMXettSaBOuj2EmDj9hFQFrmxDtZWz/view?usp=drivesdk",
+      "source_prediction_sha256": "6ec71113e7100270bf90f13957549418dad206dd8e6e5fd5c2e58f84b04ed8fb",
+      "reference_ct_used": false,
+      "native_grid": [
+        512,
+        512,
+        174
+      ],
+      "marching_cubes_threshold": 0.28479107916355134,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 339388,
+      "faces": 100000,
+      "vertices": 48632,
+      "mesh_path": "assets/meshes/pelvis.glb",
+      "mesh_sha256": "93a353f303b6f4a7409796e1610c540c7af1610aa2e8ce547b6df8b1de4352e2",
+      "mesh_bytes": 2368540,
+      "seconds": 20.35822820663452,
+      "orbit": "-35deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        0.8398,
+        0.8398,
+        3.2
+      ],
+      "physical_size_mm": [
+        429.9776,
+        429.9776,
+        556.8000000000001
+      ],
+      "viewer_axis_spacing": [
+        0.8398,
+        3.2,
+        0.8398
+      ]
+    },
+    {
+      "display_version": 2,
+      "marching_cubes_stride": 1,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.3,
+      "scene": "jaw",
+      "source_url": "https://drive.google.com/file/d/15MPDQGypk0zWpHVRrkVfLKXMJm6snRTp/view?usp=drivesdk",
+      "source_prediction_sha256": "e5357d54be829c1e320eae825de0d9e5d8784c1acf8ca531c14e988d1431e1eb",
+      "reference_ct_used": false,
+      "native_grid": [
+        256,
+        256,
+        256
+      ],
+      "marching_cubes_threshold": 0.2983979523181915,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 506118,
+      "faces": 100000,
+      "vertices": 49424,
+      "mesh_path": "assets/meshes/jaw.glb",
+      "mesh_sha256": "e85f1409daf5e7196b8a10e89717f443188c5b028e847b943a2330e1cd4e9cfc",
+      "mesh_bytes": 2387564,
+      "seconds": 13.094673156738281,
+      "orbit": "-35deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "physical_size_mm": [
+        256.0,
+        256.0,
+        256.0
+      ],
+      "viewer_axis_spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "display_version": 2,
+      "marching_cubes_stride": 2,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.45,
+      "scene": "leg",
+      "source_url": "https://drive.google.com/file/d/172Xp-8IN52EiVyfubFPysItdEqIaWFYu/view?usp=drivesdk",
+      "source_prediction_sha256": "d4855e7a085dc06be459e198e589d1ac2d34572bb23a5e3a3eb5c60da3030253",
+      "reference_ct_used": false,
+      "native_grid": [
+        341,
+        341,
+        93
+      ],
+      "marching_cubes_threshold": 0.4469042479991913,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 61962,
+      "faces": 61962,
+      "vertices": 30919,
+      "mesh_path": "assets/meshes/leg.glb",
+      "mesh_sha256": "194e507b54657cc8ef19e93e840032fdbefe874f6ebf086cbcdec34dcc2d4dc4",
+      "mesh_bytes": 1486984,
+      "seconds": 3.106060028076172,
+      "orbit": "-35deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        1.0,
+        1.0,
+        4.0
+      ],
+      "physical_size_mm": [
+        341.0,
+        341.0,
+        372.0
+      ],
+      "viewer_axis_spacing": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    },
+    {
+      "display_version": 2,
+      "marching_cubes_stride": 1,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.3,
+      "scene": "aneurism",
+      "source_url": "https://drive.google.com/file/d/1od5AZSyKF4z7OYNNNLxw6QMh98Q4sW6R/view?usp=drivesdk",
+      "source_prediction_sha256": "bef4e3b4bd11c073778548a087806b5a0941042ef9bdc4168786808f9a75044f",
+      "reference_ct_used": false,
+      "native_grid": [
+        256,
+        256,
+        256
+      ],
+      "marching_cubes_threshold": 0.29994893074035645,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 167526,
+      "faces": 100000,
+      "vertices": 49892,
+      "mesh_path": "assets/meshes/aneurism.glb",
+      "mesh_sha256": "b550552af11280d70b3f81dcb63c6f91ac5d573db82a5ab2f69002bc6ce7ead6",
+      "mesh_bytes": 2398796,
+      "seconds": 7.140290975570679,
+      "orbit": "-35deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "physical_size_mm": [
+        256.0,
+        256.0,
+        256.0
+      ],
+      "viewer_axis_spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "display_version": 2,
+      "marching_cubes_stride": 1,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.3,
+      "scene": "bonsai",
+      "source_url": "https://drive.google.com/file/d/1nXtUDl_28Ww4WFbrFa4_veY2I7k3jQcH/view?usp=drivesdk",
+      "source_prediction_sha256": "a6a9782627537b54edb24fb2a202a46640f6332186b58f32d53d58e540755a5f",
+      "reference_ct_used": false,
+      "native_grid": [
+        256,
+        256,
+        256
+      ],
+      "marching_cubes_threshold": 0.294264954328537,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 434788,
+      "faces": 100000,
+      "vertices": 50036,
+      "mesh_path": "assets/meshes/bonsai.glb",
+      "mesh_sha256": "da814411a51feeaafc1a9abf0c5b28c56def5be6e5b5cc477639ef8611f9f1cd",
+      "mesh_bytes": 2402232,
+      "seconds": 11.479761123657227,
+      "orbit": "-35deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "physical_size_mm": [
+        256.0,
+        256.0,
+        256.0
+      ],
+      "viewer_axis_spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "display_version": 2,
+      "marching_cubes_stride": 2,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.5,
+      "scene": "carp",
+      "source_url": "https://drive.google.com/file/d/1-QdCa6sMIBzzSUhJOZJBsATu_gdDBPXg/view?usp=drivesdk",
+      "source_prediction_sha256": "de0a777fde711b174539b010dba1cb0bdf03fa84aca5007fdbb18a7ff4f17200",
+      "reference_ct_used": false,
+      "native_grid": [
+        256,
+        256,
+        512
+      ],
+      "marching_cubes_threshold": 0.39137324690818787,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 275254,
+      "faces": 100000,
+      "vertices": 49074,
+      "mesh_path": "assets/meshes/carp.glb",
+      "mesh_sha256": "ad7c87822a6849e2885878512c8f6616abcfcc292d2258adfae74ab9ce677922",
+      "mesh_bytes": 2379164,
+      "seconds": 15.269858121871948,
+      "orbit": "-35deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        0.390625,
+        0.78125,
+        1.0
+      ],
+      "physical_size_mm": [
+        100.0,
+        200.0,
+        512.0
+      ],
+      "viewer_axis_spacing": [
+        0.390625,
+        1.0,
+        0.78125
+      ]
+    },
+    {
+      "display_version": 2,
+      "marching_cubes_stride": 2,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.4,
+      "scene": "backpack",
+      "source_url": "https://drive.google.com/file/d/1GZpjouPYJTFgOKok_s2KXJ9Uv8jnCZRi/view?usp=drivesdk",
+      "source_prediction_sha256": "d54be9f7d93114a80ca688d981945714b9bdcc4806a18306f0c162f9699fe91b",
+      "reference_ct_used": false,
+      "native_grid": [
+        512,
+        512,
+        373
+      ],
+      "marching_cubes_threshold": 0.4332117557525635,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 198500,
+      "faces": 100000,
+      "vertices": 49576,
+      "mesh_path": "assets/meshes/backpack.glb",
+      "mesh_sha256": "e0b347f2793cb031a9c4963504035f1975647731c55c2523ee732d03a7e03a50",
+      "mesh_bytes": 2391212,
+      "seconds": 48.45084095001221,
+      "orbit": "-35deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        0.9766,
+        0.9766,
+        1.25
+      ],
+      "physical_size_mm": [
+        500.0192,
+        500.0192,
+        466.25
+      ],
+      "viewer_axis_spacing": [
+        0.9766,
+        1.25,
+        0.9766
+      ]
+    },
+    {
+      "display_version": 2,
+      "marching_cubes_stride": 2,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.4,
+      "scene": "box",
+      "source_url": "https://drive.google.com/file/d/1frSoMvVTp7UO3bLxa2pGpp6IC0clPHy6/view?usp=drivesdk",
+      "source_prediction_sha256": "99144fd437c8c86deb8634e292cf23b436012c0efd7fd72a8c8866b98d09bc15",
+      "reference_ct_used": false,
+      "native_grid": [
+        492,
+        492,
+        442
+      ],
+      "marching_cubes_threshold": 0.3998600006103516,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 230694,
+      "faces": 100000,
+      "vertices": 48054,
+      "mesh_path": "assets/meshes/box.glb",
+      "mesh_sha256": "c16094247041600c258103a00a72a1cb68b17e5ffccc0403a00798f6eb4ebfb4",
+      "mesh_bytes": 2354684,
+      "seconds": 45.79345989227295,
+      "orbit": "-35deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        1,
+        1,
+        1
+      ],
+      "physical_size_mm": [
+        492,
+        492,
+        442
+      ],
+      "viewer_axis_spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "display_version": 2,
+      "marching_cubes_stride": 1,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.31,
+      "scene": "engine",
+      "source_url": "https://drive.google.com/file/d/1lNpBnzh794qqk5L3vi0YlToyv_HtbVMq/view?usp=drivesdk",
+      "source_prediction_sha256": "9764907671b204ed27e6585d221c09d7437d60947f5614ef2b191544e4a7b58e",
+      "reference_ct_used": false,
+      "native_grid": [
+        256,
+        256,
+        128
+      ],
+      "marching_cubes_threshold": 0.3096009612083435,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 654012,
+      "faces": 100000,
+      "vertices": 49960,
+      "mesh_path": "assets/meshes/engine.glb",
+      "mesh_sha256": "3b075c3fc751b5a7ddba70ba67f39c6bf89c59ea4a7b339369d2153901c670ca",
+      "mesh_bytes": 2400384,
+      "seconds": 12.29528260231018,
+      "orbit": "-35deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "physical_size_mm": [
+        256.0,
+        256.0,
+        128.0
+      ],
+      "viewer_axis_spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "display_version": 2,
+      "marching_cubes_stride": 1,
+      "display_orientation_source": "SAX-NeRF/3D_vis",
+      "display_threshold_fraction": 0.38,
+      "scene": "teapot",
+      "source_url": "https://drive.google.com/file/d/1P17IygDIX3tQsETgMv6FtprNzDZBu2Uy/view?usp=drivesdk",
+      "source_prediction_sha256": "89ff4f6929c814f2202aeeb1c900603300cf65a4708beec069a92db8101fd7c7",
+      "reference_ct_used": false,
+      "native_grid": [
+        256,
+        256,
+        178
+      ],
+      "marching_cubes_threshold": 0.22424864172935485,
+      "otsu_thresholds": [],
+      "mesh_rgba": [
+        0.72,
+        0.74,
+        0.77,
+        0.5
+      ],
+      "original_faces": 535992,
+      "faces": 100000,
+      "vertices": 49832,
+      "mesh_path": "assets/meshes/teapot.glb",
+      "mesh_sha256": "e11502e6423374d1114111ac1d01f4495ecc1b61e247d7b1236fbbcdcd293387",
+      "mesh_bytes": 2397356,
+      "seconds": 10.057522773742676,
+      "orbit": "-35deg 75deg 185%",
+      "physical_spacing_applied": true,
+      "voxel_spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "physical_size_mm": [
+        256.0,
+        256.0,
+        178.0
+      ],
+      "viewer_axis_spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ]
+}

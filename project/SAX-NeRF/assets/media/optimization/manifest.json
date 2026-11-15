@@ -1,0 +1,1342 @@
+{
+  "description": "First 3000 iterations of fresh SAX-NeRF MLG optimization runs, followed by a separately labeled frame from the released predicted CT. Fixed perspective half-volume ray marching. No interpolation of optimization fields and no reference CT in the visualization.",
+  "scene_order": [
+    "chest",
+    "foot",
+    "head",
+    "abdomen",
+    "pancreas",
+    "pelvis",
+    "jaw",
+    "leg",
+    "aneurism",
+    "bonsai",
+    "carp",
+    "backpack",
+    "box",
+    "engine",
+    "teapot"
+  ],
+  "scenes": [
+    {
+      "scene": "chest",
+      "video_path": "assets/media/optimization/chest.mp4",
+      "poster_path": "assets/media/optimization/chest-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "478fed9f60ca4f70f1a89c6cb0bed156e888d472fea74523e29a789eab2f54ab",
+        "source_prediction_sha256": "771a03870e309206eae949561ea33a2ac1edd02a69795dc3049bd01d6c00f2ae"
+      },
+      "fresh_run": true,
+      "mixed_precision": false,
+      "mlg_implementation": "official dataset implementation",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "447a0388b46fccf32f48b8280613f67c28662fd3cd4b0ac7e31bfaaf0e6f2eab",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "chest_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/chest_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 256,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 1500,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            8,
+            8
+          ],
+          "window_num": 16
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "foot",
+      "video_path": "assets/media/optimization/foot.mp4",
+      "poster_path": "assets/media/optimization/foot-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "b30f220f52a6ef4eb2d000073e2c1279aa3637811cdc4b9f839377bff7631770",
+        "source_prediction_sha256": "cceafa14c8a671a3bc5fd808111cad33a50563d4bc073fc7d9ec65b0e90135aa"
+      },
+      "fresh_run": true,
+      "mixed_precision": false,
+      "mlg_implementation": "official dataset implementation",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "cb2b313807f3169b93b30588033b7d1e8ba0ff6d44bd06a67c772ea9c71cb23f",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "foot_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/foot_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 320,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 3000,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            4,
+            4
+          ],
+          "window_num": 32
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "head",
+      "video_path": "assets/media/optimization/head.mp4",
+      "poster_path": "assets/media/optimization/head-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "b98d57557075893d07cd180cd45ac4ad2ea3ed7f7d5c60a24bfef8023facf505",
+        "source_prediction_sha256": "5b6956755fa01a45f87930252ec09678be1ad4162e0a089618c957a3051d9369"
+      },
+      "fresh_run": true,
+      "mixed_precision": false,
+      "mlg_implementation": "official dataset implementation",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "abbed26ae0b6d4b811b5b77a051ab160fd83200fbf54039691013f3ed46e138e",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "head_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/head_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 320,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 3000,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            16,
+            16
+          ],
+          "window_num": 4
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "abdomen",
+      "video_path": "assets/media/optimization/abdomen.mp4",
+      "poster_path": "assets/media/optimization/abdomen-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "a32cd68052567142e31ff6276236ed25d29397d85dc41eb2dff115d8b6a01ac4",
+        "source_prediction_sha256": "e2a9b94afce53deabaa7adfae5e34cd3380ccebdf964b5a0c280362c9f6e250f"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "equivalent sparse coordinate indexing",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "7de29ec8a53fd5315572802e1e9a36679ae3f621ec83c7f89f1abb8687c7fdd0",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "abdomen_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/abdomen_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 576,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 1500,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            8,
+            8
+          ],
+          "window_num": 16
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "pancreas",
+      "video_path": "assets/media/optimization/pancreas.mp4",
+      "poster_path": "assets/media/optimization/pancreas-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "abb086f54c2d3c53749e4175209ed2d70169a41ccbecdb94980129a24c53b738",
+        "source_prediction_sha256": "66459429f35d20beca3fbc05265218a9662faaf13a95ece71da6f532330ff4ac"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "equivalent sparse coordinate indexing",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "8134eab7a9aadba2e7acdcb500f16e84c98f6155ae7bcf40eeddeafb29ea021c",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "pancreas_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/pancreas_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 576,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 1500,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            4,
+            4
+          ],
+          "window_num": 32
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "pelvis",
+      "video_path": "assets/media/optimization/pelvis.mp4",
+      "poster_path": "assets/media/optimization/pelvis-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "e3b4e24d68255e80d9a284ffe71292f190b781b7ce0f12c5c6f20606b08b0859",
+        "source_prediction_sha256": "6ec71113e7100270bf90f13957549418dad206dd8e6e5fd5c2e58f84b04ed8fb"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "equivalent sparse coordinate indexing",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "54068f781967f1b1216c729bfa27ecc52a1bc2f3648dfdaddc94309d75cb4c36",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "pelvis_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/pelvis_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "relu",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 576,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 1500,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            4,
+            4
+          ],
+          "window_num": 32
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "jaw",
+      "video_path": "assets/media/optimization/jaw.mp4",
+      "poster_path": "assets/media/optimization/jaw-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "1cdd48e5196f6b516e7b5a7e0026096aa118182738489fc8c0ca0c630d5ef5cd",
+        "source_prediction_sha256": "e5357d54be829c1e320eae825de0d9e5d8784c1acf8ca531c14e988d1431e1eb"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "official dataset implementation",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "c53ecbd246801d079b979bf092492c1b2fc155407fd0841402b8dbb4a12d5c38",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "jaw_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/jaw_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 320,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 3000,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            16,
+            16
+          ],
+          "window_num": 4
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "leg",
+      "video_path": "assets/media/optimization/leg.mp4",
+      "poster_path": "assets/media/optimization/leg-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "db27a85b2b35e17426d5e1ee9cc0628294f9d263a656d1950eb2ffbabda62a21",
+        "source_prediction_sha256": "d4855e7a085dc06be459e198e589d1ac2d34572bb23a5e3a3eb5c60da3030253"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "official dataset implementation",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "d694b13065a4cb2ba913a0839558cc492abb618f55d0f7ccc26673e9268c4522",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "leg_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/leg_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 1,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 320,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 3000,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            4,
+            4
+          ],
+          "window_num": 32
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "aneurism",
+      "video_path": "assets/media/optimization/aneurism.mp4",
+      "poster_path": "assets/media/optimization/aneurism-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "c260f12af33ac803a435f71a768c024f9e28c07beeab58c822278605ed2d28f5",
+        "source_prediction_sha256": "bef4e3b4bd11c073778548a087806b5a0941042ef9bdc4168786808f9a75044f"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "equivalent sparse coordinate indexing",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "f0b76452959e009cdab537c476e16477af5bba78e2449bc4e9e3eaf845192965",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "aneurism_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/aneurism_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 320,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 3000,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            8,
+            8
+          ],
+          "window_num": 16
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "bonsai",
+      "video_path": "assets/media/optimization/bonsai.mp4",
+      "poster_path": "assets/media/optimization/bonsai-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "53d48f9da3deaa80f7453aa322f11c780358409b3e90c14e7c01d16d3a8017b2",
+        "source_prediction_sha256": "a6a9782627537b54edb24fb2a202a46640f6332186b58f32d53d58e540755a5f"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "equivalent sparse coordinate indexing",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "d64099fdd917d2c210f78a4cd002a11991b8360ea701b6eb7b832bfdd871f5d7",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "bonsai_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/bonsai_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 320,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 3000,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            4,
+            4
+          ],
+          "window_num": 32
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "carp",
+      "video_path": "assets/media/optimization/carp.mp4",
+      "poster_path": "assets/media/optimization/carp-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "3173f4d230203e48bd230ba7630b93b48e03d7e92b5be1609aa9a958f079429f",
+        "source_prediction_sha256": "de0a777fde711b174539b010dba1cb0bdf03fa84aca5007fdbb18a7ff4f17200"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "equivalent sparse coordinate indexing",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "2bb4c124352e730e69f8b112ef23e57505ad76a4b2c505bc298b91b94a88c78d",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "carp_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/carp_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 320,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 3000,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            4,
+            4
+          ],
+          "window_num": 64
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "backpack",
+      "video_path": "assets/media/optimization/backpack.mp4",
+      "poster_path": "assets/media/optimization/backpack-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "6855834c88624e6025b76fa99bb58cadbc3192b53a251e1f99629aa116fd5466",
+        "source_prediction_sha256": "d54be9f7d93114a80ca688d981945714b9bdcc4806a18306f0c162f9699fe91b"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "equivalent sparse coordinate indexing",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "e6e1193c758e2c85a037eb4e3c05f5fc78833eb16be3af7335026c058d3743be",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "backpack_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/backpack_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "relu",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 576,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 1500,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            4,
+            4
+          ],
+          "window_num": 64
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "box",
+      "video_path": "assets/media/optimization/box.mp4",
+      "poster_path": "assets/media/optimization/box-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "e1b5520fcfd9890800408a0694f514b537d5215e63e92866c59c5a8b35a21660",
+        "source_prediction_sha256": "99144fd437c8c86deb8634e292cf23b436012c0efd7fd72a8c8866b98d09bc15"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "equivalent sparse coordinate indexing",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "68815162b815c8dd0e80f0f407cf44670440776ebec380fe66ea666f3685b9a3",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "box_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/box_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 576,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 1500,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            4,
+            4
+          ],
+          "window_num": 32
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "engine",
+      "video_path": "assets/media/optimization/engine.mp4",
+      "poster_path": "assets/media/optimization/engine-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "a26d5adbe3b434a919719b71c68118590dd56df6e1d3908b8f5b43d10580b043",
+        "source_prediction_sha256": "9764907671b204ed27e6585d221c09d7437d60947f5614ef2b191544e4a7b58e"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "equivalent sparse coordinate indexing",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "e3aec70c226182b0148551fe28ce6e838fe0eff6145db2b861b2919e292a015d",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "engine_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/engine_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 320,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 3000,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            16,
+            16
+          ],
+          "window_num": 4
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    },
+    {
+      "scene": "teapot",
+      "video_path": "assets/media/optimization/teapot.mp4",
+      "poster_path": "assets/media/optimization/teapot-poster.webp",
+      "iterations": [
+        0,
+        3000
+      ],
+      "final_frame": {
+        "label": "Released reconstruction",
+        "source": "Published SAX-NeRF predicted CT; separate from the fresh optimization run",
+        "prediction_display_grid_sha256": "b68170a73b712036214712af301920abb5185416689717b189b6c762413dcb85",
+        "source_prediction_sha256": "89ff4f6929c814f2202aeeb1c900603300cf65a4708beec069a92db8101fd7c7"
+      },
+      "fresh_run": true,
+      "mixed_precision": true,
+      "mlg_implementation": "official dataset implementation",
+      "reference_ct_used": false,
+      "recorded_states": 19,
+      "duration_ms": 7000,
+      "sha256": "e6cadd4d71bcc549d1697450da5cd772441f0beeace297e6fc5954e6bebb2dbe",
+      "dimensions": [
+        320,
+        308
+      ],
+      "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
+      "seed": 20261115,
+      "capture_grid": [
+        64,
+        64,
+        64
+      ],
+      "config": {
+        "exp": {
+          "expname": "teapot_50",
+          "expdir": "./logs/Lineformer/",
+          "datadir": "./data/teapot_50.pickle"
+        },
+        "network": {
+          "net_type": "Lineformer",
+          "num_layers": 4,
+          "hidden_dim": 32,
+          "skips": [
+            2
+          ],
+          "out_dim": 1,
+          "last_activation": "sigmoid",
+          "bound": 0.3,
+          "line_size": 2,
+          "dim_head": 4,
+          "heads": 8,
+          "num_blocks": 1
+        },
+        "encoder": {
+          "encoding": "hashgrid",
+          "input_dim": 3,
+          "num_levels": 16,
+          "level_dim": 2,
+          "base_resolution": 16,
+          "log2_hashmap_size": 19
+        },
+        "render": {
+          "n_samples": 320,
+          "n_fine": 0,
+          "perturb": true,
+          "raw_noise_std": 0.0,
+          "netchunk": 409600
+        },
+        "train": {
+          "epoch": 3000,
+          "n_batch": 1,
+          "n_rays": 1024,
+          "lrate": 0.001,
+          "lrate_gamma": 0.1,
+          "lrate_step": 1500,
+          "resume": false,
+          "window_size": [
+            16,
+            16
+          ],
+          "window_num": 4
+        },
+        "log": {
+          "i_eval": 250,
+          "i_save": 500
+        }
+      }
+    }
+  ]
+}
