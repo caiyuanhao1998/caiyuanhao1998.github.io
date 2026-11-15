@@ -5,8 +5,13 @@ for(const scene of scenes){
  const videos=[...scene.querySelectorAll('video')];
  for(const video of videos){
   if(reducedMotion)video.autoplay=false;
-  video.addEventListener('error',()=>{video.parentElement.querySelector('.video-error').hidden=false});
-  video.querySelector('source').addEventListener('error',()=>{video.parentElement.querySelector('.video-error').hidden=false});
+  const error=video.parentElement.querySelector('.video-error');
+  const clearError=()=>{error.hidden=true};
+  const showError=()=>{if(video.error&&video.querySelector('source').hasAttribute('src'))error.hidden=false};
+  video.addEventListener('loadstart',clearError);
+  video.addEventListener('loadeddata',clearError);
+  video.addEventListener('canplay',clearError);
+  video.addEventListener('error',showError);
  }
 
 }
