@@ -34,5 +34,5 @@
     "fx": 1037.843814358146,
     "fy": 1050.3698942638548
   },
-  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 650k opacity-weighted splats retained when needed."
+  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
 }

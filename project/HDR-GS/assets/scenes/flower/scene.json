@@ -4,7 +4,7 @@
   "label": "Flower",
   "iteration": 30000,
   "sourcePointCount": 1660581,
-  "webPointCount": 650000,
+  "webPointCount": 500000,
   "sourceSHA256": "446137ba81084929518c2590c4a2d0e5c8787101a6015547bb5f59cb28cd5017",
   "exposure": 0.08598023028580466,
   "hdrWhite": 53.679710388183594,
@@ -34,5 +34,5 @@
     "fx": 1359.6761982107453,
     "fy": 1358.3632328714566
   },
-  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 650k opacity-weighted splats retained when needed."
+  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 500k opacity-weighted splats retained when needed."
 }
