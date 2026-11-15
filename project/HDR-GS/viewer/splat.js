@@ -606,7 +606,7 @@ async function main() {
     const url=new URL('../assets/scenes/'+sceneId+'/'+mode+'.splat',location.href);
     const req = await fetch(url, {
         mode: "cors", // no-cors, *cors, same-origin
-        credentials: "omit", // include, *same-origin, omit
+        credentials: "same-origin", // include, *same-origin, omit
     });
 
     if (req.status != 200)
