@@ -40,20 +40,28 @@
   "videoWidth": 720,
   "videoHeight": 720,
   "exposureSweep": {
-    "minimum": 0.012008585288932993,
-    "maximum": 1.877813014512952,
-    "spanEV": 7.288843402228197,
+    "minimum": 0.008938404859217638,
+    "maximum": 2.5568754929129422,
+    "spanEV": 8.160148802753644,
     "seconds": 8,
-    "curve": "constant-rate triangular cycle",
+    "curve": "linear rise outbound, linear fall along exact retrace",
     "brightnessMinimum": 0.065,
-    "brightnessMaximum": 0.45
+    "brightnessMaximum": 0.575
   },
-  "videoRevision": "linear-highlight-safe-v2",
+  "videoRevision": "spiral-forward-retrace-v1",
   "cameraMotion": {
+    "type": "spiral-forward-exact-retrace",
+    "fixedHeading": true,
+    "exactRetrace": true,
+    "turnsForward": 3,
+    "forwardSeconds": 4,
+    "returnSeconds": 4,
+    "lateralRadiusX": 1.5127620705938702,
+    "lateralRadiusY": 0.6027820272682327,
+    "forwardTravel": 2.4204193129501927,
+    "amplitudeScale": 1.0,
+    "referenceRadiusScale": 0.5,
     "radiusScale": 0.5,
-    "radiusRatioToPrevious": 2.0,
-    "rotations": 4,
-    "angularSpeedRatio": 2,
     "viewportCrop": 1.0,
     "realBoundaryScreened": false
   }
