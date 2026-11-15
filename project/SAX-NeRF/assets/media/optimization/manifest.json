@@ -24393,11 +24393,11 @@
           "i_save": 500
         }
       },
-      "mp4_sha256": "8c69a5720cd736e3cbee3481062fd13200484870e313e6692c22aeaf217cfc74",
-      "mp4_bytes": 1103209,
+      "mp4_sha256": "af8805b7d3cad636bb9597bd74cc6df0540a7d553008748be5d3a6d527d27c67",
+      "mp4_bytes": 893539,
       "video_path": "assets/media/optimization/backpack.mp4",
       "poster_path": "assets/media/optimization/backpack-poster.webp",
-      "poster_sha256": "e447fa28506535efa4a17fa6f7e980a3f7e500f3f7b6b76a6088b48bc03985cb",
+      "poster_sha256": "eccc5c5fd8e8377b57945d4bb5e7e2341f330001b2a7c1290428f87fac887b08",
       "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
       "final_loss": 2.266145600060554e-07,
       "amp_skipped_steps": 12,
@@ -24407,7 +24407,17 @@
       "display_window": [
         0,
         0.255615234375
-      ]
+      ],
+      "display_transform": {
+        "kind": "screen_rotation",
+        "counterclockwise_degrees": 90,
+        "plot_only": true,
+        "caption_rotation_degrees": 0,
+        "fit": "contain",
+        "scope": "optimization video only",
+        "version": "backpack-ccw90-v2"
+      },
+      "presentation_version": "backpack-ccw90-v2"
     },
     {
       "scene": "box",
