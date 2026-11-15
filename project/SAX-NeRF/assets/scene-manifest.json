@@ -48,7 +48,59 @@
         1.0,
         1.0
       ],
-      "marching_cubes_stride": 1
+      "marching_cubes_stride": 1,
+      "name": "Chest",
+      "dimensions": [
+        128,
+        128,
+        128
+      ],
+      "native_dimensions": [
+        128,
+        128,
+        128
+      ],
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "scale": 0.9929238557815552,
+      "quantization": 4095,
+      "rotation": [
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0,
+      "pitch": 75,
+      "threshold": 0.377311065196991,
+      "exposure": 6.0,
+      "field_path": "assets/ct_viewer/native/chest.bin.gz",
+      "field_chunks": null,
+      "bytes": 2365234,
+      "sha256": "84ed9b10c9256700bce39157440e9604a7b7dc048bbc9106e6c4c2da0c6f12aa",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 0.00012129545211791992,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "contrast": 1.25
     },
     {
       "display_version": 2,
@@ -95,7 +147,71 @@
         1.0,
         1.0
       ],
-      "marching_cubes_stride": 1
+      "marching_cubes_stride": 1,
+      "name": "Foot",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "native_dimensions": [
+        256,
+        256,
+        256
+      ],
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "scale": 0.99993896484375,
+      "quantization": 4095,
+      "rotation": [
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0,
+      "pitch": 75,
+      "threshold": 0.1499908447265625,
+      "exposure": 8.0,
+      "field_path": "assets/ct_viewer/native/foot.bin.gz",
+      "field_chunks": null,
+      "bytes": 9840241,
+      "sha256": "24aac643586febbe8f3e78dcd6adc33eb05e52eb95f9f1be40d5f3dc2f4c730a",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 0.00012218952178955078,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          192
+        ],
+        "field_path": "assets/ct_viewer/preview/foot.bin.gz",
+        "field_chunks": null,
+        "bytes": 4198752,
+        "sha256": "0616cf027db066369813700038199a781e4300971ab33fc25957d7fc004bd394",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 0.00012218952178955078
+      }
     },
     {
       "display_version": 2,
@@ -142,7 +258,72 @@
         0.995861,
         1.00797
       ],
-      "marching_cubes_stride": 1
+      "marching_cubes_stride": 1,
+      "name": "Head",
+      "dimensions": [
+        256,
+        256,
+        128
+      ],
+      "native_dimensions": [
+        256,
+        256,
+        128
+      ],
+      "size": [
+        1.975973491274542,
+        2.0,
+        1.5652648392313262
+      ],
+      "scale": 0.9747612476348877,
+      "quantization": 4095,
+      "rotation": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0,
+      "pitch": 75,
+      "threshold": 0.3411664366722107,
+      "exposure": 8.0,
+      "field_path": "assets/ct_viewer/native/head.bin.gz",
+      "field_chunks": null,
+      "bytes": 8683148,
+      "sha256": "df542610af3ba111f541600e7775e7a5195ef2aba511ed9be1c4e32e475b1e64",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 0.00011909008026123047,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          96
+        ],
+        "field_path": "assets/ct_viewer/preview/head.bin.gz",
+        "field_chunks": null,
+        "bytes": 3767830,
+        "sha256": "bf1b03b5298a7ef70bb6d90f4f65c48030072f1df37815f8879871a53d4f55df",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 0.00011909008026123047
+      },
+      "contrast": 1.1
     },
     {
       "display_version": 2,
@@ -189,7 +370,81 @@
         1.0,
         0.625
       ],
-      "marching_cubes_stride": 2
+      "marching_cubes_stride": 2,
+      "name": "Abdomen",
+      "dimensions": [
+        512,
+        512,
+        463
+      ],
+      "native_dimensions": [
+        512,
+        512,
+        463
+      ],
+      "size": [
+        1.3822894168466522,
+        1.3822894168466522,
+        2.0
+      ],
+      "scale": 0.7706714272499084,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0,
+      "pitch": 75,
+      "threshold": 0.3082685708999634,
+      "exposure": 10.0,
+      "field_path": null,
+      "field_chunks": [
+        "assets/ct_viewer/native/abdomen.bin.gz.part000",
+        "assets/ct_viewer/native/abdomen.bin.gz.part001",
+        "assets/ct_viewer/native/abdomen.bin.gz.part002",
+        "assets/ct_viewer/native/abdomen.bin.gz.part003",
+        "assets/ct_viewer/native/abdomen.bin.gz.part004",
+        "assets/ct_viewer/native/abdomen.bin.gz.part005",
+        "assets/ct_viewer/native/abdomen.bin.gz.part006",
+        "assets/ct_viewer/native/abdomen.bin.gz.part007"
+      ],
+      "bytes": 119778534,
+      "sha256": "ce13450a2f33c2162ede801a17e85e6a249f65a8ce01b7f9fe8109efb0f7e2a5",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 9.417533874511719e-05,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          174
+        ],
+        "field_path": "assets/ct_viewer/preview/abdomen.bin.gz",
+        "field_chunks": null,
+        "bytes": 7213057,
+        "sha256": "4bb4b9bc71851dac47f709ad5c486e44fa57432896f790f99a5927b6f11f5036",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 9.414553642272949e-05
+      },
+      "contrast": 1.05
     },
     {
       "display_version": 2,
@@ -236,7 +491,72 @@
         1.0,
         1.16,
         1.0
-      ]
+      ],
+      "name": "Pancreas",
+      "dimensions": [
+        512,
+        512,
+        240
+      ],
+      "native_dimensions": [
+        512,
+        512,
+        240
+      ],
+      "size": [
+        2.0,
+        2.0,
+        1.0875
+      ],
+      "scale": 0.9999490976333618,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0,
+      "pitch": 75,
+      "threshold": 0.2999847292900085,
+      "exposure": 1.5,
+      "field_path": "assets/ct_viewer/native/pancreas.bin.gz",
+      "field_chunks": null,
+      "bytes": 54010020,
+      "sha256": "e36d6f94eb5a9bb78f600d7105d0a044b4c44069e4362e6a85a2b361483f7337",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 0.00012218952178955078,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          90
+        ],
+        "field_path": "assets/ct_viewer/preview/pancreas.bin.gz",
+        "field_chunks": null,
+        "bytes": 3128857,
+        "sha256": "fae5de6f0c14e7ecd39c04619fed703283ec8c9201d821b9f168008753506ea3",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 0.00012218952178955078
+      },
+      "contrast": 1.1
     },
     {
       "display_version": 2,
@@ -283,7 +603,72 @@
         0.8398,
         3.2,
         0.8398
-      ]
+      ],
+      "name": "Pelvis",
+      "dimensions": [
+        512,
+        512,
+        174
+      ],
+      "native_dimensions": [
+        512,
+        512,
+        174
+      ],
+      "size": [
+        1.5444597701149423,
+        1.5444597701149423,
+        2.0
+      ],
+      "scale": 0.6328690648078918,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": -35.0,
+      "pitch": 75,
+      "threshold": 0.26580500721931455,
+      "exposure": 10.0,
+      "field_path": "assets/ct_viewer/native/pelvis.bin.gz",
+      "field_chunks": null,
+      "bytes": 35918670,
+      "sha256": "a0cb76b690b1f69810d1939871ac22ca1890413756c86aaf663bccf7686e279c",
+      "clipped_negative_voxels": 20851369,
+      "max_quantization_error": 7.730722427368164e-05,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          65
+        ],
+        "field_path": "assets/ct_viewer/preview/pelvis.bin.gz",
+        "field_chunks": null,
+        "bytes": 2070598,
+        "sha256": "b81212f88a4a276b8d860681a8588d9291922478e24f98f74a1e34752da3af48",
+        "clipped_negative_voxels": 1056502,
+        "max_quantization_error": 7.730722427368164e-05
+      },
+      "contrast": 1.05
     },
     {
       "display_version": 2,
@@ -330,7 +715,71 @@
         1.0,
         1.0,
         1.0
-      ]
+      ],
+      "name": "Jaw",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "native_dimensions": [
+        256,
+        256,
+        256
+      ],
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "scale": 0.9946598410606384,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": -35.0,
+      "pitch": 75,
+      "threshold": 0.09946598410606385,
+      "exposure": 8.0,
+      "field_path": "assets/ct_viewer/native/jaw.bin.gz",
+      "field_chunks": null,
+      "bytes": 21870097,
+      "sha256": "8840678ef7c0f2960015eee3ef47405f9f0b0249f07ac7c9836cee10b4c3d51a",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 0.0001214742660522461,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          192
+        ],
+        "field_path": "assets/ct_viewer/preview/jaw.bin.gz",
+        "field_chunks": null,
+        "bytes": 9422780,
+        "sha256": "42fb1360f48ca394364d887db70b3b9f33488e6f44407ad5ff3ce089f7d41aa4",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 0.0001214742660522461
+      }
     },
     {
       "display_version": 2,
@@ -377,7 +826,72 @@
         1.0,
         4.0,
         1.0
-      ]
+      ],
+      "name": "Leg",
+      "dimensions": [
+        341,
+        341,
+        93
+      ],
+      "native_dimensions": [
+        341,
+        341,
+        93
+      ],
+      "size": [
+        1.8333333333333333,
+        1.8333333333333333,
+        2.0
+      ],
+      "scale": 0.993120551109314,
+      "quantization": 4095,
+      "rotation": [
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": -35.0,
+      "pitch": 75,
+      "threshold": 0.3475921928882599,
+      "exposure": 6.0,
+      "field_path": "assets/ct_viewer/native/leg.bin.gz",
+      "field_chunks": null,
+      "bytes": 4921003,
+      "sha256": "772a10aafb094d9e57853dde7d84ac30200f766713e1551fc37ce77efe7e5da2",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 0.00012129545211791992,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          52
+        ],
+        "field_path": "assets/ct_viewer/preview/leg.bin.gz",
+        "field_chunks": null,
+        "bytes": 938445,
+        "sha256": "18d72d64046c2a80efc1a0cc4973063efd872e4520aa295e224cb36442e37522",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 0.00012129545211791992
+      },
+      "contrast": 1.25
     },
     {
       "display_version": 2,
@@ -424,7 +938,71 @@
         1.0,
         1.0,
         1.0
-      ]
+      ],
+      "name": "Aneurism",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "native_dimensions": [
+        256,
+        256,
+        256
+      ],
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "scale": 0.9998297691345215,
+      "quantization": 4095,
+      "rotation": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": -35.0,
+      "pitch": 75,
+      "threshold": 0.03999319076538086,
+      "exposure": 12.0,
+      "field_path": "assets/ct_viewer/native/aneurism.bin.gz",
+      "field_chunks": null,
+      "bytes": 2122414,
+      "sha256": "c6c49579af655cd074f0fd832be25c5bba24fdc45e4e7b67209e774eb70a66af",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 0.0001221299171447754,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          192
+        ],
+        "field_path": "assets/ct_viewer/preview/aneurism.bin.gz",
+        "field_chunks": null,
+        "bytes": 920786,
+        "sha256": "712b317310742f7cdb5d4dbeaf30369e25cc5150bd2b64905b6b400d01659558",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 0.0001221299171447754
+      }
     },
     {
       "display_version": 2,
@@ -471,7 +1049,71 @@
         1.0,
         1.0,
         1.0
-      ]
+      ],
+      "name": "Bonsai",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "native_dimensions": [
+        256,
+        256,
+        256
+      ],
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "scale": 0.9808831810951233,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": -35.0,
+      "pitch": 75,
+      "threshold": 0.024522079527378084,
+      "exposure": 12.0,
+      "field_path": "assets/ct_viewer/native/bonsai.bin.gz",
+      "field_chunks": null,
+      "bytes": 9453161,
+      "sha256": "860ea75a983d9910d1af8b0a80c9d6dc2929438b7f80863bc662a5fd61a592d7",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 0.00011980533599853516,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          192
+        ],
+        "field_path": "assets/ct_viewer/preview/bonsai.bin.gz",
+        "field_chunks": null,
+        "bytes": 4129798,
+        "sha256": "b2ea7c3372db7497096a3f287e623324625a635bb912044bd066e5fea4ed2d1e",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 0.00011980533599853516
+      }
     },
     {
       "display_version": 2,
@@ -518,7 +1160,72 @@
         0.390625,
         1.0,
         0.78125
-      ]
+      ],
+      "name": "Carp",
+      "dimensions": [
+        256,
+        256,
+        512
+      ],
+      "native_dimensions": [
+        256,
+        256,
+        512
+      ],
+      "size": [
+        0.390625,
+        0.78125,
+        2.0
+      ],
+      "scale": 0.7827464938163757,
+      "quantization": 4095,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": -35.0,
+      "pitch": 75,
+      "threshold": 0.39137324690818787,
+      "exposure": 20.0,
+      "field_path": "assets/ct_viewer/native/carp.bin.gz",
+      "field_chunks": null,
+      "bytes": 32057641,
+      "sha256": "33bf353dee1b64e00e4c00cd18f2cd17402fe9a60fc6aa1818c2a7c2301db18f",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 9.560585021972656e-05,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          96,
+          96,
+          192
+        ],
+        "field_path": "assets/ct_viewer/preview/carp.bin.gz",
+        "field_chunks": null,
+        "bytes": 1964459,
+        "sha256": "44a6b537a51943edd33ad293ecb4ebe2de38bde8930ff3dd1bccc4a0a21daf62",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 9.560585021972656e-05
+      },
+      "contrast": 0.85
     },
     {
       "display_version": 2,
@@ -565,7 +1272,71 @@
         0.9766,
         1.25,
         0.9766
-      ]
+      ],
+      "name": "Backpack",
+      "dimensions": [
+        512,
+        512,
+        373
+      ],
+      "native_dimensions": [
+        512,
+        512,
+        373
+      ],
+      "size": [
+        2.0,
+        2.0,
+        1.8649283867499487
+      ],
+      "scale": 1.0830293893814087,
+      "quantization": 4095,
+      "rotation": [
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": -35.0,
+      "pitch": 75,
+      "threshold": 0.054151469469070436,
+      "exposure": 8.0,
+      "field_path": "assets/ct_viewer/native/backpack.bin.gz",
+      "field_chunks": null,
+      "bytes": 61915968,
+      "sha256": "1184f3e2a055f5fdbfce779577496f203aa174712573b619c204f988f4b2e61f",
+      "clipped_negative_voxels": 52837878,
+      "max_quantization_error": 0.0001323223114013672,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          140
+        ],
+        "field_path": "assets/ct_viewer/preview/backpack.bin.gz",
+        "field_chunks": null,
+        "bytes": 3787265,
+        "sha256": "7b26bd906c2c6c9b08ac6545203b335d2c620ca15b58b86115883c14766e1efa",
+        "clipped_negative_voxels": 2462013,
+        "max_quantization_error": 0.0001322627067565918
+      }
     },
     {
       "display_version": 2,
@@ -612,7 +1383,71 @@
         1.0,
         1.0,
         1.0
-      ]
+      ],
+      "name": "Box",
+      "dimensions": [
+        492,
+        492,
+        442
+      ],
+      "native_dimensions": [
+        492,
+        492,
+        442
+      ],
+      "size": [
+        2.0,
+        2.0,
+        1.7967479674796747
+      ],
+      "scale": 0.9996500015258789,
+      "quantization": 4095,
+      "rotation": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": -35.0,
+      "pitch": 75,
+      "threshold": 0.04998250007629395,
+      "exposure": 8.0,
+      "field_path": "assets/ct_viewer/native/box.bin.gz",
+      "field_chunks": null,
+      "bytes": 65287982,
+      "sha256": "4cebdf1b984e28169248af4edaa4886b7aaf1d6bfde040ab5312f1dd5b156aaf",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 0.0001221299171447754,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          172
+        ],
+        "field_path": "assets/ct_viewer/preview/box.bin.gz",
+        "field_chunks": null,
+        "bytes": 4618938,
+        "sha256": "55f1c373a28088f8f0592edfdaa5a941d66f796fa00c85061488041e67a7952f",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 0.0001220703125
+      }
     },
     {
       "display_version": 2,
@@ -659,7 +1494,72 @@
         1.0,
         1.0,
         1.0
-      ]
+      ],
+      "name": "Engine",
+      "dimensions": [
+        256,
+        256,
+        128
+      ],
+      "native_dimensions": [
+        256,
+        256,
+        128
+      ],
+      "size": [
+        2.0,
+        2.0,
+        1.0
+      ],
+      "scale": 0.9987127780914307,
+      "quantization": 4095,
+      "rotation": [
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": -35.0,
+      "pitch": 75,
+      "threshold": 0.19974255561828613,
+      "exposure": 4.0,
+      "field_path": "assets/ct_viewer/native/engine.bin.gz",
+      "field_chunks": null,
+      "bytes": 7151270,
+      "sha256": "90ba516b0de846b3ccac6d70a492e09b4246dd4006c11f61b325716a76230ea0",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 0.00012201070785522461,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          96
+        ],
+        "field_path": "assets/ct_viewer/preview/engine.bin.gz",
+        "field_chunks": null,
+        "bytes": 3066438,
+        "sha256": "ecfcbc23a33c369f6ec1a706fb8e56a6dac28b4c0e14a01a3a4ae38a2108e4e1",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 0.00012201070785522461
+      },
+      "contrast": 1.25
     },
     {
       "display_version": 2,
@@ -706,7 +1606,73 @@
         1.0,
         1.0,
         1.0
-      ]
+      ],
+      "name": "Teapot",
+      "dimensions": [
+        256,
+        256,
+        178
+      ],
+      "native_dimensions": [
+        256,
+        256,
+        178
+      ],
+      "size": [
+        2.0,
+        2.0,
+        1.390625
+      ],
+      "scale": 0.5901280045509338,
+      "quantization": 4095,
+      "rotation": [
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "yaw": -35.0,
+      "pitch": 75,
+      "threshold": 0.035407680273056026,
+      "exposure": 8.0,
+      "field_path": "assets/ct_viewer/native/teapot.bin.gz",
+      "field_chunks": null,
+      "bytes": 7686713,
+      "sha256": "54d9906176dff9c82bfc3fb2aed137a06455083f8382ef4dd4be0b59435aa959",
+      "clipped_negative_voxels": 0,
+      "max_quantization_error": 7.209181785583496e-05,
+      "field_source": "Published SAX-NeRF predicted CT",
+      "preview": {
+        "dimensions": [
+          192,
+          192,
+          134
+        ],
+        "field_path": "assets/ct_viewer/preview/teapot.bin.gz",
+        "field_chunks": null,
+        "bytes": 3388241,
+        "sha256": "9781bcc297f602c9bbb7553905060161b70758296456564ef2b161b45450d551",
+        "clipped_negative_voxels": 0,
+        "max_quantization_error": 7.209181785583496e-05
+      }
     }
-  ]
+  ],
+  "asset_base": "../",
+  "encoding": "12-bit radiodensity in RG8, native XYZ dimensions, x-fast storage, gzip"
 }

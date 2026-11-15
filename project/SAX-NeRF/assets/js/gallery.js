@@ -1,6 +1,6 @@
 import '../vendor/model-viewer.min.js';
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
-const response=await fetch(new URL('../scene-manifest.json',import.meta.url));
+const response=await fetch(new URL('../scene-manifest.json?v=sax-full-100',import.meta.url));
 if(!response.ok)throw new Error('CT mesh index unavailable');
 const manifest=await response.json();
 const visibility=new IntersectionObserver(entries=>{for(const {target,isIntersecting} of entries)target.autoRotate=isIntersecting&&!reduce.matches;},{rootMargin:'80px'});
