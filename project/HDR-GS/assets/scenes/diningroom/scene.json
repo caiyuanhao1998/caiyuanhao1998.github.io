@@ -40,10 +40,21 @@
   "videoWidth": 720,
   "videoHeight": 720,
   "exposureSweep": {
-    "minimum": 0.06292001149114151,
-    "maximum": 60.904574513463196,
-    "spanEV": 9.918815942763478,
+    "minimum": 0.06694621925361721,
+    "maximum": 27.631854701232673,
+    "spanEV": 8.689114103885268,
     "seconds": 8,
-    "curve": "continuous calibrated cosine brightness cycle"
+    "curve": "constant-rate triangular cycle",
+    "brightnessMinimum": 0.065,
+    "brightnessMaximum": 0.65
+  },
+  "videoRevision": "linear-065-motion-safe-v1",
+  "cameraMotion": {
+    "radiusScale": 0.5,
+    "radiusRatioToPrevious": 2.0,
+    "rotations": 4,
+    "angularSpeedRatio": 2,
+    "viewportCrop": 1.0,
+    "realBoundaryScreened": false
   }
 }
