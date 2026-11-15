@@ -1,0 +1,38 @@
+{
+  "id": "chair",
+  "group": "synthetic",
+  "label": "Chair",
+  "iteration": 30000,
+  "sourcePointCount": 280289,
+  "webPointCount": 278656,
+  "sourceSHA256": "8c1d20a189732f467cc953fb2525e0ec7181b513a78475fac4e67d027c98bb5d",
+  "exposure": 0.08598023028580466,
+  "hdrWhite": 196.63703861389143,
+  "frames": 120,
+  "fps": 30,
+  "camera": {
+    "worldToCam": [
+      0.9999097585678101,
+      0.006433282047510147,
+      0.011795488186180592,
+      0.8358946442604065,
+      -0.006426304578781128,
+      0.9999791383743286,
+      -0.0006293576443567872,
+      0.10674992203712463,
+      -0.011799290776252747,
+      0.0005534994415938854,
+      0.999930202960968,
+      0.021844202652573586,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 600,
+    "height": 600,
+    "fx": 1037.843814358146,
+    "fy": 1050.3698942638548
+  },
+  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 650k opacity-weighted splats retained when needed."
+}

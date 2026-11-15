@@ -1,0 +1,38 @@
+{
+  "id": "luckycat",
+  "group": "real",
+  "label": "Lucky Cat",
+  "iteration": 30000,
+  "sourcePointCount": 202931,
+  "webPointCount": 200098,
+  "sourceSHA256": "54976c6654c07d1675ddc4d95056a9edbad591c83baf3f5732cc772fc7d80af2",
+  "exposure": 0.2,
+  "hdrWhite": 45.08756049231108,
+  "frames": 120,
+  "fps": 30,
+  "camera": {
+    "worldToCam": [
+      0.9995461702346802,
+      -0.029422489926218987,
+      -0.00645856186747551,
+      0.8315895795822144,
+      0.0298190675675869,
+      0.9968313574790955,
+      0.07374323904514313,
+      0.05737106874585152,
+      0.004268387332558632,
+      -0.07390236109495163,
+      0.997256338596344,
+      0.017434338107705116,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 600,
+    "height": 398,
+    "fx": 1401.2917173941948,
+    "fy": 1396.4882050012573
+  },
+  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 650k opacity-weighted splats retained when needed."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "bear",
+  "group": "synthetic",
+  "label": "Bear",
+  "iteration": 30000,
+  "sourcePointCount": 59621,
+  "webPointCount": 58945,
+  "sourceSHA256": "d618525b3665634b711a0e0ebe448e4a306cd29554c635e669c052a589456869",
+  "exposure": 2.449489742783178,
+  "hdrWhite": 45.23721158294625,
+  "frames": 120,
+  "fps": 30,
+  "camera": {
+    "worldToCam": [
+      0.9987115263938904,
+      0.029551317915320396,
+      -0.0412558950483799,
+      0.9102145433425903,
+      -0.027989832684397697,
+      0.9988884329795837,
+      0.03792675957083702,
+      0.10198841243982315,
+      0.042330823838710785,
+      -0.036723148077726364,
+      0.9984285235404968,
+      -0.0008867749711498618,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 600,
+    "height": 600,
+    "fx": 859.5836932956672,
+    "fy": 857.610385644129
+  },
+  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 650k opacity-weighted splats retained when needed."
+}

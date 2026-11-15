@@ -1,0 +1,38 @@
+{
+  "id": "desk",
+  "group": "synthetic",
+  "label": "Desk",
+  "iteration": 30000,
+  "sourcePointCount": 304732,
+  "webPointCount": 300410,
+  "sourceSHA256": "f69a78539540381803c5e6903ea7516e5b7acfc4d5bbf0bf77caab698b1886e4",
+  "exposure": 2.449489742783178,
+  "hdrWhite": 194.839104830899,
+  "frames": 120,
+  "fps": 30,
+  "camera": {
+    "worldToCam": [
+      0.9987712502479553,
+      0.04355154186487198,
+      -0.02364739216864109,
+      0.7959205508232117,
+      -0.04281940683722496,
+      0.998613178730011,
+      0.03063110075891018,
+      0.1392710953950882,
+      0.02494862861931324,
+      -0.029580896720290184,
+      0.9992510080337524,
+      0.0010382885811850429,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 600,
+    "height": 600,
+    "fx": 962.0168802935061,
+    "fy": 966.5182342150388
+  },
+  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 650k opacity-weighted splats retained when needed."
+}

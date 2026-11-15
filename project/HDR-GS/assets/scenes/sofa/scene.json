@@ -1,0 +1,38 @@
+{
+  "id": "sofa",
+  "group": "synthetic",
+  "label": "Sofa",
+  "iteration": 30000,
+  "sourcePointCount": 389929,
+  "webPointCount": 388890,
+  "sourceSHA256": "8dec4cc3c44e3b594515614f6c3ab7a2147c7902228ea9f54553b631540a5abd",
+  "exposure": 0.4472135954999579,
+  "hdrWhite": 29.071985244750977,
+  "frames": 120,
+  "fps": 30,
+  "camera": {
+    "worldToCam": [
+      0.9998504519462585,
+      -0.0002106911560986191,
+      -0.01729333959519863,
+      0.7133491635322571,
+      0.000826495757792145,
+      0.9993654489517212,
+      0.035609934478998184,
+      0.12588930130004883,
+      0.01727486215531826,
+      -0.03561890125274658,
+      0.9992161393165588,
+      0.009695181623101234,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 600,
+    "height": 600,
+    "fx": 725.0426081420944,
+    "fy": 725.8975912781352
+  },
+  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 650k opacity-weighted splats retained when needed."
+}

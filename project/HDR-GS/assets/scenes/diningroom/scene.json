@@ -1,0 +1,38 @@
+{
+  "id": "diningroom",
+  "group": "synthetic",
+  "label": "Dining Room",
+  "iteration": 30000,
+  "sourcePointCount": 496165,
+  "webPointCount": 436791,
+  "sourceSHA256": "1fe1bf84303ea4076f62d47dfb8090ec276d4c916dc8b894e73c97f4179058b6",
+  "exposure": 0.08598023028580466,
+  "hdrWhite": 95.36023751449582,
+  "frames": 120,
+  "fps": 30,
+  "camera": {
+    "worldToCam": [
+      0.9994969367980957,
+      -0.010246186517179012,
+      -0.0300152488052845,
+      0.8528188467025757,
+      0.010626736097037792,
+      0.9998648166656494,
+      0.0125465989112854,
+      0.08998183161020279,
+      0.029882635921239853,
+      -0.012859250418841839,
+      0.9994707107543945,
+      -0.006211272906512022,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 600,
+    "height": 600,
+    "fx": 683.4654311182028,
+    "fy": 727.3961299483179
+  },
+  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 650k opacity-weighted splats retained when needed."
+}

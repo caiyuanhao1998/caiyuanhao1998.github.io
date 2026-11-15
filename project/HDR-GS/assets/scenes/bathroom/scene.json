@@ -1,0 +1,38 @@
+{
+  "id": "bathroom",
+  "group": "synthetic",
+  "label": "Bathroom",
+  "iteration": 30000,
+  "sourcePointCount": 333835,
+  "webPointCount": 332577,
+  "sourceSHA256": "7ab292e8d932f9cdeb4edf05edd90b0849e0d366a6b540b24f84b353d2b6f947",
+  "exposure": 2.0,
+  "hdrWhite": 96.79806644820317,
+  "frames": 120,
+  "fps": 30,
+  "camera": {
+    "worldToCam": [
+      0.9980625510215759,
+      -0.016340676695108414,
+      0.06003405898809433,
+      0.8215630650520325,
+      0.016639243811368942,
+      0.9998515248298645,
+      -0.004476733040064573,
+      0.09630794823169708,
+      -0.05995199456810951,
+      0.005466981325298548,
+      0.9981862902641296,
+      0.07368393987417221,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 600,
+    "height": 600,
+    "fx": 641.4003516799271,
+    "fy": 641.9994212279187
+  },
+  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 650k opacity-weighted splats retained when needed."
+}

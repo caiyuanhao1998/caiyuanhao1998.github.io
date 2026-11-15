@@ -1,0 +1,38 @@
+{
+  "id": "box",
+  "group": "real",
+  "label": "Box",
+  "iteration": 30000,
+  "sourcePointCount": 240427,
+  "webPointCount": 234213,
+  "sourceSHA256": "9b7a91ea8b7feee70ba7e5240980005efbcd0cc0c451ebbc107b67b95dd79104",
+  "exposure": 0.08598023028580466,
+  "hdrWhite": 57.594539642333984,
+  "frames": 120,
+  "fps": 30,
+  "camera": {
+    "worldToCam": [
+      0.9717184901237488,
+      0.14698919653892517,
+      -0.18481720983982086,
+      0.9231136441230774,
+      -0.15122388303279877,
+      0.9884589910507202,
+      -0.008950711227953434,
+      0.15358966588974,
+      0.18136858940124512,
+      0.03664634749293327,
+      0.9827321767807007,
+      -0.08282807469367981,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 600,
+    "height": 398,
+    "fx": 1339.434888117094,
+    "fy": 1341.063655705396
+  },
+  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 650k opacity-weighted splats retained when needed."
+}

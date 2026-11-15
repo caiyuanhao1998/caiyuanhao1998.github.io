@@ -1,0 +1,38 @@
+{
+  "id": "dog",
+  "group": "synthetic",
+  "label": "Dog",
+  "iteration": 30000,
+  "sourcePointCount": 236510,
+  "webPointCount": 234362,
+  "sourceSHA256": "a2eeb8640fc873ba42dcee26ad068d2948b0b4bde5d8444f5dfe26cac45fba66",
+  "exposure": 0.08598023028580466,
+  "hdrWhite": 25.431678564834503,
+  "frames": 120,
+  "fps": 30,
+  "camera": {
+    "worldToCam": [
+      0.9994744658470154,
+      -0.007459878455847502,
+      0.031546320766210556,
+      0.8331287503242493,
+      0.006326986942440271,
+      0.9993367791175842,
+      0.035860575735569,
+      0.0969230979681015,
+      -0.031792912632226944,
+      -0.03564213588833809,
+      0.9988587498664856,
+      0.04601772874593735,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 600,
+    "height": 600,
+    "fx": 869.9988208984613,
+    "fy": 868.2376183677075
+  },
+  "webColorPolicy": "SH evaluated at the initial camera, learned MLP LDR, log-encoded linear HDR; HDR tone map follows alpha composition. Largest 650k opacity-weighted splats retained when needed."
+}
