@@ -1619,6 +1619,21 @@
     },
     {
       "scene": "foot",
+      "display_transform": {
+        "kind": "volume_rotation",
+        "axis": "vertical display Z",
+        "clockwise_degrees": 90,
+        "array_rotation_k": -1,
+        "array_rotation_axes": [
+          0,
+          1
+        ],
+        "scope": "optimization video only",
+        "version": "foot-cw90-v2"
+      },
+      "presentation_version": "foot-cw90-v2",
+      "precision": "amp",
+      "seed": 20261115,
       "status": "complete",
       "iterations": [
         0,
@@ -3877,8 +3892,8 @@
       "single_continuous_training_run": true,
       "reference_ct_used": false,
       "appended_released_frame": false,
-      "source_checkpoint_sha256": "421d2f49cd3e754680021178167e3cf811abbfbf2d46f26b2308f293d3cddfcf",
-      "frame_index_sha256": "51d0d5d6b71e0eda8e197cbc17a8db505c561619ddd85e64991f6320a83ec7d1",
+      "source_checkpoint_sha256": "76a9edbd78bea3d434fbd36c0353586cf4fe3066832f0498dff9a06b88ff2500",
+      "frame_index_sha256": "433a3cf94ecbdb92cd6d8dcc6031d6432ca748e03fd0ffd1367a1fdeb3559a0b",
       "dataset_sha256": "0dc4570c84f4f23ea300cdeed5ff1b322edfad0b9c6ae197bb4f0c2407761a6f",
       "capture_grid": [
         128,
@@ -3941,18 +3956,16 @@
           "i_save": 500
         }
       },
-      "mp4_sha256": "eae7134ee7173f154a8340b4953b4c054ccf2a5946a833c2c282047c00ad76da",
-      "mp4_bytes": 561487,
+      "mp4_sha256": "1c66e1232b0029b0fff24ba3ec2b385b91f6ce01235f50c6de65971528d2d912",
+      "mp4_bytes": 644066,
       "video_path": "assets/media/optimization/foot.mp4",
       "poster_path": "assets/media/optimization/foot-poster.webp",
-      "poster_sha256": "2b5bc5f059a0d401d21215acf358c7745320599525ed5f45b4ac770fbc530b96",
+      "poster_sha256": "de3ea2dd055e780324d6e8e3e6add29e381f8fe8325e4e7a95b0164ce5806284",
       "source_code": "https://github.com/caiyuanhao1998/SAX-NeRF/tree/6f8939ef8d55ceae0c1c34731b0001d04a08d007",
-      "seed": 20261115,
-      "final_loss": 9.965853564608551e-08,
-      "amp_skipped_steps": 42,
-      "actual_adam_updates": 150008,
+      "final_loss": 1.0262505156788393e-07,
+      "amp_skipped_steps": 44,
+      "actual_adam_updates": 150006,
       "mixed_precision": true,
-      "precision": "amp",
       "precision_history": [],
       "display_window": [
         0,
@@ -22819,6 +22832,16 @@
     },
     {
       "scene": "backpack",
+      "display_transform": {
+        "kind": "screen_rotation",
+        "counterclockwise_degrees": 90,
+        "plot_only": true,
+        "caption_rotation_degrees": 0,
+        "fit": "contain",
+        "scope": "optimization video only",
+        "version": "backpack-ccw90-v2"
+      },
+      "presentation_version": "backpack-ccw90-v2",
       "precision": "amp",
       "seed": 20261115,
       "status": "complete",
@@ -24407,17 +24430,7 @@
       "display_window": [
         0,
         0.255615234375
-      ],
-      "display_transform": {
-        "kind": "screen_rotation",
-        "counterclockwise_degrees": 90,
-        "plot_only": true,
-        "caption_rotation_degrees": 0,
-        "fit": "contain",
-        "scope": "optimization video only",
-        "version": "backpack-ccw90-v2"
-      },
-      "presentation_version": "backpack-ccw90-v2"
+      ]
     },
     {
       "scene": "box",
