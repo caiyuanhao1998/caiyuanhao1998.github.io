@@ -1,0 +1,11 @@
+{
+  "operator": "extended-reinhard",
+  "log_average": 0.4790801104344926,
+  "white_luminance": 49.792824779510525,
+  "key": 0.18,
+  "saturation": 1.0,
+  "white_percentile": 99.95,
+  "calibration_images": 33,
+  "transfer": "sRGB",
+  "input": "linear RGB"
+}

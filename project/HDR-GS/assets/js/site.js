@@ -3,6 +3,14 @@ const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const scenes=[...document.querySelectorAll('.scene')];
 for(const scene of scenes){
  const videos=[...scene.querySelectorAll('video')];
+ // Keep a scene's LDR and HDR videos aligned when using playback controls.
+ let syncing=false;
+ for(const video of videos){
+   video.addEventListener('seeking',()=>{if(syncing)return;syncing=true;for(const other of videos)if(other!==video&&other.readyState>=2&&Math.abs(other.currentTime-video.currentTime)>.04)other.currentTime=video.currentTime;syncing=false});
+   video.addEventListener('play',()=>{if(scene.dataset.visible!=='true')return;for(const other of videos)if(other!==video&&other.paused)other.play().catch(()=>{})});
+   video.addEventListener('pause',()=>{for(const other of videos)if(other!==video&&!other.paused)other.pause()});
+ }
+ setInterval(()=>{if(scene.dataset.visible!=='true'||videos.length!==2)return;const [a,b]=videos;if(!a.paused&&!b.paused&&a.readyState>=2&&b.readyState>=2&&Math.abs(a.currentTime-b.currentTime)>.10)b.currentTime=a.currentTime},500);
  for(const video of videos){
   if(reducedMotion)video.autoplay=false;
   const error=video.parentElement.querySelector('.video-error');

@@ -532,6 +532,8 @@ uniform mat4 projection, view;
 uniform vec2 focal;
 uniform vec2 viewport;
 uniform bool u_hdr;
+uniform float u_hdr_range;
+uniform bool u_hdr_log1p;
 
 in vec2 position;
 in int index;
@@ -573,7 +575,7 @@ void main () {
     vec2 minorAxis = min(sqrt(2.0 * lambda2), 1024.0) * vec2(diagonalVector.y, -diagonalVector.x);
 
     vColor = vec4((cov.w) & 0xffu, (cov.w >> 8) & 0xffu, (cov.w >> 16) & 0xffu, (cov.w >> 24) & 0xffu) / 255.0;
-    if (u_hdr) vColor.rgb=(exp(vColor.rgb*log(5001.0))-1.0)/5000.0;
+    if (u_hdr) vColor.rgb=u_hdr_log1p ? exp(vColor.rgb*log(1.0+u_hdr_range))-1.0 : (exp(vColor.rgb*log(5001.0))-1.0)/5000.0*u_hdr_range;
     vPosition = position;
 
     vec2 vCenter = vec2(pos2d) / pos2d.w;
@@ -611,22 +613,23 @@ let viewMatrix = defaultViewMatrix;
 async function main() {
     let carousel = false;
     const params = new URLSearchParams(location.search);
-    const manifestResponse=await fetch('../assets/scenes.json');
+    const manifestResponse=await fetch('../assets/scenes.json?v=compact-v2');
     if(!manifestResponse.ok)throw new Error('Unable to load the scene list. Please retry.');
     const manifest=await manifestResponse.json();
     const sceneId=params.get('scene')||'bathroom';
     const scene=manifest.find(s=>s.id===sceneId);
     if(!scene)throw new Error('Scene not found. Return to the project page to choose a scene.');
-    const mode='hdr';
+    const mode=params.get('mode')==='ldr'?'ldr':'hdr';
+    document.body.classList.toggle('embedded',params.get('embed')==='1');
     const isHDR=mode==='hdr';
     camera={...scene.camera};cameras=Array.from({length:10},()=>camera);
     defaultViewMatrix=getViewMatrix(camera);viewMatrix=defaultViewMatrix.slice();
     document.title=scene.label+' · Interactive Point Clouds · HDR-GS';
     document.getElementById('scene-title').textContent=scene.label;
-    document.getElementById('mode-description').textContent='Interactive reconstruction · adjustable exposure';
+    document.getElementById('mode-description').textContent=isHDR?'HDR radiance · Reinhard display':'LDR · learned tone mapper';
     document.getElementById('point-count').textContent=scene.webPointCount.toLocaleString()+' Gaussians';
     document.getElementById('back').href='../index.html#scene-'+sceneId;
-    document.getElementById('download').href='../assets/scenes/'+sceneId+'/'+mode+'.splat';
+    document.getElementById('download').href='../assets/scenes/'+sceneId+'/'+mode+'.splat?v=compact-v2';
     document.getElementById('download').download=sceneId+'-'+mode+'.splat';
     const select=document.getElementById('scene-select');
     for(const group of ['synthetic','real']){const optgroup=document.createElement('optgroup');optgroup.label=group==='synthetic'?'Synthetic Scenes':'Real Scenes';for(const sc of manifest.filter(s=>s.group===group)){const option=document.createElement('option');option.value=sc.id;option.textContent=sc.label;option.selected=sc.id===sceneId;optgroup.append(option)}select.append(optgroup)}
@@ -634,30 +637,52 @@ async function main() {
     document.getElementById('reset').addEventListener('click',()=>{viewMatrix=defaultViewMatrix.slice();carousel=false;activeKeys=[];down=false;history.replaceState(null,'',location.pathname+location.search)});
     document.getElementById('fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{document.getElementById('mode-description').textContent='Fullscreen is unavailable in this browser.'}});
     document.getElementById('exposure-control').hidden=!isHDR;
-    let displayExposure=1;
+    let displayExposure=2**(scene.hdrDisplayExposureEV||0);
+    document.getElementById('exposure').value=scene.hdrDisplayExposureEV||0;
+    document.getElementById('exposure-value').textContent=(scene.hdrDisplayExposureEV||0).toFixed(1)+' EV';
     document.getElementById('exposure').addEventListener('input',e=>{displayExposure=2**Number(e.target.value);document.getElementById('exposure-value').textContent=Number(e.target.value).toFixed(1)+' EV'});
 
     try {
         viewMatrix = JSON.parse(decodeURIComponent(location.hash.slice(1)));
         carousel = false;
     } catch (err) {}
-    const url=new URL('../assets/scenes/'+sceneId+'/'+mode+'.splat',location.href);
-    const req = await fetch(url, {
-        mode: "cors", // no-cors, *cors, same-origin
-        credentials: "same-origin", // include, *same-origin, omit
-    });
-
-    if (req.status != 200)
-        throw new Error(req.status + " Unable to load " + req.url);
-
-    const rowLength = 3 * 4 + 3 * 4 + 4 + 4;
-    let splatData = await readGaussianStream(req, bytes => {
-        const expected = scene.webPointCount * rowLength;
-        const percent = Math.min(99, bytes * 100 / expected);
-        const progress = document.getElementById('progress');
-        progress.style.width = percent + '%';
-        progress.setAttribute('aria-valuenow', String(Math.round(percent)));
-    });
+    const rowLength = 32;
+    const base = new URL(scene.assetBase||'../assets/scenes/'+sceneId+'/',location.href);
+    let splatData;
+    document.getElementById('download').href=new URL(mode+'.splat',base).href;
+    if(scene.gaussianEncoding==='byte-planar-gzip'&&typeof DecompressionStream!=='undefined'){
+        const fetchPacked = async name => {
+            const response=await fetch(new URL(name+'?v=compact-v2',base),{credentials:'same-origin'});
+            if(!response.ok)throw new Error('Unable to load '+name);
+            let bytes=new Uint8Array(await response.arrayBuffer());
+            // Some hosts decode Content-Encoding automatically; accept either form.
+            if(bytes[0]===31&&bytes[1]===139){
+                if(typeof DecompressionStream==='undefined')throw new Error('Please use a browser with gzip decompression support.');
+                const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+                bytes=new Uint8Array(await new Response(stream).arrayBuffer());
+            }
+            return bytes;
+        };
+        const planar=await fetchPacked(scene.gaussianAsset);
+        const count=scene.webPointCount;
+        if(planar.length!==count*rowLength)throw new Error('Incomplete Gaussian geometry');
+        splatData=new Uint8Array(planar.length);
+        for(let column=0;column<32;column++)for(let index=0;index<count;index++)splatData[index*32+column]=planar[column*count+index];
+        if(!isHDR){
+            const colors=await fetchPacked(scene.ldrColorAsset);
+            if(colors.length!==count*3)throw new Error('Incomplete LDR Gaussian colors');
+            for(let index=0;index<count;index++)splatData.set(colors.subarray(index*3,index*3+3),index*32+24);
+        }
+        document.getElementById('download').href=URL.createObjectURL(new Blob([splatData],{type:'application/octet-stream'}));
+    }else{
+        const url=new URL(mode+'.splat?v=compact-v2',base);
+        const req=await fetch(url,{credentials:'same-origin'});
+        if(!req.ok)throw new Error('Unable to load '+url);
+        splatData=await readGaussianStream(req,bytes=>{
+            const percent=Math.min(99,bytes*100/(scene.webPointCount*rowLength));
+            document.getElementById('progress').style.width=percent+'%';
+        });
+    }
 
     const downsample = 1;
     console.log(splatData.length / rowLength, downsample);
@@ -720,6 +745,8 @@ async function main() {
     const u_focal = gl.getUniformLocation(program, "focal");
     const u_view = gl.getUniformLocation(program, "view");
     gl.uniform1i(gl.getUniformLocation(program,'u_hdr'),isHDR?1:0);
+    gl.uniform1f(gl.getUniformLocation(program,'u_hdr_range'),scene.hdrRange||scene.hdrWhite||1);
+    gl.uniform1i(gl.getUniformLocation(program,'u_hdr_log1p'),scene.hdrEncoding==='log1p-radiance'?1:0);
 
     // positions
     const triangleVertices = new Float32Array([-2, -2, 2, -2, 2, 2, -2, 2]);
@@ -751,11 +778,14 @@ async function main() {
       const vs=gl.createShader(gl.VERTEX_SHADER);gl.shaderSource(vs,`#version 300 es
       out vec2 uv;void main(){vec2 p=vec2((gl_VertexID<<1)&2,gl_VertexID&2);uv=p;gl_Position=vec4(p*2.0-1.0,0,1);}`);gl.compileShader(vs);
       const fs=gl.createShader(gl.FRAGMENT_SHADER);gl.shaderSource(fs,`#version 300 es
-      precision highp float;uniform sampler2D image;uniform float exposure;in vec2 uv;out vec4 color;
-      void main(){vec3 c=texture(image,uv).rgb;color=vec4(log(1.0+5000.0*max(c*exposure,vec3(0)))/log(5001.0),1);}`);gl.compileShader(fs);
+      precision highp float;uniform sampler2D image;uniform float exposure;uniform float keyValue;uniform float averageLuma;uniform float whiteLuma;uniform float saturation;in vec2 uv;out vec4 color;
+      void main(){vec3 c=max(texture(image,uv).rgb,vec3(0));float y=dot(c,vec3(.2126,.7152,.0722));float scale=keyValue/averageLuma;float m=y*scale*exposure;float w=max(whiteLuma*scale,1e-8);float ld=m*(1.0+m/(w*w))/(1.0+m);vec3 linear=clamp(pow(c/max(y,1e-8),vec3(saturation))*ld,0.,1.);vec3 low=12.92*linear;vec3 high=1.055*pow(linear,vec3(1./2.4))-.055;color=vec4(mix(low,high,step(vec3(.0031308),linear)),1);}`);gl.compileShader(fs);
       postProgram=gl.createProgram();gl.attachShader(postProgram,vs);gl.attachShader(postProgram,fs);gl.linkProgram(postProgram);
       if(!gl.getProgramParameter(postProgram,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(postProgram));
-      gl.useProgram(postProgram);gl.uniform1i(gl.getUniformLocation(postProgram,'image'),1);gl.useProgram(program);
+      gl.useProgram(postProgram);gl.uniform1i(gl.getUniformLocation(postProgram,'image'),1);
+      const tm=scene.hdrToneMap||{key:.18,log_average:.5,white_luminance:50,saturation:1};
+      for(const [name,value] of Object.entries({keyValue:tm.key,averageLuma:tm.log_average,whiteLuma:tm.white_luminance,saturation:tm.saturation}))gl.uniform1f(gl.getUniformLocation(postProgram,name),value);
+      gl.useProgram(program);
     }
     const resize = () => {
         gl.useProgram(program);

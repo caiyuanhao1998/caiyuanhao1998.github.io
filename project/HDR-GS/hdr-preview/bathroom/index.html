@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Bathroom HDR Preview · HDR-GS</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fff; color: #303030; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; }
+    main { max-width: 784px; padding: 28px 32px 48px; margin: 0 auto; }
+    a { color: #287fb8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .back { font-size: 15px; }
+    h1 { font-size: clamp(25px, 5vw, 34px); line-height: 1.3; margin: 24px 0 8px; font-weight: 650; }
+    .intro { margin: 0 0 20px; color: #626262; font-size: 16px; }
+    video { display: block; width: 100%; height: auto; aspect-ratio: 1; background: #171717; border-radius: 8px; }
+    .specs { margin: 12px 0 20px; color: #767676; font-size: 14px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 22px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 8px 15px; border-radius: 22px; border: 1px solid #d4dbe0; font-size: 14px; }
+    .primary { background: #353535; border-color: #353535; color: #fff; }
+    .note { color: #626262; font-size: 14px; margin: 0 0 10px; }
+    @media (max-width: 540px) { main { padding: 20px 16px 36px; } h1 { margin-top: 20px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../../">← HDR-GS project page</a>
+    <h1>Bathroom · HDR preview</h1>
+    <p class="intro">HDR radiance rendered along the project page’s camera path.</p>
+    <video id="hdr-video" controls autoplay muted loop playsinline preload="metadata" poster="poster.jpg" aria-label="Bathroom HDR rendering with continuous spiral camera motion">
+      <source src="https://huggingface.co/datasets/CaiYuanhao/HDR-GS/resolve/5b509df14325f889fcd8b44896cab6c216f31d58/visualizations/synthetic/bathroom/videos/hdr.mp4" type="video/mp4">
+      Your browser does not support this video. <a href="https://huggingface.co/datasets/CaiYuanhao/HDR-GS/resolve/5b509df14325f889fcd8b44896cab6c216f31d58/visualizations/synthetic/bathroom/videos/hdr.mp4">Download the video</a>.
+    </video>
+    <p class="specs">16 seconds · 60 fps · 720 × 720 · Continuous spiral forward and backward</p>
+    <div class="actions">
+      <a class="button primary" href="https://huggingface.co/datasets/CaiYuanhao/HDR-GS/resolve/5b509df14325f889fcd8b44896cab6c216f31d58/visualizations/synthetic/bathroom/videos/hdr.mp4" download>Download video</a>
+      <a class="button" href="https://huggingface.co/datasets/CaiYuanhao/HDR-GS/resolve/5b509df14325f889fcd8b44896cab6c216f31d58/visualizations/synthetic/bathroom/hdr_samples/000480.exr" download>Download raw HDR frame</a>
+    </div>
+    <p class="note">Extended Reinhard tone mapping and an sRGB display transform make the HDR rendering viewable on ordinary screens. The MP4 is an SDR visualization; the downloadable EXR preserves the original float32 HDR radiance.</p>
+    <p class="note">One fixed calibration is used for the entire video. The camera continues spiraling in the same direction through the forward/backward transition and loops smoothly.</p>
+    <p class="note"><a href="tonemap.json">Tone-mapping settings</a> · <a href="metadata.json">Render details</a> · <a href="https://github.com/caiyuanhao1998/HDR-GS/">Code</a></p>
+  </main>
+</body>
+</html>
