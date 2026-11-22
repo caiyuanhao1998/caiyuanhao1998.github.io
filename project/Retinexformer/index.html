@@ -8,11 +8,11 @@
   <link rel="canonical" href="https://caiyuanhao1998.github.io/project/Retinexformer/">
   <meta property="og:title" content="Retinexformer | Low-light Image Enhancement">
   <meta property="og:description" content="A one-stage Retinex-based Transformer for low-light image enhancement, with nighttime video comparisons for four tasks.">
-  <meta property="og:image" content="https://caiyuanhao1998.github.io/project/Retinexformer/assets/videos/enhancement-foggy-alley.webp">
+  <meta property="og:image" content="https://caiyuanhao1998.github.io/project/Retinexformer/assets/videos/enhancement-foggy-alley-enhanced.webp">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
-  <link rel="stylesheet" href="assets/site.css?v=stacked-gallery">
-  <script src="assets/site.js" defer></script>
+  <link rel="stylesheet" href="assets/site.css?v=paired-panels">
+  <script src="assets/site.js?v=paired-panels" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#video-enhancement">Skip to video comparisons</a>
@@ -57,42 +57,94 @@
       <div class="comparison-grid">
         <figure class="comparison">
           <figcaption class="scene-title">Foggy alley</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/enhancement-foggy-alley.mp4" poster="assets/videos/enhancement-foggy-alley.webp" aria-label="Foggy alley. Low-light input above and Retinexformer-enhanced input below.">
-              <a href="assets/videos/enhancement-foggy-alley.mp4">Open foggy alley video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-foggy-alley.mp4">Open video</a></p>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/enhancement-foggy-alley-low-light.mp4" poster="assets/videos/enhancement-foggy-alley-low-light.webp" aria-label="Foggy alley · Low-light">
+                <a href="assets/videos/enhancement-foggy-alley-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-foggy-alley-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/enhancement-foggy-alley-enhanced.mp4" poster="assets/videos/enhancement-foggy-alley-enhanced.webp" aria-label="Foggy alley · Retinexformer">
+                <a href="assets/videos/enhancement-foggy-alley-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-foggy-alley-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
           <figcaption class="scene-title">Rainy street</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/enhancement-rainy-street.mp4" poster="assets/videos/enhancement-rainy-street.webp" aria-label="Rainy street. Low-light input above and Retinexformer-enhanced input below.">
-              <a href="assets/videos/enhancement-rainy-street.mp4">Open rainy street video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-rainy-street.mp4">Open video</a></p>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/enhancement-rainy-street-low-light.mp4" poster="assets/videos/enhancement-rainy-street-low-light.webp" aria-label="Rainy street · Low-light">
+                <a href="assets/videos/enhancement-rainy-street-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-rainy-street-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/enhancement-rainy-street-enhanced.mp4" poster="assets/videos/enhancement-rainy-street-enhanced.webp" aria-label="Rainy street · Retinexformer">
+                <a href="assets/videos/enhancement-rainy-street-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-rainy-street-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
           <figcaption class="scene-title">Snowy path</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/enhancement-snowy-path.mp4" poster="assets/videos/enhancement-snowy-path.webp" aria-label="Snowy path. Low-light input above and Retinexformer-enhanced input below.">
-              <a href="assets/videos/enhancement-snowy-path.mp4">Open snowy path video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-snowy-path.mp4">Open video</a></p>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/enhancement-snowy-path-low-light.mp4" poster="assets/videos/enhancement-snowy-path-low-light.webp" aria-label="Snowy path · Low-light">
+                <a href="assets/videos/enhancement-snowy-path-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-snowy-path-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/enhancement-snowy-path-enhanced.mp4" poster="assets/videos/enhancement-snowy-path-enhanced.webp" aria-label="Snowy path · Retinexformer">
+                <a href="assets/videos/enhancement-snowy-path-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-snowy-path-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
-          <figcaption class="scene-title">Outdoor dance</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/enhancement-night-dance.mp4" poster="assets/videos/enhancement-night-dance.webp" aria-label="Outdoor dance. Low-light input above and Retinexformer-enhanced input below.">
-              <a href="assets/videos/enhancement-night-dance.mp4">Open outdoor dance video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-night-dance.mp4">Open video</a></p>
+          <figcaption class="scene-title">Candlelight</figcaption>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/enhancement-candlelight-low-light.mp4" poster="assets/videos/enhancement-candlelight-low-light.webp" aria-label="Candlelight · Low-light">
+                <a href="assets/videos/enhancement-candlelight-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-candlelight-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/enhancement-candlelight-enhanced.mp4" poster="assets/videos/enhancement-candlelight-enhanced.webp" aria-label="Candlelight · Retinexformer">
+                <a href="assets/videos/enhancement-candlelight-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-candlelight-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
       </div>
@@ -102,43 +154,95 @@
       <h2 id="object-detection-heading">Low-light Object Detection</h2>
       <div class="comparison-grid">
         <figure class="comparison">
-          <figcaption class="scene-title">Town square traffic</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/detection-town-square.mp4" poster="assets/videos/detection-town-square.webp" aria-label="Town square traffic. Upper video shows Grounding DINO Tiny on low-light frames. Lower video shows Grounding DINO Base on Retinexformer-enhanced frames.">
-              <a href="assets/videos/detection-town-square.mp4">Open town square traffic video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-town-square.mp4">Open video</a></p>
+          <figcaption class="scene-title">Evening stroll</figcaption>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/detection-evening-stroll-low-light.mp4" poster="assets/videos/detection-evening-stroll-low-light.webp" aria-label="Evening stroll · Low-light">
+                <a href="assets/videos/detection-evening-stroll-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-evening-stroll-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/detection-evening-stroll-enhanced.mp4" poster="assets/videos/detection-evening-stroll-enhanced.webp" aria-label="Evening stroll · Retinexformer">
+                <a href="assets/videos/detection-evening-stroll-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-evening-stroll-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
-          <figcaption class="scene-title">Night traffic</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/detection-night-traffic.mp4" poster="assets/videos/detection-night-traffic.webp" aria-label="Night traffic. Upper video shows Grounding DINO Tiny on low-light frames. Lower video shows Grounding DINO Base on Retinexformer-enhanced frames.">
-              <a href="assets/videos/detection-night-traffic.mp4">Open night traffic video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-night-traffic.mp4">Open video</a></p>
+          <figcaption class="scene-title">Cobblestone walk</figcaption>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/detection-slow-steps-low-light.mp4" poster="assets/videos/detection-slow-steps-low-light.webp" aria-label="Cobblestone walk · Low-light">
+                <a href="assets/videos/detection-slow-steps-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-slow-steps-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/detection-slow-steps-enhanced.mp4" poster="assets/videos/detection-slow-steps-enhanced.webp" aria-label="Cobblestone walk · Retinexformer">
+                <a href="assets/videos/detection-slow-steps-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-slow-steps-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
-          <figcaption class="scene-title">Unlit road</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/detection-unlit-road.mp4" poster="assets/videos/detection-unlit-road.webp" aria-label="Unlit road. Upper video shows Grounding DINO Tiny on low-light frames. Lower video shows Grounding DINO Base on Retinexformer-enhanced frames.">
-              <a href="assets/videos/detection-unlit-road.mp4">Open unlit road video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-unlit-road.mp4">Open video</a></p>
+          <figcaption class="scene-title">Parked car</figcaption>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/detection-parked-car-low-light.mp4" poster="assets/videos/detection-parked-car-low-light.webp" aria-label="Parked car · Low-light">
+                <a href="assets/videos/detection-parked-car-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-parked-car-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/detection-parked-car-enhanced.mp4" poster="assets/videos/detection-parked-car-enhanced.webp" aria-label="Parked car · Retinexformer">
+                <a href="assets/videos/detection-parked-car-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-parked-car-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
-          <figcaption class="scene-title">Park sidewalk</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/detection-park-sidewalk.mp4" poster="assets/videos/detection-park-sidewalk.webp" aria-label="Park sidewalk. Upper video shows Grounding DINO Tiny on low-light frames. Lower video shows Grounding DINO Base on Retinexformer-enhanced frames.">
-              <a href="assets/videos/detection-park-sidewalk.mp4">Open park sidewalk video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-park-sidewalk.mp4">Open video</a></p>
+          <figcaption class="scene-title">Pedestrians in fog</figcaption>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/detection-pedestrians-in-fog-low-light.mp4" poster="assets/videos/detection-pedestrians-in-fog-low-light.webp" aria-label="Pedestrians in fog · Low-light">
+                <a href="assets/videos/detection-pedestrians-in-fog-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-pedestrians-in-fog-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/detection-pedestrians-in-fog-enhanced.mp4" poster="assets/videos/detection-pedestrians-in-fog-enhanced.webp" aria-label="Pedestrians in fog · Retinexformer">
+                <a href="assets/videos/detection-pedestrians-in-fog-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-pedestrians-in-fog-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
       </div>
@@ -149,42 +253,94 @@
       <div class="comparison-grid">
         <figure class="comparison">
           <figcaption class="scene-title">Town square</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/segmentation-town-square.mp4" poster="assets/videos/segmentation-town-square.webp" aria-label="Town square. Upper video shows SegFormer B2 on low-light frames. Lower video shows Mask2Former on Retinexformer-enhanced frames.">
-              <a href="assets/videos/segmentation-town-square.mp4">Open town square video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-town-square.mp4">Open video</a></p>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/segmentation-town-square-low-light.mp4" poster="assets/videos/segmentation-town-square-low-light.webp" aria-label="Town square · Low-light">
+                <a href="assets/videos/segmentation-town-square-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-town-square-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/segmentation-town-square-enhanced.mp4" poster="assets/videos/segmentation-town-square-enhanced.webp" aria-label="Town square · Retinexformer">
+                <a href="assets/videos/segmentation-town-square-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-town-square-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
           <figcaption class="scene-title">Bus lane</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/segmentation-bus-lane.mp4" poster="assets/videos/segmentation-bus-lane.webp" aria-label="Bus lane. Upper video shows SegFormer B2 on low-light frames. Lower video shows SegFormer B5 on Retinexformer-enhanced frames.">
-              <a href="assets/videos/segmentation-bus-lane.mp4">Open bus lane video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-bus-lane.mp4">Open video</a></p>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/segmentation-bus-lane-low-light.mp4" poster="assets/videos/segmentation-bus-lane-low-light.webp" aria-label="Bus lane · Low-light">
+                <a href="assets/videos/segmentation-bus-lane-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-bus-lane-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/segmentation-bus-lane-enhanced.mp4" poster="assets/videos/segmentation-bus-lane-enhanced.webp" aria-label="Bus lane · Retinexformer">
+                <a href="assets/videos/segmentation-bus-lane-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-bus-lane-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
           <figcaption class="scene-title">Tree-lined sidewalk</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/segmentation-tree-lined-sidewalk.mp4" poster="assets/videos/segmentation-tree-lined-sidewalk.webp" aria-label="Tree-lined sidewalk. Upper video shows SegFormer B2 on low-light frames. Lower video shows Mask2Former on Retinexformer-enhanced frames.">
-              <a href="assets/videos/segmentation-tree-lined-sidewalk.mp4">Open tree-lined sidewalk video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-tree-lined-sidewalk.mp4">Open video</a></p>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/segmentation-tree-lined-sidewalk-low-light.mp4" poster="assets/videos/segmentation-tree-lined-sidewalk-low-light.webp" aria-label="Tree-lined sidewalk · Low-light">
+                <a href="assets/videos/segmentation-tree-lined-sidewalk-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-tree-lined-sidewalk-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/segmentation-tree-lined-sidewalk-enhanced.mp4" poster="assets/videos/segmentation-tree-lined-sidewalk-enhanced.webp" aria-label="Tree-lined sidewalk · Retinexformer">
+                <a href="assets/videos/segmentation-tree-lined-sidewalk-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-tree-lined-sidewalk-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
-          <figcaption class="scene-title">Residential street</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/segmentation-residential-street.mp4" poster="assets/videos/segmentation-residential-street.webp" aria-label="Residential street. Upper video shows SegFormer B2 on low-light frames. Lower video shows SegFormer B5 on Retinexformer-enhanced frames.">
-              <a href="assets/videos/segmentation-residential-street.mp4">Open residential street video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-residential-street.mp4">Open video</a></p>
+          <figcaption class="scene-title">Park path</figcaption>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/segmentation-park-path-low-light.mp4" poster="assets/videos/segmentation-park-path-low-light.webp" aria-label="Park path · Low-light">
+                <a href="assets/videos/segmentation-park-path-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-park-path-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/segmentation-park-path-enhanced.mp4" poster="assets/videos/segmentation-park-path-enhanced.webp" aria-label="Park path · Retinexformer">
+                <a href="assets/videos/segmentation-park-path-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-park-path-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
       </div>
@@ -206,45 +362,98 @@
       <div class="comparison-grid">
         <figure class="comparison">
           <figcaption class="scene-title">Floor choreography</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/pose-floor-choreography.mp4" poster="assets/videos/pose-floor-choreography.webp" aria-label="Floor choreography. Upper video shows RTMPose-M on low-light frames. Lower video shows RTMPose-X on Retinexformer-enhanced frames.">
-              <a href="assets/videos/pose-floor-choreography.mp4">Open floor choreography video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-floor-choreography.mp4">Open video</a></p>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/pose-floor-choreography-low-light.mp4" poster="assets/videos/pose-floor-choreography-low-light.webp" aria-label="Floor choreography · Low-light">
+                <a href="assets/videos/pose-floor-choreography-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-floor-choreography-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/pose-floor-choreography-enhanced.mp4" poster="assets/videos/pose-floor-choreography-enhanced.webp" aria-label="Floor choreography · Retinexformer">
+                <a href="assets/videos/pose-floor-choreography-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-floor-choreography-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
           <figcaption class="scene-title">Outdoor dance</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/pose-outdoor-dance.mp4" poster="assets/videos/pose-outdoor-dance.webp" aria-label="Outdoor dance. Upper video shows RTMPose-M on low-light frames. Lower video shows RTMPose-X on Retinexformer-enhanced frames.">
-              <a href="assets/videos/pose-outdoor-dance.mp4">Open outdoor dance video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-outdoor-dance.mp4">Open video</a></p>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/pose-outdoor-dance-low-light.mp4" poster="assets/videos/pose-outdoor-dance-low-light.webp" aria-label="Outdoor dance · Low-light">
+                <a href="assets/videos/pose-outdoor-dance-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-outdoor-dance-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/pose-outdoor-dance-enhanced.mp4" poster="assets/videos/pose-outdoor-dance-enhanced.webp" aria-label="Outdoor dance · Retinexformer">
+                <a href="assets/videos/pose-outdoor-dance-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-outdoor-dance-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
           <figcaption class="scene-title">Night walk</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/pose-night-walk.mp4" poster="assets/videos/pose-night-walk.webp" aria-label="Night walk. Upper video shows RTMPose-M on low-light frames. Lower video shows RTMPose-X on Retinexformer-enhanced frames.">
-              <a href="assets/videos/pose-night-walk.mp4">Open night walk video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-night-walk.mp4">Open video</a></p>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/pose-night-walk-low-light.mp4" poster="assets/videos/pose-night-walk-low-light.webp" aria-label="Night walk · Low-light">
+                <a href="assets/videos/pose-night-walk-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-night-walk-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/pose-night-walk-enhanced.mp4" poster="assets/videos/pose-night-walk-enhanced.webp" aria-label="Night walk · Retinexformer">
+                <a href="assets/videos/pose-night-walk-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-night-walk-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
         <figure class="comparison">
-          <figcaption class="scene-title">Shadowed doorway</figcaption>
-          <div class="video-frame">
-            <video controls muted loop playsinline preload="none" width="704" height="880"
-              src="assets/videos/pose-shadowed-doorway.mp4" poster="assets/videos/pose-shadowed-doorway.webp" aria-label="Shadowed doorway. Upper video shows RTMPose-M on low-light frames. Lower video shows RTMPose-X on Retinexformer-enhanced frames.">
-              <a href="assets/videos/pose-shadowed-doorway.mp4">Open shadowed doorway video</a>
-            </video>
-            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-shadowed-doorway.mp4">Open video</a></p>
+          <figcaption class="scene-title">Boxing workout</figcaption>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="low-light" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/pose-boxing-workout-low-light.mp4" poster="assets/videos/pose-boxing-workout-low-light.webp" aria-label="Boxing workout · Low-light">
+                <a href="assets/videos/pose-boxing-workout-low-light.mp4">Open Low-light video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-boxing-workout-low-light.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Low-light</p>
+          </div>
+          <div class="comparison-panel">
+            <div class="video-frame">
+              <video class="enhanced" controls muted loop playsinline preload="none" width="704" height="396"
+                src="assets/videos/pose-boxing-workout-enhanced.mp4" poster="assets/videos/pose-boxing-workout-enhanced.webp" aria-label="Boxing workout · Retinexformer">
+                <a href="assets/videos/pose-boxing-workout-enhanced.mp4">Open Retinexformer video</a>
+              </video>
+              <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-boxing-workout-enhanced.mp4">Open video</a></p>
+            </div>
+            <p class="condition-label">Retinexformer</p>
           </div>
         </figure>
       </div>
+      <p class="pipeline-note">The downstream comparisons use different models for the two inputs.</p>
     </section>
 
     <section class="section paper-section" id="method" aria-labelledby="method-heading">
@@ -329,13 +538,20 @@
     </section>
 
     <section class="section paper-section award" id="award" aria-labelledby="award-heading">
-      <h2 id="award-heading">NTIRE 2024 Runner-Up Award</h2>
-      <p>Low Light Enhancement Challenge at the CVPR 2024 NTIRE Workshop.</p>
+      <h2 id="award-heading">Awards</h2>
+      <figure class="paper-figure certificate">
+        <a href="assets/images/ntire-2022-award.png" aria-label="Open the full-resolution NTIRE 2022 Winner Award certificate">
+          <img src="assets/images/ntire-2022-award.png" width="825" height="495" loading="lazy"
+            alt="NTIRE 2022 Challenge on Spectral Recovery Winner Award certificate.">
+        </a>
+        <figcaption>NTIRE 2022 Challenge on Spectral Recovery · Winner Award</figcaption>
+      </figure>
       <figure class="paper-figure certificate">
         <a href="assets/images/ntire-2024-award.png" aria-label="Open the full-resolution NTIRE 2024 Runner-Up Award certificate">
           <img src="assets/images/ntire-2024-award.png" width="2068" height="1216" loading="lazy"
-            alt="NTIRE 2024 Runner-Up Award for the Low Light Enhancement Challenge, awarded to Yuanhao Cai, Hao Bian, Yuxin Zheng, Jing Lin, and Alan Yuille.">
+            alt="NTIRE 2024 Low Light Enhancement Challenge Runner-Up Award certificate.">
         </a>
+        <figcaption>NTIRE 2024 Low Light Enhancement Challenge · Runner-Up Award</figcaption>
       </figure>
     </section>
 

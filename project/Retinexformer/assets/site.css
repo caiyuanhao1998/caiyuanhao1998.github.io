@@ -172,6 +172,25 @@ sup {
   font-weight: 650;
 }
 
+.comparison-panel + .comparison-panel { margin-top: 0.7rem; }
+
+.condition-label {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.94rem;
+  font-weight: 650;
+}
+
+.comparison-panel:last-child .condition-label { color: var(--accent); }
+
+.pipeline-note {
+  margin: 1.15rem 0 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
 .video-frame {
   position: relative;
   overflow: hidden;
@@ -186,7 +205,7 @@ video {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 704 / 880;
+  aspect-ratio: 704 / 396;
 }
 
 .video-error {
