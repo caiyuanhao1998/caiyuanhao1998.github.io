@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Retinexformer | Low-light Image Enhancement</title>
-  <meta name="description" content="Retinexformer, ICCV 2023. Explore low-light video enhancement and side-by-side comparisons for zero-shot detection, semantic segmentation, and human pose estimation.">
+  <meta name="description" content="Retinexformer, ICCV 2023. Explore low-light video enhancement and stacked video comparisons for zero-shot detection, semantic segmentation, and human pose estimation.">
   <link rel="canonical" href="https://caiyuanhao1998.github.io/project/Retinexformer/">
   <meta property="og:title" content="Retinexformer | Low-light Image Enhancement">
-  <meta property="og:description" content="A one-stage Retinex-based Transformer for low-light image enhancement, with four nighttime video comparisons.">
-  <meta property="og:image" content="https://caiyuanhao1998.github.io/project/Retinexformer/assets/videos/enhancement.webp">
+  <meta property="og:description" content="A one-stage Retinex-based Transformer for low-light image enhancement, with nighttime video comparisons for four tasks.">
+  <meta property="og:image" content="https://caiyuanhao1998.github.io/project/Retinexformer/assets/videos/enhancement-foggy-alley.webp">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
-  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/site.css?v=stacked-gallery">
   <script src="assets/site.js" defer></script>
 </head>
 <body>
@@ -49,129 +49,202 @@
         <img src="assets/icons/huggingface.svg" width="19" height="19" alt="">Online Demo
       </a>
     </nav>
-    <nav class="section-nav" aria-label="On this page">
-      <a href="#video-enhancement">Enhancement</a>
-      <a href="#object-detection">Detection</a>
-      <a href="#semantic-segmentation">Segmentation</a>
-      <a href="#human-pose-estimation">Pose Estimation</a>
-      <a href="#award">Award</a>
-    </nav>
   </header>
 
   <main>
-    <section class="section demo" id="video-enhancement" aria-labelledby="enhancement-heading">
-      <h2 id="enhancement-heading">Low-light Video Enhancement</h2>
-      <p class="demo-description">Retinexformer enhances each frame of the nighttime footage. Both views play in sync.</p>
-      <figure class="comparison">
-        <figcaption class="comparison-labels">
-          <span class="condition">Low-light input</span>
-          <span class="condition enhanced">Retinexformer</span>
-        </figcaption>
-        <div class="video-frame">
-          <video controls muted loop playsinline preload="none" width="1418" height="396"
-            src="assets/videos/enhancement.mp4" poster="assets/videos/enhancement.webp"
-            aria-label="Nighttime footage before and after enhancement. Low-light input on the left and Retinexformer on the right.">
-            <a href="assets/videos/enhancement.mp4">Open the enhancement video</a>
-          </video>
-          <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement.mp4">Open video</a></p>
-        </div>
-      </figure>
-      <p class="footage-credit"><a href="https://www.pexels.com/video/misty-night-ride-through-foggy-city-streets-30339957/">Footage by Sketch Benjamin</a></p>
+    <section class="section demo" id="video-enhancement" aria-labelledby="video-enhancement-heading">
+      <h2 id="video-enhancement-heading">Low-light Video Enhancement</h2>
+      <div class="comparison-grid">
+        <figure class="comparison">
+          <figcaption class="scene-title">Foggy alley</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/enhancement-foggy-alley.mp4" poster="assets/videos/enhancement-foggy-alley.webp" aria-label="Foggy alley. Low-light input above and Retinexformer-enhanced input below.">
+              <a href="assets/videos/enhancement-foggy-alley.mp4">Open foggy alley video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-foggy-alley.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Rainy street</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/enhancement-rainy-street.mp4" poster="assets/videos/enhancement-rainy-street.webp" aria-label="Rainy street. Low-light input above and Retinexformer-enhanced input below.">
+              <a href="assets/videos/enhancement-rainy-street.mp4">Open rainy street video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-rainy-street.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Snowy path</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/enhancement-snowy-path.mp4" poster="assets/videos/enhancement-snowy-path.webp" aria-label="Snowy path. Low-light input above and Retinexformer-enhanced input below.">
+              <a href="assets/videos/enhancement-snowy-path.mp4">Open snowy path video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-snowy-path.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Outdoor dance</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/enhancement-night-dance.mp4" poster="assets/videos/enhancement-night-dance.webp" aria-label="Outdoor dance. Low-light input above and Retinexformer-enhanced input below.">
+              <a href="assets/videos/enhancement-night-dance.mp4">Open outdoor dance video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement-night-dance.mp4">Open video</a></p>
+          </div>
+        </figure>
+      </div>
     </section>
 
-    <section class="section demo" id="object-detection" aria-labelledby="detection-heading">
-      <h2 id="detection-heading">Low-light Object Detection</h2>
-      <p class="demo-description">
-        The same zero-shot detector runs directly on the nighttime frames and again after Retinexformer enhancement. <a href="https://huggingface.co/IDEA-Research/grounding-dino-tiny">Grounding DINO Tiny</a>
-      </p>
-      <figure class="comparison">
-        <figcaption class="comparison-labels">
-          <span class="condition">Detection on low-light frames</span>
-          <span class="condition enhanced">Detection after Retinexformer</span>
-        </figcaption>
-        <div class="video-frame">
-          <video controls muted loop playsinline preload="none" width="1418" height="396"
-            src="assets/videos/detection.mp4" poster="assets/videos/detection.webp"
-            aria-label="Grounding DINO detection on low-light frames on the left and on Retinexformer-enhanced frames on the right.">
-            <a href="assets/videos/detection.mp4">Open the detection video</a>
-          </video>
-          <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection.mp4">Open video</a></p>
-        </div>
-      </figure>
-      <p class="footage-credit"><a href="https://www.pexels.com/video/nighttime-urban-street-with-moving-cars-34065957/">Footage by Marc Espejo</a></p>
+    <section class="section demo" id="object-detection" aria-labelledby="object-detection-heading">
+      <h2 id="object-detection-heading">Low-light Object Detection</h2>
+      <div class="comparison-grid">
+        <figure class="comparison">
+          <figcaption class="scene-title">Town square traffic</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/detection-town-square.mp4" poster="assets/videos/detection-town-square.webp" aria-label="Town square traffic. Upper video shows Grounding DINO Tiny on low-light frames. Lower video shows Grounding DINO Base on Retinexformer-enhanced frames.">
+              <a href="assets/videos/detection-town-square.mp4">Open town square traffic video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-town-square.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Night traffic</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/detection-night-traffic.mp4" poster="assets/videos/detection-night-traffic.webp" aria-label="Night traffic. Upper video shows Grounding DINO Tiny on low-light frames. Lower video shows Grounding DINO Base on Retinexformer-enhanced frames.">
+              <a href="assets/videos/detection-night-traffic.mp4">Open night traffic video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-night-traffic.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Unlit road</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/detection-unlit-road.mp4" poster="assets/videos/detection-unlit-road.webp" aria-label="Unlit road. Upper video shows Grounding DINO Tiny on low-light frames. Lower video shows Grounding DINO Base on Retinexformer-enhanced frames.">
+              <a href="assets/videos/detection-unlit-road.mp4">Open unlit road video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-unlit-road.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Park sidewalk</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/detection-park-sidewalk.mp4" poster="assets/videos/detection-park-sidewalk.webp" aria-label="Park sidewalk. Upper video shows Grounding DINO Tiny on low-light frames. Lower video shows Grounding DINO Base on Retinexformer-enhanced frames.">
+              <a href="assets/videos/detection-park-sidewalk.mp4">Open park sidewalk video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection-park-sidewalk.mp4">Open video</a></p>
+          </div>
+        </figure>
+      </div>
     </section>
 
-    <section class="section demo" id="semantic-segmentation" aria-labelledby="segmentation-heading">
-      <h2 id="segmentation-heading">Low-light Semantic Segmentation</h2>
-      <p class="demo-description">
-        The overlays show pixel-level predictions using the same Cityscapes colors in both views. <a href="https://huggingface.co/nvidia/segformer-b2-finetuned-cityscapes-1024-1024">SegFormer B2</a>
-      </p>
-      <figure class="comparison">
-        <figcaption class="comparison-labels">
-          <span class="condition">Segmentation on low-light frames</span>
-          <span class="condition enhanced">Segmentation after Retinexformer</span>
-        </figcaption>
-        <div class="video-frame">
-          <video controls muted loop playsinline preload="none" width="1418" height="396"
-            src="assets/videos/segmentation.mp4" poster="assets/videos/segmentation.webp"
-            aria-label="SegFormer semantic masks on low-light frames on the left and on Retinexformer-enhanced frames on the right.">
-            <a href="assets/videos/segmentation.mp4">Open the segmentation video</a>
-          </video>
-          <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation.mp4">Open video</a></p>
-        </div>
-      </figure>
+    <section class="section demo" id="semantic-segmentation" aria-labelledby="semantic-segmentation-heading">
+      <h2 id="semantic-segmentation-heading">Low-light Semantic Segmentation</h2>
+      <div class="comparison-grid">
+        <figure class="comparison">
+          <figcaption class="scene-title">Town square</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/segmentation-town-square.mp4" poster="assets/videos/segmentation-town-square.webp" aria-label="Town square. Upper video shows SegFormer B2 on low-light frames. Lower video shows Mask2Former on Retinexformer-enhanced frames.">
+              <a href="assets/videos/segmentation-town-square.mp4">Open town square video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-town-square.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Bus lane</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/segmentation-bus-lane.mp4" poster="assets/videos/segmentation-bus-lane.webp" aria-label="Bus lane. Upper video shows SegFormer B2 on low-light frames. Lower video shows SegFormer B5 on Retinexformer-enhanced frames.">
+              <a href="assets/videos/segmentation-bus-lane.mp4">Open bus lane video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-bus-lane.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Tree-lined sidewalk</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/segmentation-tree-lined-sidewalk.mp4" poster="assets/videos/segmentation-tree-lined-sidewalk.webp" aria-label="Tree-lined sidewalk. Upper video shows SegFormer B2 on low-light frames. Lower video shows Mask2Former on Retinexformer-enhanced frames.">
+              <a href="assets/videos/segmentation-tree-lined-sidewalk.mp4">Open tree-lined sidewalk video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-tree-lined-sidewalk.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Residential street</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/segmentation-residential-street.mp4" poster="assets/videos/segmentation-residential-street.webp" aria-label="Residential street. Upper video shows SegFormer B2 on low-light frames. Lower video shows SegFormer B5 on Retinexformer-enhanced frames.">
+              <a href="assets/videos/segmentation-residential-street.mp4">Open residential street video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation-residential-street.mp4">Open video</a></p>
+          </div>
+        </figure>
+      </div>
       <ul class="legend" aria-label="Selected segmentation classes">
         <li><span style="--swatch: #804080"></span>Road</li>
         <li><span style="--swatch: #f423e8"></span>Sidewalk</li>
         <li><span style="--swatch: #464646"></span>Building</li>
         <li><span style="--swatch: #6b8e23"></span>Vegetation</li>
+        <li><span style="--swatch: #98fb98"></span>Terrain</li>
         <li><span style="--swatch: #4682b4"></span>Sky</li>
         <li><span style="--swatch: #00008e"></span>Car</li>
+        <li><span style="--swatch: #003c64"></span>Bus</li>
         <li><span style="--swatch: #dc143c"></span>Person</li>
       </ul>
-      <p class="footage-credit"><a href="https://www.pexels.com/video/a-car-driving-down-a-street-at-night-16657023/">Footage by Erik Mclean</a></p>
     </section>
 
-    <section class="section demo" id="human-pose-estimation" aria-labelledby="pose-heading">
-      <h2 id="pose-heading">Low-light Human Pose Estimation</h2>
-      <p class="demo-description">
-        The same pose estimator predicts 2D joints in the original and enhanced frames. <a href="https://github.com/open-mmlab/mmpose/tree/main/projects/rtmpose">RTMPose-M</a>
-      </p>
-      <figure class="comparison">
-        <figcaption class="comparison-labels">
-          <span class="condition">Pose on low-light frames</span>
-          <span class="condition enhanced">Pose after Retinexformer</span>
-        </figcaption>
-        <div class="video-frame">
-          <video controls muted loop playsinline preload="none" width="1418" height="396"
-            src="assets/videos/pose.mp4" poster="assets/videos/pose.webp"
-            aria-label="RTMPose joint predictions on low-light frames on the left and on Retinexformer-enhanced frames on the right.">
-            <a href="assets/videos/pose.mp4">Open the human pose video</a>
-          </video>
-          <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose.mp4">Open video</a></p>
-        </div>
-      </figure>
-      <p class="footage-credit"><a href="https://www.pexels.com/video/person-dancing-on-the-street-4765796/">Footage by K</a></p>
-
-      <details class="demo-settings">
-        <summary>Video demo settings</summary>
-        <div>
-          <p>All four demos apply Retinexformer frame by frame at 704 × 396 using the released NTIRE checkpoint. Each downstream model uses identical weights and settings on the two inputs. <a href="https://huggingface.co/CaiYuanhao/Retinexformer/tree/main">Retinexformer checkpoints</a></p>
-          <ul>
-            <li>Grounding DINO uses the prompts “person,” “bicycle,” and “car,” with a box threshold of 0.34 and a text threshold of 0.25.</li>
-            <li>SegFormer B2 uses the Cityscapes checkpoint and the same mask opacity on both sides.</li>
-            <li>YOLOX-M locates people for RTMPose-M. The overlay shows joints with a confidence of 0.42 or higher.</li>
-          </ul>
-          <p>Source footage is provided under the <a href="https://www.pexels.com/license/">Pexels license</a>.</p>
-        </div>
-      </details>
-    </section>
-
-    <section class="section paper-section" id="abstract" aria-labelledby="abstract-heading">
-      <h2 id="abstract-heading">Abstract</h2>
-      <p>
-        Brightening a low-light image can expose sensor noise, shift colors, or clip highlights. Retinexformer learns to estimate illumination and restore the corrupted image in one end-to-end model. Its Illumination-Guided Transformer uses lighting features to relate regions with different exposures, helping recover details that are hard to see in the input.
-      </p>
+    <section class="section demo" id="human-pose-estimation" aria-labelledby="human-pose-estimation-heading">
+      <h2 id="human-pose-estimation-heading">Low-light Human Pose Estimation</h2>
+      <div class="comparison-grid">
+        <figure class="comparison">
+          <figcaption class="scene-title">Floor choreography</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/pose-floor-choreography.mp4" poster="assets/videos/pose-floor-choreography.webp" aria-label="Floor choreography. Upper video shows RTMPose-M on low-light frames. Lower video shows RTMPose-X on Retinexformer-enhanced frames.">
+              <a href="assets/videos/pose-floor-choreography.mp4">Open floor choreography video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-floor-choreography.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Outdoor dance</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/pose-outdoor-dance.mp4" poster="assets/videos/pose-outdoor-dance.webp" aria-label="Outdoor dance. Upper video shows RTMPose-M on low-light frames. Lower video shows RTMPose-X on Retinexformer-enhanced frames.">
+              <a href="assets/videos/pose-outdoor-dance.mp4">Open outdoor dance video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-outdoor-dance.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Night walk</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/pose-night-walk.mp4" poster="assets/videos/pose-night-walk.webp" aria-label="Night walk. Upper video shows RTMPose-M on low-light frames. Lower video shows RTMPose-X on Retinexformer-enhanced frames.">
+              <a href="assets/videos/pose-night-walk.mp4">Open night walk video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-night-walk.mp4">Open video</a></p>
+          </div>
+        </figure>
+        <figure class="comparison">
+          <figcaption class="scene-title">Shadowed doorway</figcaption>
+          <div class="video-frame">
+            <video controls muted loop playsinline preload="none" width="704" height="880"
+              src="assets/videos/pose-shadowed-doorway.mp4" poster="assets/videos/pose-shadowed-doorway.webp" aria-label="Shadowed doorway. Upper video shows RTMPose-M on low-light frames. Lower video shows RTMPose-X on Retinexformer-enhanced frames.">
+              <a href="assets/videos/pose-shadowed-doorway.mp4">Open shadowed doorway video</a>
+            </video>
+            <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose-shadowed-doorway.mp4">Open video</a></p>
+          </div>
+        </figure>
+      </div>
     </section>
 
     <section class="section paper-section" id="method" aria-labelledby="method-heading">
@@ -190,9 +263,62 @@
 
     <section class="section paper-section" id="results" aria-labelledby="results-heading">
       <h2 id="results-heading">Paper Results</h2>
-      <p>
-        The ICCV paper evaluates Retinexformer on 13 low-light image benchmarks. It also reports 66.1 mean AP on ExDark using a YOLOv3 detector trained for that experiment. <a href="https://arxiv.org/html/2303.06705#S4">Experiments in the paper</a>
-      </p>
+      <div class="benchmark" role="region" aria-label="Image enhancement on seven paired benchmarks (PSNR in dB / SSIM)" tabindex="0">
+        <table>
+          <caption><a href="https://arxiv.org/html/2303.06705#S3.T1">Image enhancement on seven paired benchmarks (PSNR in dB / SSIM)</a></caption>
+          <thead><tr><th scope="col">Method</th><th scope="col">FLOPs (G)</th><th scope="col">Params (M)</th><th scope="col">LOL-v1</th><th scope="col">LOL-v2-real</th><th scope="col">LOL-v2-syn</th><th scope="col">SID</th><th scope="col">SMID</th><th scope="col">SDSD-in</th><th scope="col">SDSD-out</th></tr></thead>
+          <tbody>
+          <tr><th scope="row">SID</th><td>13.73</td><td>7.76</td><td>14.35 / 0.436</td><td>13.24 / 0.442</td><td>15.04 / 0.610</td><td>16.97 / 0.591</td><td>24.78 / 0.718</td><td>23.29 / 0.703</td><td>24.90 / 0.693</td></tr>
+          <tr><th scope="row">3DLUT</th><td>0.075</td><td>0.59</td><td>14.35 / 0.445</td><td>17.59 / 0.721</td><td>18.04 / 0.800</td><td>20.11 / 0.592</td><td>23.86 / 0.678</td><td>21.66 / 0.655</td><td>21.89 / 0.649</td></tr>
+          <tr><th scope="row">DeepUPE</th><td>21.10</td><td>1.02</td><td>14.38 / 0.446</td><td>13.27 / 0.452</td><td>15.08 / 0.623</td><td>17.01 / 0.604</td><td>23.91 / 0.690</td><td>21.70 / 0.662</td><td>21.94 / 0.698</td></tr>
+          <tr><th scope="row">RF</th><td>46.23</td><td>21.54</td><td>15.23 / 0.452</td><td>14.05 / 0.458</td><td>15.97 / 0.632</td><td>16.44 / 0.596</td><td>23.11 / 0.681</td><td>20.97 / 0.655</td><td>21.21 / 0.689</td></tr>
+          <tr><th scope="row">DeepLPF</th><td>5.86</td><td>1.77</td><td>15.28 / 0.473</td><td>14.10 / 0.480</td><td>16.02 / 0.587</td><td>18.07 / 0.600</td><td>24.36 / 0.688</td><td>22.21 / 0.664</td><td>22.76 / 0.658</td></tr>
+          <tr><th scope="row">IPT</th><td>6887</td><td>115.31</td><td>16.27 / 0.504</td><td>19.80 / 0.813</td><td>18.30 / 0.811</td><td>20.53 / 0.561</td><td>27.03 / 0.783</td><td>26.11 / 0.831</td><td>27.55 / 0.850</td></tr>
+          <tr><th scope="row">UFormer</th><td>12.00</td><td>5.29</td><td>16.36 / 0.771</td><td>18.82 / 0.771</td><td>19.66 / 0.871</td><td>18.54 / 0.577</td><td>27.20 / 0.792</td><td>23.17 / 0.859</td><td>23.85 / 0.748</td></tr>
+          <tr><th scope="row">RetinexNet</th><td>587.47</td><td>0.84</td><td>16.77 / 0.560</td><td>15.47 / 0.567</td><td>17.13 / 0.798</td><td>16.48 / 0.578</td><td>22.83 / 0.684</td><td>20.84 / 0.617</td><td>20.96 / 0.629</td></tr>
+          <tr><th scope="row">Sparse</th><td>53.26</td><td>2.33</td><td>17.20 / 0.640</td><td>20.06 / 0.816</td><td>22.05 / 0.905</td><td>18.68 / 0.606</td><td>25.48 / 0.766</td><td>23.25 / 0.863</td><td>25.28 / 0.804</td></tr>
+          <tr><th scope="row">EnGAN</th><td>61.01</td><td>114.35</td><td>17.48 / 0.650</td><td>18.23 / 0.617</td><td>16.57 / 0.734</td><td>17.23 / 0.543</td><td>22.62 / 0.674</td><td>20.02 / 0.604</td><td>20.10 / 0.616</td></tr>
+          <tr><th scope="row">RUAS</th><td>0.83</td><td>0.003</td><td>18.23 / 0.720</td><td>18.37 / 0.723</td><td>16.55 / 0.652</td><td>18.44 / 0.581</td><td>25.88 / 0.744</td><td>23.17 / 0.696</td><td>23.84 / 0.743</td></tr>
+          <tr><th scope="row">FIDE</th><td>28.51</td><td>8.62</td><td>18.27 / 0.665</td><td>16.85 / 0.678</td><td>15.20 / 0.612</td><td>18.34 / 0.578</td><td>24.42 / 0.692</td><td>22.41 / 0.659</td><td>22.20 / 0.629</td></tr>
+          <tr><th scope="row">DRBN</th><td>48.61</td><td>5.27</td><td>20.13 / 0.830</td><td>20.29 / 0.831</td><td>23.22 / 0.927</td><td>19.02 / 0.577</td><td>26.60 / 0.781</td><td>24.08 / 0.868</td><td>25.77 / 0.841</td></tr>
+          <tr><th scope="row">KinD</th><td>34.99</td><td>8.02</td><td>20.86 / 0.790</td><td>14.74 / 0.641</td><td>13.29 / 0.578</td><td>18.02 / 0.583</td><td>22.18 / 0.634</td><td>21.95 / 0.672</td><td>21.97 / 0.654</td></tr>
+          <tr><th scope="row">Restormer</th><td>144.25</td><td>26.13</td><td>22.43 / 0.823</td><td>19.94 / 0.827</td><td>21.41 / 0.830</td><td>22.27 / 0.649</td><td>26.97 / 0.758</td><td>25.67 / 0.827</td><td>24.79 / 0.802</td></tr>
+          <tr><th scope="row">MIRNet</th><td>785</td><td>31.76</td><td>24.14 / 0.830</td><td>20.02 / 0.820</td><td>21.94 / 0.876</td><td>20.84 / 0.605</td><td>25.66 / 0.762</td><td>24.38 / 0.864</td><td>27.13 / 0.837</td></tr>
+          <tr><th scope="row">SNR-Net</th><td>26.35</td><td>4.01</td><td>24.61 / 0.842</td><td>21.48 / 0.849</td><td>24.14 / 0.928</td><td>22.87 / 0.625</td><td>28.49 / 0.805</td><td>29.44 / 0.894</td><td>28.66 / 0.866</td></tr>
+          <tr class="ours"><th scope="row">Retinexformer</th><td>15.57</td><td>1.61</td><td>25.16 / 0.845</td><td>22.80 / 0.840</td><td>25.67 / 0.930</td><td>24.44 / 0.680</td><td>29.15 / 0.815</td><td>29.77 / 0.896</td><td>29.84 / 0.877</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="benchmark" role="region" aria-label="MIT-Adobe FiveK image enhancement" tabindex="0">
+        <table>
+          <caption><a href="https://arxiv.org/html/2303.06705#S4.T2">MIT-Adobe FiveK image enhancement</a></caption>
+          <thead><tr><th scope="col">Method</th><th scope="col">PSNR (dB)</th><th scope="col">FLOPs (G)</th></tr></thead>
+          <tbody>
+          <tr><th scope="row">DeepUPE</th><td>23.04</td><td>21.10</td></tr>
+          <tr><th scope="row">MIRNet</th><td>23.73</td><td>785.0</td></tr>
+          <tr><th scope="row">SNR-Net</th><td>23.81</td><td>26.35</td></tr>
+          <tr><th scope="row">Restormer</th><td>24.13</td><td>144.3</td></tr>
+          <tr class="ours"><th scope="row">Retinexformer</th><td>24.94</td><td>15.57</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="benchmark" role="region" aria-label="ExDark detection using YOLOv3 (AP %)" tabindex="0">
+        <table>
+          <caption><a href="https://arxiv.org/html/2303.06705#S4.T3">ExDark detection using YOLOv3 (AP %)</a></caption>
+          <thead><tr><th scope="col">Method</th><th scope="col">Bicycle</th><th scope="col">Boat</th><th scope="col">Bottle</th><th scope="col">Bus</th><th scope="col">Car</th><th scope="col">Cat</th><th scope="col">Chair</th><th scope="col">Cup</th><th scope="col">Dog</th><th scope="col">Motor</th><th scope="col">People</th><th scope="col">Table</th><th scope="col">Mean</th></tr></thead>
+          <tbody>
+          <tr><th scope="row">MIRNet</th><td>71.8</td><td>63.8</td><td>62.9</td><td>81.4</td><td>71.1</td><td>58.8</td><td>58.9</td><td>61.3</td><td>63.1</td><td>52.0</td><td>68.8</td><td>45.5</td><td>63.6</td></tr>
+          <tr><th scope="row">RetinexNet</th><td>73.8</td><td>62.8</td><td>64.8</td><td>84.9</td><td>80.8</td><td>53.4</td><td>57.2</td><td>68.3</td><td>61.5</td><td>51.3</td><td>65.9</td><td>43.1</td><td>64.0</td></tr>
+          <tr><th scope="row">RUAS</th><td>72.0</td><td>62.2</td><td>65.2</td><td>72.9</td><td>78.1</td><td>57.3</td><td>62.4</td><td>61.8</td><td>60.2</td><td>61.5</td><td>69.4</td><td>46.8</td><td>64.2</td></tr>
+          <tr><th scope="row">Restormer</th><td>76.2</td><td>65.1</td><td>64.2</td><td>84.0</td><td>76.3</td><td>59.2</td><td>53.0</td><td>58.7</td><td>66.1</td><td>62.9</td><td>68.6</td><td>45.0</td><td>64.9</td></tr>
+          <tr><th scope="row">KinD</th><td>72.2</td><td>66.5</td><td>58.9</td><td>83.7</td><td>74.5</td><td>55.4</td><td>61.7</td><td>61.3</td><td>63.8</td><td>63.0</td><td>70.5</td><td>47.8</td><td>65.0</td></tr>
+          <tr><th scope="row">ZeroDCE</th><td>75.8</td><td>66.5</td><td>65.6</td><td>84.9</td><td>77.2</td><td>56.3</td><td>53.8</td><td>59.0</td><td>63.5</td><td>64.0</td><td>68.3</td><td>46.3</td><td>65.1</td></tr>
+          <tr><th scope="row">SNR-Net</th><td>75.3</td><td>64.4</td><td>63.6</td><td>85.3</td><td>77.5</td><td>59.1</td><td>54.1</td><td>59.6</td><td>66.3</td><td>65.2</td><td>69.1</td><td>44.6</td><td>65.3</td></tr>
+          <tr><th scope="row">SCI</th><td>74.6</td><td>65.3</td><td>65.8</td><td>85.4</td><td>76.3</td><td>59.4</td><td>57.1</td><td>60.5</td><td>65.6</td><td>63.9</td><td>69.1</td><td>45.9</td><td>65.6</td></tr>
+          <tr class="ours"><th scope="row">Retinexformer</th><td>76.3</td><td>66.7</td><td>65.9</td><td>84.7</td><td>77.6</td><td>61.2</td><td>53.5</td><td>60.7</td><td>67.5</td><td>63.4</td><td>69.5</td><td>46.0</td><td>66.1</td></tr>
+          </tbody>
+        </table>
+      </div>
       <figure class="paper-figure">
         <a href="assets/images/qualitative-results.webp">
           <img src="assets/images/qualitative-results.webp" width="1217" height="359" loading="lazy"
@@ -211,7 +337,6 @@
             alt="NTIRE 2024 Runner-Up Award for the Low Light Enhancement Challenge, awarded to Yuanhao Cai, Hao Bian, Yuxin Zheng, Jing Lin, and Alan Yuille.">
         </a>
       </figure>
-      <a class="award-link" href="https://openaccess.thecvf.com/content/CVPR2024W/NTIRE/papers/Liu_NTIRE_2024_Challenge_on_Low_Light_Image_Enhancement_Methods_and_CVPRW_2024_paper.pdf">Challenge report</a>
     </section>
 
     <section class="section citation" id="bibtex" aria-labelledby="citation-heading">
