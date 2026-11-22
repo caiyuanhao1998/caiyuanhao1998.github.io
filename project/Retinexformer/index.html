@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retinexformer | Low-light Image Enhancement</title>
+  <meta name="description" content="Retinexformer, ICCV 2023. Explore low-light video enhancement and side-by-side comparisons for zero-shot detection, semantic segmentation, and human pose estimation.">
+  <link rel="canonical" href="https://caiyuanhao1998.github.io/project/Retinexformer/">
+  <meta property="og:title" content="Retinexformer | Low-light Image Enhancement">
+  <meta property="og:description" content="A one-stage Retinex-based Transformer for low-light image enhancement, with four nighttime video comparisons.">
+  <meta property="og:image" content="https://caiyuanhao1998.github.io/project/Retinexformer/assets/videos/enhancement.webp">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#video-enhancement">Skip to video comparisons</a>
+  <header class="hero">
+    <h1><span class="brand">Retinexformer</span>: One-stage Retinex-based Transformer for Low-light Image Enhancement</h1>
+    <p class="venue">IEEE/CVF International Conference on Computer Vision (ICCV), 2023</p>
+    <p class="authors">
+      <span><a href="https://caiyuanhao1998.github.io/">Yuanhao Cai</a><sup>1</sup>,</span>
+      <span><a href="https://bianhao123.github.io/">Hao Bian</a><sup>1</sup>,</span>
+      <span>Jing Lin<sup>1</sup>,</span>
+      <span><a href="https://www.sigs.tsinghua.edu.cn/whq/">Haoqian Wang</a><sup>1</sup>,</span>
+      <span><a href="https://www.cvlai.net/">Radu Timofte</a><sup>2</sup>,</span>
+      <span><a href="https://yulunzhang.com/">Yulun Zhang</a><sup>3</sup></span>
+    </p>
+    <p class="affiliations">
+      <span><sup>1</sup> Tsinghua University</span>
+      <span><sup>2</sup> University of Würzburg</span>
+      <span><sup>3</sup> ETH Zürich</span>
+    </p>
+    <nav class="resource-links" aria-label="Project resources">
+      <a class="pill" href="https://openaccess.thecvf.com/content/ICCV2023/papers/Cai_Retinexformer_One-stage_Retinex-based_Transformer_for_Low-light_Image_Enhancement_ICCV_2023_paper.pdf">
+        <img class="monochrome" src="assets/icons/pdf.svg" width="19" height="19" alt="">Paper
+      </a>
+      <a class="pill" href="https://arxiv.org/html/2303.06705">
+        <img class="monochrome" src="assets/icons/arxiv.svg" width="19" height="19" alt="">arXiv
+      </a>
+      <a class="pill" href="https://github.com/caiyuanhao1998/Retinexformer">
+        <img class="monochrome" src="assets/icons/github.svg" width="19" height="19" alt="">Code
+      </a>
+      <a class="pill" href="https://huggingface.co/CaiYuanhao/Retinexformer">
+        <img src="assets/icons/huggingface.svg" width="19" height="19" alt="">Models
+      </a>
+      <a class="pill" href="https://huggingface.co/spaces/CaiYuanhao/Retinexformer">
+        <img src="assets/icons/huggingface.svg" width="19" height="19" alt="">Online Demo
+      </a>
+    </nav>
+    <nav class="section-nav" aria-label="On this page">
+      <a href="#video-enhancement">Enhancement</a>
+      <a href="#object-detection">Detection</a>
+      <a href="#semantic-segmentation">Segmentation</a>
+      <a href="#human-pose-estimation">Pose Estimation</a>
+      <a href="#award">Award</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section demo" id="video-enhancement" aria-labelledby="enhancement-heading">
+      <h2 id="enhancement-heading">Low-light Video Enhancement</h2>
+      <p class="demo-description">Retinexformer enhances each frame of the nighttime footage. Both views play in sync.</p>
+      <figure class="comparison">
+        <figcaption class="comparison-labels">
+          <span class="condition">Low-light input</span>
+          <span class="condition enhanced">Retinexformer</span>
+        </figcaption>
+        <div class="video-frame">
+          <video controls muted loop playsinline preload="none" width="1418" height="396"
+            src="assets/videos/enhancement.mp4" poster="assets/videos/enhancement.webp"
+            aria-label="Nighttime footage before and after enhancement. Low-light input on the left and Retinexformer on the right.">
+            <a href="assets/videos/enhancement.mp4">Open the enhancement video</a>
+          </video>
+          <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/enhancement.mp4">Open video</a></p>
+        </div>
+      </figure>
+      <p class="footage-credit"><a href="https://www.pexels.com/video/misty-night-ride-through-foggy-city-streets-30339957/">Footage by Sketch Benjamin</a></p>
+    </section>
+
+    <section class="section demo" id="object-detection" aria-labelledby="detection-heading">
+      <h2 id="detection-heading">Low-light Object Detection</h2>
+      <p class="demo-description">
+        The same zero-shot detector runs directly on the nighttime frames and again after Retinexformer enhancement. <a href="https://huggingface.co/IDEA-Research/grounding-dino-tiny">Grounding DINO Tiny</a>
+      </p>
+      <figure class="comparison">
+        <figcaption class="comparison-labels">
+          <span class="condition">Detection on low-light frames</span>
+          <span class="condition enhanced">Detection after Retinexformer</span>
+        </figcaption>
+        <div class="video-frame">
+          <video controls muted loop playsinline preload="none" width="1418" height="396"
+            src="assets/videos/detection.mp4" poster="assets/videos/detection.webp"
+            aria-label="Grounding DINO detection on low-light frames on the left and on Retinexformer-enhanced frames on the right.">
+            <a href="assets/videos/detection.mp4">Open the detection video</a>
+          </video>
+          <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/detection.mp4">Open video</a></p>
+        </div>
+      </figure>
+      <p class="footage-credit"><a href="https://www.pexels.com/video/nighttime-urban-street-with-moving-cars-34065957/">Footage by Marc Espejo</a></p>
+    </section>
+
+    <section class="section demo" id="semantic-segmentation" aria-labelledby="segmentation-heading">
+      <h2 id="segmentation-heading">Low-light Semantic Segmentation</h2>
+      <p class="demo-description">
+        The overlays show pixel-level predictions using the same Cityscapes colors in both views. <a href="https://huggingface.co/nvidia/segformer-b2-finetuned-cityscapes-1024-1024">SegFormer B2</a>
+      </p>
+      <figure class="comparison">
+        <figcaption class="comparison-labels">
+          <span class="condition">Segmentation on low-light frames</span>
+          <span class="condition enhanced">Segmentation after Retinexformer</span>
+        </figcaption>
+        <div class="video-frame">
+          <video controls muted loop playsinline preload="none" width="1418" height="396"
+            src="assets/videos/segmentation.mp4" poster="assets/videos/segmentation.webp"
+            aria-label="SegFormer semantic masks on low-light frames on the left and on Retinexformer-enhanced frames on the right.">
+            <a href="assets/videos/segmentation.mp4">Open the segmentation video</a>
+          </video>
+          <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/segmentation.mp4">Open video</a></p>
+        </div>
+      </figure>
+      <ul class="legend" aria-label="Selected segmentation classes">
+        <li><span style="--swatch: #804080"></span>Road</li>
+        <li><span style="--swatch: #f423e8"></span>Sidewalk</li>
+        <li><span style="--swatch: #464646"></span>Building</li>
+        <li><span style="--swatch: #6b8e23"></span>Vegetation</li>
+        <li><span style="--swatch: #4682b4"></span>Sky</li>
+        <li><span style="--swatch: #00008e"></span>Car</li>
+        <li><span style="--swatch: #dc143c"></span>Person</li>
+      </ul>
+      <p class="footage-credit"><a href="https://www.pexels.com/video/a-car-driving-down-a-street-at-night-16657023/">Footage by Erik Mclean</a></p>
+    </section>
+
+    <section class="section demo" id="human-pose-estimation" aria-labelledby="pose-heading">
+      <h2 id="pose-heading">Low-light Human Pose Estimation</h2>
+      <p class="demo-description">
+        The same pose estimator predicts 2D joints in the original and enhanced frames. <a href="https://github.com/open-mmlab/mmpose/tree/main/projects/rtmpose">RTMPose-M</a>
+      </p>
+      <figure class="comparison">
+        <figcaption class="comparison-labels">
+          <span class="condition">Pose on low-light frames</span>
+          <span class="condition enhanced">Pose after Retinexformer</span>
+        </figcaption>
+        <div class="video-frame">
+          <video controls muted loop playsinline preload="none" width="1418" height="396"
+            src="assets/videos/pose.mp4" poster="assets/videos/pose.webp"
+            aria-label="RTMPose joint predictions on low-light frames on the left and on Retinexformer-enhanced frames on the right.">
+            <a href="assets/videos/pose.mp4">Open the human pose video</a>
+          </video>
+          <p class="video-error" hidden>Unable to play this clip. <a href="assets/videos/pose.mp4">Open video</a></p>
+        </div>
+      </figure>
+      <p class="footage-credit"><a href="https://www.pexels.com/video/person-dancing-on-the-street-4765796/">Footage by K</a></p>
+
+      <details class="demo-settings">
+        <summary>Video demo settings</summary>
+        <div>
+          <p>All four demos apply Retinexformer frame by frame at 704 × 396 using the released NTIRE checkpoint. Each downstream model uses identical weights and settings on the two inputs. <a href="https://huggingface.co/CaiYuanhao/Retinexformer/tree/main">Retinexformer checkpoints</a></p>
+          <ul>
+            <li>Grounding DINO uses the prompts “person,” “bicycle,” and “car,” with a box threshold of 0.34 and a text threshold of 0.25.</li>
+            <li>SegFormer B2 uses the Cityscapes checkpoint and the same mask opacity on both sides.</li>
+            <li>YOLOX-M locates people for RTMPose-M. The overlay shows joints with a confidence of 0.42 or higher.</li>
+          </ul>
+          <p>Source footage is provided under the <a href="https://www.pexels.com/license/">Pexels license</a>.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="section paper-section" id="abstract" aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>
+        Brightening a low-light image can expose sensor noise, shift colors, or clip highlights. Retinexformer learns to estimate illumination and restore the corrupted image in one end-to-end model. Its Illumination-Guided Transformer uses lighting features to relate regions with different exposures, helping recover details that are hard to see in the input.
+      </p>
+    </section>
+
+    <section class="section paper-section" id="method" aria-labelledby="method-heading">
+      <h2 id="method-heading">Method</h2>
+      <p>
+        The One-stage Retinex-based Framework first estimates a light-up map and illumination features. The Illumination-Guided Transformer then restores the brightened image. Its attention blocks use the illumination features to model long-range interactions between differently lit regions. <a href="https://arxiv.org/html/2303.06705#S3">Method in the paper</a>
+      </p>
+      <figure class="paper-figure">
+        <a href="assets/images/architecture.webp">
+          <img src="assets/images/architecture.webp" width="1562" height="815" loading="lazy"
+            alt="Retinexformer architecture with an illumination estimator, an illumination-guided Transformer for restoration, and a detailed view of its attention block.">
+        </a>
+        <figcaption>The illumination estimator guides both light-up and restoration.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section paper-section" id="results" aria-labelledby="results-heading">
+      <h2 id="results-heading">Paper Results</h2>
+      <p>
+        The ICCV paper evaluates Retinexformer on 13 low-light image benchmarks. It also reports 66.1 mean AP on ExDark using a YOLOv3 detector trained for that experiment. <a href="https://arxiv.org/html/2303.06705#S4">Experiments in the paper</a>
+      </p>
+      <figure class="paper-figure">
+        <a href="assets/images/qualitative-results.webp">
+          <img src="assets/images/qualitative-results.webp" width="1217" height="359" loading="lazy"
+            alt="Original low-light photos, competing methods, and Retinexformer results across LIME, NPE, MEF, DICM, and VV.">
+        </a>
+        <figcaption>Qualitative image enhancement results on five benchmarks without paired reference images.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section paper-section award" id="award" aria-labelledby="award-heading">
+      <h2 id="award-heading">NTIRE 2024 Runner-Up Award</h2>
+      <p>Low Light Enhancement Challenge at the CVPR 2024 NTIRE Workshop.</p>
+      <figure class="paper-figure certificate">
+        <a href="assets/images/ntire-2024-award.png" aria-label="Open the full-resolution NTIRE 2024 Runner-Up Award certificate">
+          <img src="assets/images/ntire-2024-award.png" width="2068" height="1216" loading="lazy"
+            alt="NTIRE 2024 Runner-Up Award for the Low Light Enhancement Challenge, awarded to Yuanhao Cai, Hao Bian, Yuxin Zheng, Jing Lin, and Alan Yuille.">
+        </a>
+      </figure>
+      <a class="award-link" href="https://openaccess.thecvf.com/content/CVPR2024W/NTIRE/papers/Liu_NTIRE_2024_Challenge_on_Low_Light_Image_Enhancement_Methods_and_CVPRW_2024_paper.pdf">Challenge report</a>
+    </section>
+
+    <section class="section citation" id="bibtex" aria-labelledby="citation-heading">
+      <h2 id="citation-heading">BibTeX</h2>
+      <div class="citation-block">
+        <button type="button" id="copy-bibtex" hidden>Copy</button>
+        <span id="copy-status" class="visually-hidden" role="status"></span>
+        <pre tabindex="0"><code id="bibtex-entry">@inproceedings{cai2023retinexformer,
+  title     = {Retinexformer: One-stage Retinex-based Transformer for Low-light Image Enhancement},
+  author    = {Cai, Yuanhao and Bian, Hao and Lin, Jing and Wang, Haoqian and Timofte, Radu and Zhang, Yulun},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  year      = {2023},
+  pages     = {12504--12513}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
