@@ -113,14 +113,15 @@ sup {
   font-size: 0.95rem;
 }
 
-.resource-links {
+.resource-links,
+.resource-pair {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 0.5rem;
 }
 
 .resource-links {
-  gap: 0.5rem;
+  flex-wrap: wrap;
   margin-top: 1.02rem;
 }
 
